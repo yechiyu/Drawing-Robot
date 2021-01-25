@@ -2,7 +2,7 @@
 
 This project has realized a drawing machine hand that can draw a graph according to the picture. Our idea is to generate images after drawing on a computer drawing board or on a mobile device and perform some processing on Raspberry Pi, using image processing, trajectory calculation, and trajectory optimization for path planning, then pass pictures to Raspberry Pi through a WIFI module. The Drawing Robot Draws an image on a whiteboard of an image of a picture from a computer. The Robot utilizes code and motor control system theory to convert a physical image to a position digital format and onto a whiteboard. In this vision, we will use servo motors, DC motors with encoders, and some hardware.
 
-# Key Words:
+## Key Words:
 IMAGE PROCESSING 
 MATH COMPUTATIONS
 COORDINATE GEOMETRY
@@ -12,7 +12,7 @@ TRIGONOMETRY
 <p align="center">
   <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/pic5.jpg" width="400">
 
-### Everything We Need (~100£ or less)
+# Everything We Need (~100£ or less)
 * [Raspberry Pi 4 Model B] 	£ 54 (https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052740158)
 * [Official UK Raspberry Pi 4 Power Supply (5.1V 3A)]   £ 7.50  (https://thepihut.com/products/raspberry-pi-psu-uk?variant=20064004505662)
 * ['NOOBS' Preinstalled Micro SD Card (Latest v3.4.0)]  £ 9     (https://thepihut.com/products/noobs-preinstalled-sd-card?variant=20649315598398)
@@ -29,7 +29,7 @@ TRIGONOMETRY
 
 # Equipment assembly
 
-# The operating environment
+## The operating environment
 * Ubuntu 20.10 ran in raspberry.
 * Initialize the environment so that remote connections are possible.
 * `sudo apt update`
@@ -65,3 +65,17 @@ location ~ \.php$ {
 ### Download the repositories
 * `git clone https://github.com/yechiyu/Drawing-Robot.git`
 * `cd Drawing-Robot`
+
+# Author
+  <ul>
+    <li><a href="https://github.com/Jin-Tao-208/">Jin Tao</a></li>
+    <li>2494589T@student.gla.ac.uk</li>
+  </ul>
+  <ul>
+    <li><a href="https://github.com/yechiyu/">Qikai Yang</a></li>
+    <li>2440230y@student.gla.ac.uk</li>
+  </ul>
+  <ul>
+    <li><a href="https://github.com/yechiyu/">Jiaming Chen</a></li>
+    <li>2363540C@student.gla.ac.uk</li>
+  </ul>
