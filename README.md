@@ -17,7 +17,7 @@ TRIGONOMETRY
 * [Premium Female/Female Jumper Wires - 20 x 6" (150mm)]  £ 2  (https://thepihut.com/products/premium-female-female-jumper-wires-20-x-6-150mm?variant=27739698449)
 * [Raspberry Pi Motor Driver Board]  £ 28  (https://thepihut.com/products/raspberry-pi-motor-driver-board?variant=32051314589758)
 * [3D printing model] £ 10 <br/>
-![alt 3D printing model](https://github.com/yechiyu/Drawing-Robot/blob/main/picture/2.jpg)
+<centre>![alt 3D printing model](https://github.com/yechiyu/Drawing-Robot/blob/main/picture/2.jpg)</centre>
 
 # Equipment assembly
 
