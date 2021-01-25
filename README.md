@@ -44,13 +44,13 @@ TRIGONOMETRY
 * `sudo nano sites-enabled/default`
 * find the line `index index.html index.htm;`, then add `index.php` after index.
 
-* find the section
-* (```)
+* find the section <br/>
+```
 location ~ \.php$ {
     include snippets/fastcgi-php.conf;
     fastcgi_pass unix:/var/run/php5-fpm.sock;
 }
-(```)
+```
 * and removing the `#` before the each line.
 ### reload the configuration file
 * `sudo /etc/init.d/nginx reload`
