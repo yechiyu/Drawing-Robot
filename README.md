@@ -9,7 +9,9 @@ COORDINATE GEOMETRY
 ROBOT MOVEMENT
 TRIGONOMETRY
 
-'<img scr="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/pic5.jpg">'
+<center>
+  <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/pic5.jpg" width="400">
+</center>
 
 ### Everything We Need (~100£ or less)
 * [Raspberry Pi 4 Model B] 	£ 54 (https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052740158)
