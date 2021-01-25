@@ -19,6 +19,7 @@ TRIGONOMETRY
 * [3D printing model] £ 10 <br/>
 
 ![alt 3D printing model](https://github.com/yechiyu/Drawing-Robot/blob/main/picture/2.jpg)
+* [GS-9025MG 2.5kg Mini Throttle Steering RC Servo Metal Gears 1/16] £10.99 
 
 # Equipment assembly
 
