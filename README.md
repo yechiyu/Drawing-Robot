@@ -45,7 +45,7 @@ TRIGONOMETRY
 * find the line `index index.html index.htm;`, then add `index.php` after index.
 
 * find the section
-(```)
+* (```)
 location ~ \.php$ {
     include snippets/fastcgi-php.conf;
     fastcgi_pass unix:/var/run/php5-fpm.sock;
