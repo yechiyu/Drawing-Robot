@@ -22,35 +22,35 @@ TRIGONOMETRY
 # Equipment assembly
 
 # The operating environment
-Ubuntu 20.10 ran in raspberry.
-Initialize the environment so that remote connections are possible.
-`sudo apt update`
-`sudo apt install openssh-server`
-`sudo passwd username`
-`ifconfig` getting IP
-`ssh <username>@<ip_address>` The remote connection
+* Ubuntu 20.10 ran in raspberry.
+* Initialize the environment so that remote connections are possible.
+* `sudo apt update`
+* `sudo apt install openssh-server`
+* `sudo passwd username`
+* `ifconfig` getting IP
+* `ssh <username>@<ip_address>` The remote connection
   
 ## install and start NGINX
-`sudo apt install nginx`
-`sudo /etc/init.d/nginx start`
-Site root `/var/www/html`
+* `sudo apt install nginx`
+* `sudo /etc/init.d/nginx start`
+* Site root `/var/www/html`
 
 ## install PHP
-`sudo apt install php-fpm`
+* `sudo apt install php-fpm`
 
 ## Start PHP in NGINX
 ### configuration
-`cd /etc/nginx`
-`sudo nano sites-enabled/default`
-find the line `index index.html index.htm;`, then add `index.php` after index.
+* `cd /etc/nginx`
+* `sudo nano sites-enabled/default`
+* find the line `index index.html index.htm;`, then add `index.php` after index.
 
-find the section
+* find the section
 (```)
 location ~ \.php$ {
     include snippets/fastcgi-php.conf;
     fastcgi_pass unix:/var/run/php5-fpm.sock;
 }
 (```)
-and removing the `#` before the each line.
+* and removing the `#` before the each line.
 ### reload the configuration file
-`sudo /etc/init.d/nginx reload`
+* `sudo /etc/init.d/nginx reload`
