@@ -18,7 +18,6 @@ TRIGONOMETRY
 * [Raspberry Pi Motor Driver Board]  £ 28  (https://thepihut.com/products/raspberry-pi-motor-driver-board?variant=32051314589758)
 * [3D printing model] £ 10 <br/>
 
-<center><img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/2.jpg"></center>
 ![alt 3D printing model](https://github.com/yechiyu/Drawing-Robot/blob/main/picture/2.jpg)
 
 # Equipment assembly
