@@ -54,3 +54,6 @@ location ~ \.php$ {
 * and removing the `#` before the each line.
 ### reload the configuration file
 * `sudo /etc/init.d/nginx reload`
+### Download the repositories
+* `git clone https://github.com/yechiyu/Drawing-Robot.git`
+* `cd Drawing-Robot`
