@@ -13,7 +13,7 @@ TRIGONOMETRY
   <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/pic5.jpg" width="400">
 </div>
 
-# Everything We Need (~100£ or less)
+# Everything We Need
 * [Raspberry Pi 4 Model B] 	£ 54 (https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052740158)
 * [Official UK Raspberry Pi 4 Power Supply (5.1V 3A)]   £ 7.50  (https://thepihut.com/products/raspberry-pi-psu-uk?variant=20064004505662)
 * ['NOOBS' Preinstalled Micro SD Card (Latest v3.4.0)]  £ 9     (https://thepihut.com/products/noobs-preinstalled-sd-card?variant=20649315598398)
