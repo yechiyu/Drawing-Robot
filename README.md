@@ -77,6 +77,6 @@ location ~ \.php$ {
     <li>2440230y@student.gla.ac.uk</li>
   </ul>
   <ul>
-    <li><a href="https://github.com/yechiyu/">Jiaming Chen</a></li>
+    <li><a href="https://github.com/Monster3747">Jiaming Chen</a></li>
     <li>2363540C@student.gla.ac.uk</li>
   </ul>
