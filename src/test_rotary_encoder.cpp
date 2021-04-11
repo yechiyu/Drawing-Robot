@@ -1,11 +1,9 @@
 #include <iostream>
-
 #include <pigpio.h>
-
+#include <unistd.h>
 #include "rotary_encoder.hpp"
 
 /*
-
 REQUIRES
 
 A rotary encoder contacts A and B connected to separate gpios and

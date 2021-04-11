@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include <pigpio.h>
 
 #include "rotary_encoder.hpp"
