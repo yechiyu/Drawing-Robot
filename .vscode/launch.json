@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "g++ Generate and debug the activity file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/main",
+            "program": "${workspaceFolder}/my_cmake_exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
