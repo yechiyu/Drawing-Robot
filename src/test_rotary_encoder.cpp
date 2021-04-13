@@ -2,6 +2,7 @@
 #include <pigpio.h>
 #include <unistd.h>
 #include "rotary_encoder.hpp"
+#include "pid.h"
 
 /*
 REQUIRES
@@ -19,25 +20,40 @@ sudo ./rot_enc_cpp
 
 */
 
-void callback(int way)
+int callback_left(int way)
 {
-   static int pos = 0;
+   static int pos_left = 0;
+   pos_left += way;
+   std::cout << "pos_left=" << pos_left << std::endl;
+   return pos_left;
+}
 
-   pos += way;
-
-   std::cout << "pos=" << pos << std::endl;
+int callback_right(int way)
+{
+   static int pos_right = 0;
+   pos_right += way;
+   std::cout << "pos_left=" << pos_right << std::endl;
+   return pos_right;
 }
 
 int main(int argc, char *argv[])
 {
    if (gpioInitialise() < 0) return 1;
 
-   re_decoder dec(7, 8, callback);
+   re_decoder dec1(7, 8, callback_left);
+   re_decoder dec2(17, 18, callback_right);
+   PID pid = PID(0.1, 100, -100, 0.1, 0.01, 0.5);
 
+    double val = 20;
+    for (int i = 0; i < 100; i++) {
+        double inc = pid.calculate(0, val);
+        printf("val:% 7.3f inc:% 7.3f\n", val, inc);
+        val += inc;
+    }
    sleep(3000);
 
-   dec.re_cancel();
-
+   dec1.re_cancel();
+   dec2.re_cancel();
    gpioTerminate();
 }
 

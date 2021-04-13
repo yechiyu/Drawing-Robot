@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-typedef void (*re_decoderCB_t)(int);
+typedef int (*re_decoderCB_t)(int);
 
 class re_decoder
 {
