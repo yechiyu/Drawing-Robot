@@ -16,6 +16,8 @@ int main()
     int counts2 = 300;
     double targetX = 0.4; // target x
     double targetY = 0.3;  // target y
+    double currrentX, currrentY, targetCounts1, targetCounts2;
+
 
     result = cp.initialPosition(L1,L2);
 
@@ -24,11 +26,26 @@ int main()
 
     result = cp.currentPosition(counts1,counts2);
 
+    currrentX = result[0];
+    currrentY = result[1];
+
     cout << "Current X: " << result[0] << endl;
     cout << "Current Y: " << result[1] << endl;
 
     result = mt.calCounts(targetX,targetY,result[0], result[1]);
     
+    targetCounts1 = result[0];
+    targetCounts2 = result[1];
+
     cout << "Counts1:" << result[0] << endl;
-    cout << "Counts2:" << result[0] << endl;
+    cout << "Counts2:" << result[1] << endl;
+
+    // run();
+    if((currrentX-targetX<0.000001)&&(currrentY-targetY)<0.000001)
+        // stop();
+        cout << "Stop"<< endl;
+    else 
+        // run();
+        cout << "Running"<< endl;
+
 }
