@@ -1,5 +1,4 @@
 import threading
-import numpy
 from gpiozero import DigitalInputDevice, Robot,OutputDevice
 from time import sleep
 
@@ -77,4 +76,3 @@ while True:
     e1_sum_error += e1_error
     e2_sum_error += e2_error
 
-print(numpy.zeros(3,1))
