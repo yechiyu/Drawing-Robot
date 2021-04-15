@@ -27,18 +27,21 @@ enable1=OutputDevice(26)
 enable1.on()
 enable2=OutputDevice(12)
 enable2.on()
-SAMPLETIME = 0.2
-TARGET = 45
-KP = 0.018
-KD = 0.01
-KI = 0.005
+SAMPLETIME = 0.1
+TARGET = 15
+KP = 0.18
+KD = 0.00
+KI = 0.01
 
 r = Robot((20,21), (6,13)) 
 e1 = Encoder(17)
 e2 = Encoder(18)
+e1 = Encoder(17)
+e2 = Encoder(18)
 
-m1_speed = 0.3
-m2_speed = 0.3
+
+m1_speed = -0.1
+m2_speed = 0.1
 r.value = (m1_speed, m2_speed)
 
 e1_prev_error = 0
@@ -72,3 +75,4 @@ while True:
 
     e1_sum_error += e1_error
     e2_sum_error += e2_error
+
