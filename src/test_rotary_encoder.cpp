@@ -2,12 +2,7 @@
 #include <pigpio.h>
 #include <unistd.h>
 #include "rotary_encoder.hpp"
-<<<<<<< HEAD
 #include "../include/PiMotor.h"
-=======
-#include "pid.h"
-
->>>>>>> 7a3239ae73db79aac3476e28503d8799e4fd5d6f
 /*
 REQUIRES
 
@@ -24,7 +19,6 @@ sudo ./rot_enc_cpp
 
 */
 
-<<<<<<< HEAD
 // int callback(int way)
 // {
 //    static int pos = 0;
@@ -34,23 +28,6 @@ sudo ./rot_enc_cpp
 //    std::cout << "pos=" << pos << std::endl;
 //    return pos;
 // }
-=======
-int callback_left(int way)
-{
-   static int pos_left = 0;
-   pos_left += way;
-   std::cout << "pos_left=" << pos_left << std::endl;
-   return pos_left;
-}
-
-int callback_right(int way)
-{
-   static int pos_right = 0;
-   pos_right += way;
-   std::cout << "pos_left=" << pos_right << std::endl;
-   return pos_right;
-}
->>>>>>> 7a3239ae73db79aac3476e28503d8799e4fd5d6f
 
 // int main(int argc, char *argv[])
 // {
@@ -58,7 +35,6 @@ int callback_right(int way)
 
 //    re_decoder dec(7, 8, callback);
 
-<<<<<<< HEAD
 //    sleep(3);
 
 //    dec.re_cancel();
@@ -116,22 +92,5 @@ int main(int argc, char *argv[])
    dec1.re_cancel();
    dec2.re_cancel();
    gpioTerminate();     
-=======
-   re_decoder dec1(7, 8, callback_left);
-   re_decoder dec2(17, 18, callback_right);
-   PID pid = PID(0.1, 100, -100, 0.1, 0.01, 0.5);
-
-    double val = 20;
-    for (int i = 0; i < 100; i++) {
-        double inc = pid.calculate(0, val);
-        printf("val:% 7.3f inc:% 7.3f\n", val, inc);
-        val += inc;
-    }
-   sleep(3000);
-
-   dec1.re_cancel();
-   dec2.re_cancel();
-   gpioTerminate();
->>>>>>> 7a3239ae73db79aac3476e28503d8799e4fd5d6f
 }
 
