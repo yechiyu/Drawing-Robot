@@ -4,7 +4,7 @@
 using namespace std;
 
 // Move to target position
-int movetoTarget::calCounts(double targetX, double targetY, double x, double y)
+double* movetoTarget::calCounts(double targetX, double targetY, double x, double y)
 {
     double Z1 = sqrt(x*x+y*y);
     double Z2 = sqrt((Base - x)*(Base - x) + y*y);
@@ -24,8 +24,15 @@ int movetoTarget::calCounts(double targetX, double targetY, double x, double y)
     angle1 = angle1*100; // the gear ratio is 100
     angle2 = angle2*100;
     
+    cout << "Angle1:" << angle1 << endl;
+
     targetC1 = angle1*12/4;
-    targetC2 = angle2*12/4;   
-    
-    return targetC1, targetC2;
+    targetC2 = angle2*12/4;  
+
+
+    result[0] = targetC1;
+    result[1] = targetC2;
+
+
+    return result; 
 }

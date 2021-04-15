@@ -5,21 +5,22 @@ using namespace std;
 
 
 // Find starting position
-double calPosition::initialPosition(double L1,double L2)
+double* calPosition::initialPosition(double L1,double L2)
 {
     Z1 = L1 + Larm;
     Z2 = L2 + Larm;
 
     x = (Base*Base + Z1*Z1 - Z2*Z2)/(2*Base);
     y = sqrt(Z1*Z1-x*x);
-    cout << "Test!!!! X: " << x << endl;
-    cout << "Test!!!! Y: " << y << endl;
-    return x, y;
+
+    result[0] = x;
+    result[1] = y;
+    return result;
 }
 
 
 // Calculate new robot position
-double calPosition::currentPosition(int counts1, int counts2)
+double* calPosition::currentPosition(int counts1, int counts2)
 {
     double countsPerRadian = countsPerRevolution/(2*3.14); 
 
@@ -38,6 +39,8 @@ double calPosition::currentPosition(int counts1, int counts2)
     x = (Base*Base + Z1*Z1 - Z2*Z2)/(2*Base);
     y = sqrt(Z1*Z1-x*x);
 
-    return x,y;
+    result[0] = x;
+    result[1] = y;
+    return result;
 }
 

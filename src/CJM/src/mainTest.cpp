@@ -6,7 +6,7 @@ using namespace std;
 
 calPosition cp;
 movetoTarget mt;
-
+double *result;
 
 int main()
 {
@@ -17,19 +17,18 @@ int main()
     double targetX = 0.4; // target x
     double targetY = 0.3;  // target y
 
-    double y = cp.initialPosition(L1,L2);
+    result = cp.initialPosition(L1,L2);
 
-    // cout << "Starting X: " << x << endl;
-    cout << "Starting Y: " << y << endl;
+    cout << "Initial X: " << result[0] << endl;
+    cout << "Initial Y: " << result[1] << endl;
 
-    double x1, y1 = cp.currentPosition(counts1,counts2);
+    result = cp.currentPosition(counts1,counts2);
 
-    cout << "New X: " << x1 << endl;
-    cout << "New Y: " << y1 << endl;
-    cout << "--------------------------------------------" << endl;
+    cout << "Current X: " << result[0] << endl;
+    cout << "Current Y: " << result[1] << endl;
 
-    mt.calCounts(targetX,targetY,x1, y1);
+    result = mt.calCounts(targetX,targetY,result[0], result[1]);
     
-    cout << "targetC1:" << mt.targetC1 << endl;
-    cout << "targetC2:" << mt.targetC2 << endl;
+    cout << "Counts1:" << result[0] << endl;
+    cout << "Counts2:" << result[0] << endl;
 }
