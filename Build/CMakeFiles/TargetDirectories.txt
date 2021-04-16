@@ -1,0 +1,3 @@
+/home/pi/Drawing-Robot/Build/CMakeFiles/rebuild_cache.dir
+/home/pi/Drawing-Robot/Build/CMakeFiles/testmotor.dir
+/home/pi/Drawing-Robot/Build/CMakeFiles/edit_cache.dir
