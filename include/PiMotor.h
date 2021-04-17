@@ -10,7 +10,8 @@
 #include <stdint.h>
 
 typedef int (*re_decoderCB_t)(int);
-
+int callback_left(int);
+int callback_right(int);
 class PiMotor {
 private:
     int fPin;
@@ -32,7 +33,7 @@ private:
       void Thread_run_right ();
       void runForMS_left( int milliseconds);
       void runForMS_right(int milliseconds);
-      void stop();
+      int *stop();
       void setDebug(bool); 
       void re_decoder(int, int,re_decoderCB_t);
    /*

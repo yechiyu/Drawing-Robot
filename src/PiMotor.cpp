@@ -7,6 +7,22 @@
 #include <iostream>
 using namespace std;
 std::mutex x;
+int pos[2]={0,0};
+int callback_left(int way)
+{
+   //static int pos_left = 0;
+   pos[0] += way;
+   std::cout << "pos_left=" << pos[0] << std::endl;
+   return pos[0];
+}
+
+int callback_right(int way)
+{
+   //static int pos_right = 0;
+   pos[1] += way;
+   std::cout << "pos_right=" << pos[1] << std::endl;
+   return pos[1];
+}
 
 PiMotor::PiMotor(int forwardPin, int reversePin,int Speed,bool Direction ) {
     if (DEBUG) {
@@ -26,115 +42,36 @@ void PiMotor::setDebug(bool debug) {
     }
 }
 
-void PiMotor::stop() {
+int * PiMotor::stop() {
     //Initialise GPIO.
     if (gpioInitialise() < 0) {
         if (DEBUG) {
             fprintf(stderr, "PiGPIO initialisation failed.\n\r");
         }
-      return;
    }
     gpioSetMode(fPin, PI_OUTPUT);
     gpioSetMode(rPin, PI_OUTPUT);
     gpioPWM(fPin, 0);
     gpioPWM(rPin, 0);
-    
+    static int Posion[2]={0,0};
+    Posion[0]=pos[0];
+    Posion[1]=pos[1];
+    pos[0]=0;
+    pos[1]=0;
     if (DEBUG) {
         printf("Stopping motors on pin %i and pin %i.\n\r", rPin, fPin);
     }
+    return Posion;
    
    //Free resources & GPIO access
    //gpioTerminate();   
 }
 
-// void PiMotor::runForMS_left(int milliseconds) {
-//     //Convert Milliseconds to Microseconds for usleep (unix)
-//     unsigned int microseconds = (milliseconds * 1000.0);
-//     if (DEBUG) {
-//         printf("Running PiMotor::run for %i milliseconds.\n\r", milliseconds);
-//     }
-//     //Run
-//     PiMotor::Thread_run_left();
-//     //Wait
-//     usleep(microseconds);
-//     //Stop
-//     PiMotor::Thread_run_left();
-    
-//     if (DEBUG) {
-//         printf("Stopping PiMotor::run\n\r");
-//     }
-// }
 
-// void PiMotor::runForMS_right(int milliseconds) {
-//     //Convert Milliseconds to Microseconds for usleep (unix)
-//     unsigned int microseconds = (milliseconds * 1000.0);
-//     if (DEBUG) {
-//         printf("Running PiMotor::run for %i milliseconds.\n\r", milliseconds);
-//     }
-//     //Run
-//     PiMotor::Thread_run_right();
-//     //Wait
-//     usleep(microseconds);
-//     //Stop
-//     PiMotor::Thread_run_right();
-    
-//     if (DEBUG) {
-//         printf("Stopping PiMotor::run\n\r");
-//     }
-// }
-
-// void PiMotor::Thread_run_left () {
-    
-//     cout<<"enter Thread_run_left"<<endl;
-//     x.lock();
-//     cout<<"enter Thread_run_left........."<<endl;
-//     if (gpioInitialise() < 0) {
-//         if (DEBUG) {
-//             fprintf(stderr, "PiGPIO initialisation failed in PiMotor::run.\n\r");
-//         }
-//       return;
-//    }
-//   int Direction;
-//   if (direction == false) {
-//       Direction = rPin;
-//   } else if (direction == true) {
-//       Direction = fPin;
-//   } else {
-//       if (DEBUG) {
-//         fprintf(stderr, "Invalid Direction Value in PiMotor::run\n\r");
-//       }
-//       return;
-    
-//   }
-  
-//    //Set motor as output.
-//     gpioInitialise();
-//     gpioSetMode(26, PI_ALT0);
-//     //gpioSetMode(12, PI_ALT0);
-//     //gpioSetPullUpDown(26, PI_PUD_UP);
-//     //gpioSetPullUpDown(12, PI_PUD_UP);
-//     //gpioWrite(12, 1);// Sets a pull-up.
-//     gpioWrite(26, 1);// Sets a pull-up.
-//     gpioSetMode(Direction, PI_OUTPUT);
-    
-//     gpioPWM(Direction, speed);
-//     if (1) {
-//         if(Direction==rPin){
-//         printf("Setting speed to %i on right_motor pin %i \n\r", speed, rPin);}
-//         if(Direction==fPin){
-//             printf("Setting speed to %i on right_motor pin %i \n\r", speed, fPin);}
-//     }
-   
-   
-//    //Free resources & GPIO access
-//    gpioTerminate();
-//    x.unlock();
-// }
 
 void PiMotor::Thread_run_right () {
     cout<<"enter Thread_run_left"<<endl;
-    x.lock();
-    cout<<"enter Thread_run_left................."<<endl;
+    //x.lock();
     if (gpioInitialise() < 0) {
         if (DEBUG) {
             fprintf(stderr, "PiGPIO initialisation failed in PiMotor::run.\n\r");
@@ -168,14 +105,14 @@ void PiMotor::Thread_run_right () {
     gpioPWM(Direction, speed);
     if (DEBUG) {
         if(Direction==rPin){
-        printf("Setting speed to %i on right_motor pin %i \n\r", speed, rPin);}
+        printf("Setting speed to %i on motor pin %i \n\r", speed, rPin);}
         if(Direction==fPin){
-            printf("Setting speed to %i on right_motor pin %i \n\r", speed, fPin);}
+            printf("Setting speed to %i on motor pin %i \n\r", speed, fPin);}
     }
    
    //Free resources & GPIO access
    //gpioTerminate();
-   x.unlock();
+   //x.unlock();
 }
 
 void PiMotor::_pulse(int gpio, int level, uint32_t tick)
