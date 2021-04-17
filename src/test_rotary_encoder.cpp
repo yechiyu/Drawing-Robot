@@ -68,11 +68,11 @@ sudo ./rot_enc_cpp
 // }
 int m1_A = 20; //Motor 1 Forward
 int m1_B = 21; //Motor 1 Reverse
-int speed_left=50;
+int speed_left=60;
     //bool direction_left=0;
 int m2_A = 6; //Motor 2 Forward
 int m2_B = 13; //Motor 2 Reverse
-int speed_right=30;
+int speed_right=20;
 void run_creat(bool direction_right,bool direction_left)
     {
       PiMotor motor1(m1_A, m1_B,speed_left,direction_left);
@@ -97,8 +97,8 @@ void run_stop(bool direction_right,bool direction_left)
       
       int *p1=motor3.stop(); //Stop the motor 
       int *p2=motor4.stop(); //Stop the motor
-      cout<<"11111"<<*p1<<" "<<*(p1+1)<<endl;
-      cout<<"22222"<<*p2<<" "<<*(p2+1)<<endl;
+      //cout<<"11111"<<*p1<<" "<<*(p1+1)<<endl;
+      //cout<<"22222"<<*p2<<" "<<*(p2+1)<<endl;
 
     }
    
@@ -119,12 +119,16 @@ int main(int argc, char *argv[])
     run_creat(1,1);
     usleep(3000000);//5 seconds
     run_stop(1,1);
-    usleep(3000000);//5 seconds
-    run_creat(0,0);
+    usleep(1000000);//5 seconds
+    run_creat(1,1);
     usleep(2000000);//5 seconds
     run_stop(1,1);
-    usleep(3000000);//5 seconds
-    run_creat(0,0);
+    usleep(1000000);//5 seconds
+    run_creat(1,1);
+    usleep(1000000);//5 seconds
+    run_stop(1,1);
+    usleep(1000000);//5 seconds
+    run_creat(1,1);
     usleep(1000000);//5 seconds
     run_stop(1,1);
     sleep(SAMPLETIME); // Pause 1 seconds

@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 std::mutex x;
-int pos[2]={0,0};
+static int pos[2]={0,0};
 int callback_left(int way)
 {
    //static int pos_left = 0;
