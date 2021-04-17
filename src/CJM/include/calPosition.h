@@ -1,6 +1,10 @@
 #ifndef CALPOSTISION_H
 #define CALPOSTISION_H
 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
 class calPosition {
     private:       
         double Base = 0.8;  // the distance between the two pulleys（0.535）

@@ -1,7 +1,4 @@
-#include <iostream>
-#include <cmath>
 #include "../include/calPosition.h"
-using namespace std;
 
 
 // Find starting position

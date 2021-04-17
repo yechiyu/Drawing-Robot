@@ -1,6 +1,10 @@
 #ifndef MOVE_H
 #define MOVE_H
 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
 class movetoTarget {
     private:
         double Base = 0.8;  // the distance between the two pulleys（0.535）

@@ -1,7 +1,5 @@
-#include <iostream>
-#include <cmath>
 #include "../include/movetoTarget.h"
-using namespace std;
+
 
 // Move to target position
 double* movetoTarget::calCounts(double targetX, double targetY, double x, double y)
@@ -24,7 +22,6 @@ double* movetoTarget::calCounts(double targetX, double targetY, double x, double
     angle1 = angle1*100; // the gear ratio is 100
     angle2 = angle2*100;
     
-    cout << "Angle1:" << angle1 << endl;
 
     targetC1 = angle1*12/4;
     targetC2 = angle2*12/4;  
