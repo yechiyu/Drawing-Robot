@@ -1,8 +1,8 @@
 /* 
  * File:   PiMotor.h
- * Author: Steve McMillan
+ * Author: Jin Tao
  *
- * Created on 07 July 2017, 17:13
+ * Created on 07 April 2021, 01:13
  */
 
 #ifndef PIMOTOR_H
