@@ -5,26 +5,13 @@
 #include <thread>
 #include <mutex>
 #include <iostream>
+#include <functional>
 using namespace std;
 std::mutex x;
-static int pos[2]={0,0};
-int callback_left(int way)
-{
-   //static int pos_left = 0;
-   pos[0] += way;
-   std::cout << "pos_left=" << pos[0] << std::endl;
-   return pos[0];
-}
+extern int pos[2];
 
-int callback_right(int way)
+PiMotor::PiMotor(int forwardPin, int reversePin,int Speed,bool Direction)
 {
-   //static int pos_right = 0;
-   pos[1] += way;
-   std::cout << "pos_right=" << pos[1] << std::endl;
-   return pos[1];
-}
-
-PiMotor::PiMotor(int forwardPin, int reversePin,int Speed,bool Direction ) {
     if (DEBUG) {
         printf("Creating motor object with pins %i and %i\n\r", forwardPin, reversePin);
     }
@@ -33,8 +20,9 @@ PiMotor::PiMotor(int forwardPin, int reversePin,int Speed,bool Direction ) {
     rPin = reversePin;
     speed =Speed;
     direction=Direction;
+    //function=f;
 }
-
+ 
 void PiMotor::setDebug(bool debug) {
     DEBUG = debug;
     if (DEBUG) {
@@ -42,7 +30,7 @@ void PiMotor::setDebug(bool debug) {
     }
 }
 
-int * PiMotor::stop() {
+int PiMotor::Thread_stop_left() {
     //Initialise GPIO.
     if (gpioInitialise() < 0) {
         if (DEBUG) {
@@ -53,10 +41,33 @@ int * PiMotor::stop() {
     gpioSetMode(rPin, PI_OUTPUT);
     gpioPWM(fPin, 0);
     gpioPWM(rPin, 0);
-    static int Posion[2]={0,0};
-    Posion[0]=pos[0];
-    Posion[1]=pos[1];
+    int Posion=0;
+    Posion=pos[0];
     pos[0]=0;
+    if (DEBUG) {
+        printf("Stopping motors on pin %i and pin %i.\n\r", rPin, fPin);
+    }
+    return Posion;
+   
+   //Free resources & GPIO access
+   //gpioTerminate();   
+}
+
+int PiMotor::Thread_stop_right() {
+    //Initialise GPIO.
+    if (gpioInitialise() < 0) {
+        if (DEBUG) {
+            fprintf(stderr, "PiGPIO initialisation failed.\n\r");
+        }
+   }
+
+    
+    gpioSetMode(fPin, PI_OUTPUT);
+    gpioSetMode(rPin, PI_OUTPUT);
+    gpioPWM(fPin, 0);
+    gpioPWM(rPin, 0);
+    int Posion=0;
+    Posion=pos[1];
     pos[1]=0;
     if (DEBUG) {
         printf("Stopping motors on pin %i and pin %i.\n\r", rPin, fPin);
@@ -67,23 +78,24 @@ int * PiMotor::stop() {
    //gpioTerminate();   
 }
 
-
-
 void PiMotor::Thread_run_right () {
     cout<<"enter Thread_run_left"<<endl;
     //x.lock();
     if (gpioInitialise() < 0) {
-        if (DEBUG) {
-            fprintf(stderr, "PiGPIO initialisation failed in PiMotor::run.\n\r");
-        }
-      return;
+    if (DEBUG) {
+        fprintf(stderr, "PiGPIO initialisation failed in PiMotor::run.\n\r");
+    }
+    return;
    }
-   int Direction;
+    gpioSetMode(12, PI_ALT0);
+    gpioWrite(12, 1);// Sets a pull-up.
+  cout<<"before direction is  "<<direction<<endl;
+  int D=0;
   if (direction == 0) {
      
-      Direction = rPin;
-  } else if (direction == 1) {
-      Direction = fPin;
+      D = rPin;
+  } else if (direction== 1) {
+      D = fPin;
   } 
   else {
       if (DEBUG) {
@@ -91,31 +103,104 @@ void PiMotor::Thread_run_right () {
       }
       return;
   }
+  cout<<"after direction   "<<D<<endl;
+    gpioInitialise();
+  
+   //gpioSetMode(26, PI_ALT0);
+
+   //gpioWrite(26, 1);// Sets a pull-up.
+    //gpioSetPullUpDown(26, PI_PUD_UP);
+    //gpioSetPullUpDown(12, PI_PUD_UP);
+   // gpioInitialise();
+     gpioSetMode(D, PI_OUTPUT);
+    //gpioSetPWMrange(D, 1000);
+    gpioPWM(D,speed);
+
+   
   
    //Set motor as output.
-    gpioInitialise();
-    gpioSetMode(26, PI_ALT0);
-    gpioSetMode(12, PI_ALT0);
-    // gpioSetPullUpDown(26, PI_PUD_UP);
-    // gpioSetPullUpDown(12, PI_PUD_UP);
-    gpioWrite(12, 1);// Sets a pull-up.
-    gpioWrite(26, 1);// Sets a pull-up.
-    gpioSetMode(Direction, PI_OUTPUT);
+    //gpioInitialise();
+    //gpioSetMode(26, PI_ALT0);
     
-    gpioPWM(Direction, speed);
-    if (DEBUG) {
-        if(Direction==rPin){
+   
+    
+    
+    //pioWrite(26, 1);// Sets a pull-up.
+    
+      if (DEBUG) {
+        if(D==rPin){
         printf("Setting speed to %i on motor pin %i \n\r", speed, rPin);}
-        if(Direction==fPin){
+        if(D==fPin){
             printf("Setting speed to %i on motor pin %i \n\r", speed, fPin);}
     }
+    
+   
+  
    
    //Free resources & GPIO access
    //gpioTerminate();
    //x.unlock();
 }
 
-void PiMotor::_pulse(int gpio, int level, uint32_t tick)
+void PiMotor::Thread_run_left () {
+    cout<<"enter Thread_run_left"<<endl;
+    //x.lock();
+   if (gpioInitialise() < 0) {
+        if (DEBUG) {
+            fprintf(stderr, "PiGPIO initialisation failed in PiMotor::run.\n\r");
+        }
+      return;
+   }
+   int D=0;
+  if (direction == 0) {
+     
+      D= rPin;
+  } else if (direction == 1) {
+     D= fPin;
+  } 
+  else {
+      if (DEBUG) {
+        fprintf(stderr, "Invalid Direction Value in PiMotor::run\n\r");
+      }
+      return;
+  }
+    gpioInitialise();
+    gpioSetMode(26, PI_ALT0);
+    //gpioSetMode(12, PI_ALT0);
+    gpioWrite(26, 1);// Sets a pull-up.
+    //gpioWrite(12, 1);// Sets a pull-up.
+    // gpioSetPullUpDown(26, PI_PUD_UP);
+    // gpioSetPullUpDown(12, PI_PUD_UP);
+    //gpioInitialise();
+    gpioSetMode(D, PI_OUTPUT);
+    //gpioSetPWMrange(D, 1000);
+    gpioPWM(D, speed);
+
+   
+  
+   //Set motor as output.
+    //gpioInitialise();
+    
+    
+    //gpioSetMode(12, PI_ALT0);
+   
+    //gpioWrite(12, 1);// Sets a pull-up.
+    
+    if (DEBUG) {
+        if(D==rPin){
+        printf("Setting speed to %i on motor pin %i \n\r", speed, rPin);}
+        if(D==fPin){
+            printf("Setting speed to %i on motor pin %i \n\r", speed, fPin);}
+    }
+    
+    
+   
+   //Free resources & GPIO access
+   //gpioTerminate();
+   //x.unlock();
+}
+
+void re_decoder::_pulse(int gpio, int level, uint32_t tick)
 {
    if (gpio == mygpioA) levA = level; else levB = level;
 
@@ -134,20 +219,20 @@ void PiMotor::_pulse(int gpio, int level, uint32_t tick)
    }
 }
 
-void PiMotor::_pulseEx(int gpio, int level, uint32_t tick, void *user)
+void re_decoder::_pulseEx(int gpio, int level, uint32_t tick, void *user)
 {
    /*
       Need a static callback to link with C.
    */
 
-   PiMotor *mySelf = (PiMotor *) user;
+   re_decoder *mySelf = (re_decoder *) user;
 
    mySelf->_pulse(gpio, level, tick); /* Call the instance callback. */
 }
-
-void PiMotor::re_decoder(int gpioA, int gpioB, re_decoderCB_t callback)
+void re_decoder::encoder_left(int gpioA, int gpioB, re_decoderCB_t callback)
 {
    mygpioA = gpioA;
+   
    mygpioB = gpioB;
 
    mycallback = callback;
@@ -156,7 +241,6 @@ void PiMotor::re_decoder(int gpioA, int gpioB, re_decoderCB_t callback)
    levB=0;
 
    lastGpio = -1;
-
    gpioSetMode(gpioA, PI_INPUT);
    gpioSetMode(gpioB, PI_INPUT);
 
@@ -169,11 +253,66 @@ void PiMotor::re_decoder(int gpioA, int gpioB, re_decoderCB_t callback)
 
    gpioSetAlertFuncEx(gpioA, _pulseEx, this);
    gpioSetAlertFuncEx(gpioB, _pulseEx, this);
+   }
+
+void re_decoder::encoder_right(int gpioA, int gpioB, re_decoderCB_t callback)
+{
+   mygpioA = gpioA;
+   
+   mygpioB = gpioB;
+
+   mycallback = callback;
+
+   levA=0;
+   levB=0;
+
+   lastGpio = -1;
+   gpioSetMode(gpioA, PI_INPUT);
+   gpioSetMode(gpioB, PI_INPUT);
+
+   /* pull up is needed as encoder common is grounded */
+
+   gpioSetPullUpDown(gpioA, PI_PUD_UP);
+   gpioSetPullUpDown(gpioB, PI_PUD_UP);
+
+   /* monitor encoder level changes */
+
+   gpioSetAlertFuncEx(gpioA, _pulseEx, this);
+   gpioSetAlertFuncEx(gpioB, _pulseEx, this);
+   }
+re_decoder::re_decoder(int gpioA, int gpioB, re_decoderCB_t callback)
+{
+   mygpioA = gpioA;
+   
+   mygpioB = gpioB;
+
+   mycallback = callback;
+
+   levA=0;
+   levB=0;
+
+   lastGpio = -1;
+//    gpioSetMode(gpioA, PI_INPUT);
+//    gpioSetMode(gpioB, PI_INPUT);
+
+//    /* pull up is needed as encoder common is grounded */
+
+//    gpioSetPullUpDown(gpioA, PI_PUD_UP);
+//    gpioSetPullUpDown(gpioB, PI_PUD_UP);
+
+//    /* monitor encoder level changes */
+
+//    gpioSetAlertFuncEx(gpioA, _pulseEx, this);
+//    gpioSetAlertFuncEx(gpioB, _pulseEx, this);
+
+   
 }
 
-void PiMotor::re_cancel(void)
-{
+void re_decoder::re_cancel(void)
+{   if (gpioInitialise() < 0) 
+//      {
+//          cout<<"PiGPIO initialisation failed in PiMotor::run.\n\r"<<endl;
+//      }
    gpioSetAlertFuncEx(mygpioA, 0, this);
    gpioSetAlertFuncEx(mygpioB, 0, this);
 }
-

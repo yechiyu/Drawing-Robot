@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Drawing-Robot
+CMAKE_SOURCE_DIR = /home/pi/REPT/Drawing-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Drawing-Robot/Build
+CMAKE_BINARY_DIR = /home/pi/REPT/Drawing-Robot/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Drawing-Robot/Build/CMakeFiles /home/pi/Drawing-Robot/Build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles /home/pi/REPT/Drawing-Robot/Build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Drawing-Robot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,18 @@ testmotor/fast:
 	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/build
 .PHONY : testmotor/fast
 
-motor_test.o: motor_test.cpp.o
+#=============================================================================
+# Target rules for targets named PiMotor
 
-.PHONY : motor_test.o
+# Build rule for target.
+PiMotor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PiMotor
+.PHONY : PiMotor
 
-# target to build an object file
-motor_test.cpp.o:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/motor_test.cpp.o
-.PHONY : motor_test.cpp.o
-
-motor_test.i: motor_test.cpp.i
-
-.PHONY : motor_test.i
-
-# target to preprocess a source file
-motor_test.cpp.i:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/motor_test.cpp.i
-.PHONY : motor_test.cpp.i
-
-motor_test.s: motor_test.cpp.s
-
-.PHONY : motor_test.s
-
-# target to generate assembly for a file
-motor_test.cpp.s:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/motor_test.cpp.s
-.PHONY : motor_test.cpp.s
+# fast build rule for target.
+PiMotor/fast:
+	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/build
+.PHONY : PiMotor/fast
 
 src/PiMotor.o: src/PiMotor.cpp.o
 
@@ -156,7 +142,7 @@ src/PiMotor.o: src/PiMotor.cpp.o
 
 # target to build an object file
 src/PiMotor.cpp.o:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/PiMotor.cpp.o
+	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o
 .PHONY : src/PiMotor.cpp.o
 
 src/PiMotor.i: src/PiMotor.cpp.i
@@ -165,7 +151,7 @@ src/PiMotor.i: src/PiMotor.cpp.i
 
 # target to preprocess a source file
 src/PiMotor.cpp.i:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/PiMotor.cpp.i
+	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.i
 .PHONY : src/PiMotor.cpp.i
 
 src/PiMotor.s: src/PiMotor.cpp.s
@@ -174,8 +160,35 @@ src/PiMotor.s: src/PiMotor.cpp.s
 
 # target to generate assembly for a file
 src/PiMotor.cpp.s:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/PiMotor.cpp.s
+	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s
 .PHONY : src/PiMotor.cpp.s
+
+src/test_rotary_encoder.o: src/test_rotary_encoder.cpp.o
+
+.PHONY : src/test_rotary_encoder.o
+
+# target to build an object file
+src/test_rotary_encoder.cpp.o:
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o
+.PHONY : src/test_rotary_encoder.cpp.o
+
+src/test_rotary_encoder.i: src/test_rotary_encoder.cpp.i
+
+.PHONY : src/test_rotary_encoder.i
+
+# target to preprocess a source file
+src/test_rotary_encoder.cpp.i:
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i
+.PHONY : src/test_rotary_encoder.cpp.i
+
+src/test_rotary_encoder.s: src/test_rotary_encoder.cpp.s
+
+.PHONY : src/test_rotary_encoder.s
+
+# target to generate assembly for a file
+src/test_rotary_encoder.cpp.s:
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s
+.PHONY : src/test_rotary_encoder.cpp.s
 
 # Help Target
 help:
@@ -184,14 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... testmotor"
 	@echo "... edit_cache"
-	@echo "... motor_test.o"
-	@echo "... motor_test.i"
-	@echo "... motor_test.s"
+	@echo "... testmotor"
+	@echo "... PiMotor"
 	@echo "... src/PiMotor.o"
 	@echo "... src/PiMotor.i"
 	@echo "... src/PiMotor.s"
+	@echo "... src/test_rotary_encoder.o"
+	@echo "... src/test_rotary_encoder.i"
+	@echo "... src/test_rotary_encoder.s"
 .PHONY : help
 
 

@@ -5,7 +5,7 @@
             "name": "g++ Generate and debug the activity file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/my_cmake_exe",
+            "program": "${workspaceFolder}/Build/testmotor",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

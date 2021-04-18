@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pi/REPT/Drawing-Robot/include 
+CXX_INCLUDES = 
 

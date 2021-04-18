@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPiMotor.a  CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o
+/usr/bin/ranlib libPiMotor.a

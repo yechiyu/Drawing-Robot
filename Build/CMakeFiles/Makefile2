@@ -44,16 +44,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Drawing-Robot
+CMAKE_SOURCE_DIR = /home/pi/REPT/Drawing-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Drawing-Robot/Build
+CMAKE_BINARY_DIR = /home/pi/REPT/Drawing-Robot/Build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/testmotor.dir/all
+all: CMakeFiles/PiMotor.dir/all
 
 .PHONY : all
 
@@ -64,6 +65,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/testmotor.dir/clean
+clean: CMakeFiles/PiMotor.dir/clean
 
 .PHONY : clean
 
@@ -71,17 +73,17 @@ clean: CMakeFiles/testmotor.dir/clean
 # Target rules for target CMakeFiles/testmotor.dir
 
 # All Build rule for target.
-CMakeFiles/testmotor.dir/all:
+CMakeFiles/testmotor.dir/all: CMakeFiles/PiMotor.dir/all
 	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/depend
 	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=1,2,3 "Built target testmotor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=3,4 "Built target testmotor"
 .PHONY : CMakeFiles/testmotor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/testmotor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Drawing-Robot/Build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testmotor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Drawing-Robot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 0
 .PHONY : CMakeFiles/testmotor.dir/rule
 
 # Convenience name for target.
@@ -93,6 +95,33 @@ testmotor: CMakeFiles/testmotor.dir/rule
 CMakeFiles/testmotor.dir/clean:
 	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/clean
 .PHONY : CMakeFiles/testmotor.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/PiMotor.dir
+
+# All Build rule for target.
+CMakeFiles/PiMotor.dir/all:
+	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/depend
+	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=1,2 "Built target PiMotor"
+.PHONY : CMakeFiles/PiMotor.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/PiMotor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PiMotor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 0
+.PHONY : CMakeFiles/PiMotor.dir/rule
+
+# Convenience name for target.
+PiMotor: CMakeFiles/PiMotor.dir/rule
+
+.PHONY : PiMotor
+
+# clean rule for target.
+CMakeFiles/PiMotor.dir/clean:
+	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/clean
+.PHONY : CMakeFiles/PiMotor.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Drawing-Robot
+CMAKE_SOURCE_DIR = /home/pi/REPT/Drawing-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Drawing-Robot/Build
+CMAKE_BINARY_DIR = /home/pi/REPT/Drawing-Robot/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/testmotor.dir/depend.make
@@ -57,45 +57,31 @@ include CMakeFiles/testmotor.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testmotor.dir/flags.make
 
-CMakeFiles/testmotor.dir/motor_test.cpp.o: CMakeFiles/testmotor.dir/flags.make
-CMakeFiles/testmotor.dir/motor_test.cpp.o: ../motor_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testmotor.dir/motor_test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testmotor.dir/motor_test.cpp.o -c /home/pi/Drawing-Robot/motor_test.cpp
+CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o: CMakeFiles/testmotor.dir/flags.make
+CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o: ../src/test_rotary_encoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o -c /home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp
 
-CMakeFiles/testmotor.dir/motor_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testmotor.dir/motor_test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Drawing-Robot/motor_test.cpp > CMakeFiles/testmotor.dir/motor_test.cpp.i
+CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp > CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i
 
-CMakeFiles/testmotor.dir/motor_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testmotor.dir/motor_test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Drawing-Robot/motor_test.cpp -o CMakeFiles/testmotor.dir/motor_test.cpp.s
-
-CMakeFiles/testmotor.dir/src/PiMotor.cpp.o: CMakeFiles/testmotor.dir/flags.make
-CMakeFiles/testmotor.dir/src/PiMotor.cpp.o: ../src/PiMotor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/testmotor.dir/src/PiMotor.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testmotor.dir/src/PiMotor.cpp.o -c /home/pi/Drawing-Robot/src/PiMotor.cpp
-
-CMakeFiles/testmotor.dir/src/PiMotor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testmotor.dir/src/PiMotor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Drawing-Robot/src/PiMotor.cpp > CMakeFiles/testmotor.dir/src/PiMotor.cpp.i
-
-CMakeFiles/testmotor.dir/src/PiMotor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testmotor.dir/src/PiMotor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Drawing-Robot/src/PiMotor.cpp -o CMakeFiles/testmotor.dir/src/PiMotor.cpp.s
+CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp -o CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s
 
 # Object files for target testmotor
 testmotor_OBJECTS = \
-"CMakeFiles/testmotor.dir/motor_test.cpp.o" \
-"CMakeFiles/testmotor.dir/src/PiMotor.cpp.o"
+"CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o"
 
 # External object files for target testmotor
 testmotor_EXTERNAL_OBJECTS =
 
-testmotor: CMakeFiles/testmotor.dir/motor_test.cpp.o
-testmotor: CMakeFiles/testmotor.dir/src/PiMotor.cpp.o
+testmotor: CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o
 testmotor: CMakeFiles/testmotor.dir/build.make
+testmotor: libPiMotor.a
 testmotor: CMakeFiles/testmotor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable testmotor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable testmotor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testmotor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +94,6 @@ CMakeFiles/testmotor.dir/clean:
 .PHONY : CMakeFiles/testmotor.dir/clean
 
 CMakeFiles/testmotor.dir/depend:
-	cd /home/pi/Drawing-Robot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Drawing-Robot /home/pi/Drawing-Robot /home/pi/Drawing-Robot/Build /home/pi/Drawing-Robot/Build /home/pi/Drawing-Robot/Build/CMakeFiles/testmotor.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/REPT/Drawing-Robot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/REPT/Drawing-Robot /home/pi/REPT/Drawing-Robot /home/pi/REPT/Drawing-Robot/Build /home/pi/REPT/Drawing-Robot/Build /home/pi/REPT/Drawing-Robot/Build/CMakeFiles/testmotor.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/testmotor.dir/depend
 
