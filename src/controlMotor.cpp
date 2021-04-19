@@ -3,30 +3,26 @@
 int pos[2]={0,0};
 int callback_left(int way)
 {
-   //static int pos_left = 0;
    pos[0] += way;
-   // std::cout << "pos_left=" << pos[0] << std::endl;
    return pos[0];
 }
 
 int callback_right(int way)
 {
-   //static int pos_right = 0;
    pos[1] += way;
-   // std::cout << "pos_right=" << pos[1] << std::endl;
    return pos[1];
 }
 
-void control::run_left()   //int , int , re_decoderCB_t ,int , int ,int ,bool
+void control::run_left(int speed_L,bool direction)   //int , int , re_decoderCB_t ,int , int ,int ,bool
 { 
-   re_decoder::encoder_left(PL1,PL2,callback_left);
-   PiMotor::Run_left();
+   re_decoder::encoder_left(17,27,callback_left);
+   PiMotor::Run_left(speed_L,direction);
 }
 
-void control::run_right()   //int , int , re_decoderCB_t ,int , int ,int ,bool
+void control::run_right(int speed_R,bool direction)   //int , int , re_decoderCB_t ,int , int ,int ,bool
 {
-   PiMotor::Run_right();
-   re_decoder::encoder_right(PR1,PR2,callback_right);
+   PiMotor::Run_right(speed_R,direction);
+   re_decoder::encoder_right(16,19,callback_right);
 }
 
 void control::stop_left()

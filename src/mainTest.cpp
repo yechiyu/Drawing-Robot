@@ -9,22 +9,25 @@ processImages pi;
 
 double *result;
 
-int main()
+int main() 
 {  
     
     double L1 = 0.425; //the distances between the motors and the pulley（left）
     double L2 = 0.425; //the distances between the motors and the pulley（right）
     
+    int speeds = 50;
+    bool dir;
     // string url = "../img/3.jpg";
 
     extern int pos[2];
     int counts1 = pos[0]; //the encoders give motor positions in counts
     int counts2 = pos[1];
 
-    double targetX = 0.44; // target x
-    double targetY = 0.5;  // target y
+    double targetX = 0.4; // target x
+    double targetY = 0.2;  // target y
 
-    double currrentX, currrentY, targetCounts1, targetCounts2;
+    double currrentX, currrentY;
+    int targetCounts1, targetCounts2;
 
     // intial position
     result = cp.initialPosition(L1,L2);
@@ -69,24 +72,16 @@ int main()
     cout << "targetCounts2:" << targetCounts2 << endl;
      
     // control the robot
-    // left_motor.run_left();
-    // right_motor.run_right();
-    // while (true){
-    //     if(targetCounts1 == counts1){
-    //         left_motor.stop_left();
-    //         break;
-    //     }else{
-    //         cout << "counts" << counts1<< endl;
-    //         cout << "targetcounts" << targetCounts1<< endl;
-    //     }
-    //     if(targetCounts2 == counts2){
-    //         left_motor.stop_left();
-    //         break;
-    //     }else{
-    //         cout << "running" << endl;
-    //     }   
-    // } 
-    if (gpioInitialise() < 0)
+
+    control left_motor(17,27,callback_left,20,21);
+    control right_motor(16,19,callback_right,6,13);
+    
+    if(targetCounts1 > 0){
+        dir = 1;
+    }else{
+        dir = 0;
+    }
+     if (gpioInitialise() < 0)
     {
       fprintf(stderr, "igpio initialisation failed.\n\r");
      }
@@ -94,16 +89,22 @@ int main()
     {
       fprintf(stderr, "igpio initialisation is okey.\n\r");
     }
-    control left_motor(26,19,callback_left,20,21,150,1);
-    control right_motor(7,8,callback_right,6,13,87,1);
-
-    left_motor.run_left();
-    right_motor.run_right();
-    cout << counts1 << endl;
-    cout << counts2 << endl;
-    while(counts1 == 600){
-        left_motor.stop_left();
-        right_motor.stop_right();
+    left_motor.run_left(speeds,dir);
+    int i = 0;
+    while(abs(pos[0]) < abs(targetCounts1)){
+      usleep(10000);//5 seconds
+      i++;
     }
+    left_motor.stop_left();
+
+    // right_motor.run_right(50,1);
+    // int i = 0;
+    // while(abs(pos[1])<=targetCounts2){
+    //   usleep(10000);//5 seconds
+    //   cout << i << ":" << pos[1]<< endl;
+    //   i++;
+    // }
+    // left_motor.stop_left();
+
     gpioTerminate(); 
 }

@@ -208,6 +208,7 @@ src/PiMotor.o: src/PiMotor.cpp.o
 # target to build an object file
 src/PiMotor.cpp.o:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o
+	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o
 .PHONY : src/PiMotor.cpp.o
 
 src/PiMotor.i: src/PiMotor.cpp.i
@@ -217,6 +218,7 @@ src/PiMotor.i: src/PiMotor.cpp.i
 # target to preprocess a source file
 src/PiMotor.cpp.i:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.i
+	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/PiMotor.cpp.i
 .PHONY : src/PiMotor.cpp.i
 
 src/PiMotor.s: src/PiMotor.cpp.s
@@ -226,6 +228,7 @@ src/PiMotor.s: src/PiMotor.cpp.s
 # target to generate assembly for a file
 src/PiMotor.cpp.s:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s
+	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/PiMotor.cpp.s
 .PHONY : src/PiMotor.cpp.s
 
 src/calPosition.o: src/calPosition.cpp.o
@@ -370,6 +373,7 @@ src/reDecoder.o: src/reDecoder.cpp.o
 # target to build an object file
 src/reDecoder.cpp.o:
 	$(MAKE) -f CMakeFiles/reDecoder.dir/build.make CMakeFiles/reDecoder.dir/src/reDecoder.cpp.o
+	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o
 .PHONY : src/reDecoder.cpp.o
 
 src/reDecoder.i: src/reDecoder.cpp.i
@@ -379,6 +383,7 @@ src/reDecoder.i: src/reDecoder.cpp.i
 # target to preprocess a source file
 src/reDecoder.cpp.i:
 	$(MAKE) -f CMakeFiles/reDecoder.dir/build.make CMakeFiles/reDecoder.dir/src/reDecoder.cpp.i
+	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/reDecoder.cpp.i
 .PHONY : src/reDecoder.cpp.i
 
 src/reDecoder.s: src/reDecoder.cpp.s
@@ -388,6 +393,7 @@ src/reDecoder.s: src/reDecoder.cpp.s
 # target to generate assembly for a file
 src/reDecoder.cpp.s:
 	$(MAKE) -f CMakeFiles/reDecoder.dir/build.make CMakeFiles/reDecoder.dir/src/reDecoder.cpp.s
+	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/reDecoder.cpp.s
 .PHONY : src/reDecoder.cpp.s
 
 # Help Target

@@ -10,21 +10,16 @@ class PiMotor {
    private:
       int fPin;
       int rPin;
-      int speed;
-      bool direction;
       bool DEBUG = true;
    
   public:
-      PiMotor(int, int,int,bool);
-      void Run_left ();
-      void Run_right ();
+      PiMotor(int, int);
+      void Run_left (int,bool);
+      void Run_right (int,bool);
    
       int Stop_left();
       int Stop_right();
       void setDebug(bool); 
-
-      int pos1;
-      int pos2;
    
    /*
       This function establishes a rotary encoder on gpioA and gpioB.

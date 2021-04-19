@@ -5,7 +5,7 @@ add_executable(mainTest src/mainTest.cpp)
 
 add_library(PiMotor src/PiMotor.cpp)
 add_library(reDecoder src/reDecoder.cpp)
-add_library(controlMotor src/controlMotor.cpp)
+add_library(controlMotor src/controlMotor.cpp src/PiMotor.cpp src/reDecoder.cpp)
 add_library(calPosition src/calPosition.cpp)
 add_library(movetoTarget src/movetoTarget.cpp)
 add_library(processImages src/processImages.cpp)

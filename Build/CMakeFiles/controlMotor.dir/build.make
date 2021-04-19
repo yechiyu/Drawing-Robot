@@ -70,17 +70,47 @@ CMakeFiles/controlMotor.dir/src/controlMotor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controlMotor.dir/src/controlMotor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/CJM_DrawingRobot/src/controlMotor.cpp -o CMakeFiles/controlMotor.dir/src/controlMotor.cpp.s
 
+CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o: CMakeFiles/controlMotor.dir/flags.make
+CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o: ../src/PiMotor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o -c /home/pi/Desktop/CJM_DrawingRobot/src/PiMotor.cpp
+
+CMakeFiles/controlMotor.dir/src/PiMotor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controlMotor.dir/src/PiMotor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/CJM_DrawingRobot/src/PiMotor.cpp > CMakeFiles/controlMotor.dir/src/PiMotor.cpp.i
+
+CMakeFiles/controlMotor.dir/src/PiMotor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controlMotor.dir/src/PiMotor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/CJM_DrawingRobot/src/PiMotor.cpp -o CMakeFiles/controlMotor.dir/src/PiMotor.cpp.s
+
+CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o: CMakeFiles/controlMotor.dir/flags.make
+CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o: ../src/reDecoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o -c /home/pi/Desktop/CJM_DrawingRobot/src/reDecoder.cpp
+
+CMakeFiles/controlMotor.dir/src/reDecoder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/controlMotor.dir/src/reDecoder.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/CJM_DrawingRobot/src/reDecoder.cpp > CMakeFiles/controlMotor.dir/src/reDecoder.cpp.i
+
+CMakeFiles/controlMotor.dir/src/reDecoder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/controlMotor.dir/src/reDecoder.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/CJM_DrawingRobot/src/reDecoder.cpp -o CMakeFiles/controlMotor.dir/src/reDecoder.cpp.s
+
 # Object files for target controlMotor
 controlMotor_OBJECTS = \
-"CMakeFiles/controlMotor.dir/src/controlMotor.cpp.o"
+"CMakeFiles/controlMotor.dir/src/controlMotor.cpp.o" \
+"CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o" \
+"CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o"
 
 # External object files for target controlMotor
 controlMotor_EXTERNAL_OBJECTS =
 
 libcontrolMotor.a: CMakeFiles/controlMotor.dir/src/controlMotor.cpp.o
+libcontrolMotor.a: CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o
+libcontrolMotor.a: CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o
 libcontrolMotor.a: CMakeFiles/controlMotor.dir/build.make
 libcontrolMotor.a: CMakeFiles/controlMotor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcontrolMotor.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libcontrolMotor.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/controlMotor.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/controlMotor.dir/link.txt --verbose=$(VERBOSE)
 
