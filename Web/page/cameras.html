@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="../css/camera.css">
+
+
+<div id="loading">
+    <video id="video" class="bg"></video>
+    <canvas id="qr-canvas"></canvas>
+</div>
+
+<div id="controller" class="border">
+    <p>
+        <button onclick="openMedia()" class="cameraBt border">打开</button>
+        <button onclick="closeMedia()" class="cameraBt border">关闭</button>
+<!--        <button onclick="drawMedia()" class="cameraBt border">截取</button>-->
+    </p>
+
+    <div id="directions" class="border">
+        <div id="directions-circle" class="border">
+            <div class="directions-line border">
+                <img src="../img/up.svg" alt="" class="ctyDir">
+            </div>
+            <div class="directions-line1 border">
+                <img src="../img/left.svg" alt="" class="ctyDir">
+                <img src="../img/stop.svg" id="stop" alt="" class="ctyDir">
+                <img src="../img/play.svg" id="play" alt="" class="ctyDir" style="display: none">
+                <img src="../img/right.svg" alt="" class="ctyDir">
+            </div>
+            <div class="directions-line border">
+                <img src="../img/down.svg" alt="" class="ctyDir">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var video = document.querySelector('video');
+    var text = document.getElementById('text');
+    var canvas1 = document.getElementById('qr-canvas');
+    var context1 = canvas1.getContext('2d');
+    var mediaStreamTrack;
+
+    // A bunch of compatible code
+    window.URL = (window.URL || window.webkitURL || window.mozURL || window.msURL);
+    if (navigator.mediaDevices === undefined) {
+        navigator.mediaDevices = {};
+    }
+    if (navigator.mediaDevices.getUserMedia === undefined) {
+        navigator.mediaDevices.getUserMedia = function(constraints) {
+            var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+            if (!getUserMedia) {
+                return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+            }
+            return new Promise(function(resolve, reject) {
+                getUserMedia.call(navigator, constraints, resolve, reject);
+            });
+        }
+    }
+
+    //Camera call configuration
+    var mediaOpts = {
+        audio: false,
+        video: true,
+        video: { facingMode: "environment"} // 或者 "user"
+        // video: { width: 1280, height: 720 }
+        // video: { facingMode: { exact: "environment" } }// 或者 "user"
+    }
+
+    // The callback
+    function successFunc(stream) {
+        mediaStreamTrack = stream;
+        video = document.querySelector('video');
+        if ("srcObject" in video) {
+            video.srcObject = stream
+        } else {
+            video.src = window.URL && window.URL.createObjectURL(stream) || stream
+        }
+        video.play();
+    }
+    function errorFunc(err) {
+        alert(err.name);
+    }
+
+    // Officially start the camera
+    function openMedia(){
+        navigator.mediaDevices.getUserMedia(mediaOpts).then(successFunc).catch(errorFunc);
+    }
+
+    //Turn off the camera
+    function closeMedia(){
+        mediaStreamTrack.getVideoTracks().forEach(function (track) {
+            track.stop();
+            context1.clearRect(0, 0,context1.width, context1.height);//清除画布
+        });
+    }
+
+    //Capture video
+    function drawMedia(){
+        canvas1.setAttribute("width", video.videoWidth);
+        canvas1.setAttribute("height", video.videoHeight);
+        context1.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    }
+
+    $("#stop").click(function(){
+        $("#stop").hide();
+        $("#play").show()
+    });
+
+    $("#play").click(function(){
+        $("#play").hide();
+        $("#stop").show()
+    });
+
+</script>

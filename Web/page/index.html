@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing Robot</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/imgDeal.js"></script>
+    <script type="text/javascript" src="../js/router.js"></script>
+    <script type="text/javascript" src="../js/jquery.webcam.js"></script>
+    <script type="text/javascript" src="../js/jquery.webcam.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="camera">
+            <video id="video" class="bg"></video>
+            <canvas id="qr-canvas"></canvas>
+        </div>
+        <div id="interface" class="border">
+            <form action="start.php" id="imgSubmit" class="border">
+                <div id="loadImg" class="border">
+                    <label id="loadImg-title" class="border">Please select the picture you want to draw:</label>
+                    <img id="preview" class="border"/>
+                    <input type="hidden" class="border" style="display: none" name="MAX_FILE_SIZE" value="10485760">
+                    <div id="loadImg-button" class="border">
+                        <input type="file" style="opacity:0; filter:alpha(opacity=0);" id="loadImg-button-left" class="in border buttonSty1" name="image" onchange="imgPreview(this)" />
+                        <input type="submit" id="loadImg-button-right" class="border buttonSty1" value="Drawing">
+                    </div>
+                </div>
+                <div id="initVal" class="border">
+                    <div id="initValLa" class="border">
+                        <div id="initValLa-text" class="border">LA</div>
+                        <div id="initValla-value">
+                            <input type="number" class="buttonSty border" />
+                        </div>
+                    </div>
+                    <div id="initValLb" class="border">
+                        <div id="initValLb-text" class="border">LB</div>
+                        <div id="initVallb-value">
+                            <input type="number" class="buttonSty border" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div id="butCtrl" class="border">
+                <p>
+                    <button onclick="openMedia()">打开</button>
+                    <button onclick="closeMedia()">关闭</button>
+                    <button onclick="drawMedia()">截取</button>
+                </p>
+                <div id="remoteCtrl">
+                    <div id="remoteCtrl-line1">
+                        <input type="button" value="up">
+                    </div>
+                    <div id="remoteCtrl-line2">
+                        <input type="button" value="left">
+                        <input type="button" value="right">
+                    </div>
+                    <div id="remoteCtrl-line3">
+                        <input type="button" value="down">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="info"></div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    var video = document.querySelector('video');
+    var text = document.getElementById('text');
+    var canvas1 = document.getElementById('qr-canvas');
+    var context1 = canvas1.getContext('2d');
+    var mediaStreamTrack;
+
+    // A bunch of compatible code
+    window.URL = (window.URL || window.webkitURL || window.mozURL || window.msURL);
+    if (navigator.mediaDevices === undefined) {
+        navigator.mediaDevices = {};
+    }
+    if (navigator.mediaDevices.getUserMedia === undefined) {
+        navigator.mediaDevices.getUserMedia = function(constraints) {
+            var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+            if (!getUserMedia) {
+                return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+            }
+            return new Promise(function(resolve, reject) {
+                getUserMedia.call(navigator, constraints, resolve, reject);
+            });
+        }
+    }
+
+    //Camera call configuration
+    var mediaOpts = {
+        audio: false,
+        video: true,
+        video: { facingMode: "environment"} // 或者 "user"
+        // video: { width: 1280, height: 720 }
+        // video: { facingMode: { exact: "environment" } }// 或者 "user"
+    }
+
+    // The callback
+    function successFunc(stream) {
+        mediaStreamTrack = stream;
+        video = document.querySelector('video');
+        if ("srcObject" in video) {
+            video.srcObject = stream
+        } else {
+            video.src = window.URL && window.URL.createObjectURL(stream) || stream
+        }
+        video.play();
+    }
+    function errorFunc(err) {
+        alert(err.name);
+    }
+
+    // Officially start the camera
+    function openMedia(){
+        navigator.mediaDevices.getUserMedia(mediaOpts).then(successFunc).catch(errorFunc);
+    }
+
+    //Turn off the camera
+    function closeMedia(){
+        mediaStreamTrack.getVideoTracks().forEach(function (track) {
+            track.stop();
+            context1.clearRect(0, 0,context1.width, context1.height);//清除画布
+        });
+    }
+
+    //Capture video
+    function drawMedia(){
+        canvas1.setAttribute("width", video.videoWidth);
+        canvas1.setAttribute("height", video.videoHeight);
+        context1.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    }
+
+</script>
+</html>

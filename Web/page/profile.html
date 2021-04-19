@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="../css/profile.css">
+<div id="profile-title" class="border">
+    Drawing Robot
+</div>
+<div id="profile-author" class="border">
+    Author: Jin Tao, Qikai Yang and Jiaming Chen
+</div>
+<div id="profile-sys" class="border">
+    <div id="profile-sys-time" class="border"></div>
+    <div id="profile-sys-cpu" class="border">cpu:</div>
+</div>
+<div id="profile-pic">
+    <img src="../img/concept.jpg" alt="">
+</div>
+<div id="profile-info">
+
+</div>
+
+<script type="text/javascript">
+    function now(){
+        var myDate = new Date();
+        var myWeek = new Array(6);
+        myWeek[0] = "Sun";
+        myWeek[1] = "Mon";
+        myWeek[2] = "Tue";
+        myWeek[3] = "Wed";
+        myWeek[4] = "Thu";
+        myWeek[5] = "Fri";
+        myWeek[6] = "Sat";
+        var nowTime ="<span>" + myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate() + "    " + myWeek[ myDate.getDay()] + "    " + myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds() + "</span>";
+        document.getElementById("profile-sys-time").innerHTML = nowTime;
+    }
+    setInterval("now()", 0);
+</script>
