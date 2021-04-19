@@ -6,5 +6,9 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
+<<<<<<< HEAD
 CXX_INCLUDES = -I/usr/local/include/opencv/include 
+=======
+CXX_INCLUDES = 
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 

@@ -1,0 +1,35 @@
+.button {
+    color: #0f1214;
+    text-shadow: 0 1px 0 #484f58;
+    border-radius: 7px;
+    border: 1px solid #202124;
+    box-shadow: 0 1px 0 #616a74 inset,0 1px 5px #212528;
+    background: -webkit-linear-gradient(top,#474d54,#2f363d);
+    background: -moz-linear-gradient(top,#474d54,#2f363d);
+    background: -ms-linear-gradient(top,#474d54,#2f363d);
+    background: -o-linear-gradient(top,#474d54,#2f363d);
+    background: linear-gradient(top,#474d54,#2f363d);
+}
+
+
+.button:hover {
+    background: -webkit-linear-gradient(top,#5b6167,#30373e);
+    background: -moz-linear-gradient(top,#5b6167,#30373e);
+    background: -ms-linear-gradient(top,#5b6167,#30373e);
+    background: -o-linear-gradient(top,#5b6167,#30373e);
+    background: linear-gradient(top,#5b6167,#30373e);
+}
+
+.button:active {
+    box-shadow: 0 1px #484c50;
+    background: -webkit-linear-gradient(top,#232930,#3c4249);
+    background: -moz-linear-gradient(top,#232930,#3c4249);
+    background: -ms-linear-gradient(top,#232930,#3c4249);
+    background: -o-linear-gradient(top,#232930,#3c4249);
+    background: linear-gradient(top,#232930,#3c4249);
+}
+
+
+.button:after {
+    display: block;
+}

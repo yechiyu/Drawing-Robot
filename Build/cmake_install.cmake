@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /home/pi/Desktop/CJM_DrawingRobot
+=======
+# Install script for directory: /home/pi/REPT/Drawing-Robot
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +49,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/home/pi/Desktop/CJM_DrawingRobot/Build/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/home/pi/REPT/Drawing-Robot/Build/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

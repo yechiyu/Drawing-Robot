@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/REPT/Drawing-Robot/include/PiMotor.h
+stdint.h
+-
+functional
+-
+
+/home/pi/REPT/Drawing-Robot/src/mainTest.cpp
+iostream
+-
+pigpio.h
+-
+unistd.h
+-
+../include/PiMotor.h
+/home/pi/REPT/Drawing-Robot/include/PiMotor.h
+iostream
+-
+stdio.h
+-
+chrono
+-
+thread
+-
+functional
+-
+

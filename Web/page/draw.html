@@ -1,0 +1,80 @@
+<div id="loading">
+    <img id="preview" class="border"/>
+</div>
+
+<div id="controller" class="border">
+    <p>
+        <button onclick="openMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">open camera</button>
+        <button onclick="closeMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">close camera</button>
+<!--        <button onclick="drawMedia()" class="cameraBt border">截取</button>-->
+    </p>
+
+    <div id="directions" class="border">
+        <div id="directions-circle" class="border">
+            <div class="directions-line border">
+                <img src="../img/up.svg" alt="" class="ctyDir">
+            </div>
+            <div class="directions-line1 border">
+                <img src="../img/left.svg" alt="" class="ctyDir">
+                <img src="../img/stop.svg" id="stop" alt="" class="ctyDir">
+                <img src="../img/play.svg" id="play" alt="" class="ctyDir" style="display: none">
+                <img src="../img/right.svg" alt="" class="ctyDir">
+            </div>
+            <div class="directions-line border">
+                <img src="../img/down.svg" alt="" class="ctyDir">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $("#preview").click(function(){
+        $("#sidebar").css("bottom","10%");
+
+    });
+
+    $("#sidebar-exit").click(function(){
+        $("#sidebar").css("bottom","-150px");
+
+    });
+
+    $("#stop").click(function(){
+        $("#sidebar").css("bottom","-150px");
+
+    });
+
+    $("#stop").click(function(){
+        $("#stop").hide();
+        $("#play").show()
+    });
+
+    $("#play").click(function(){
+        $("#play").hide();
+        $("#stop").show()
+    });
+
+
+    function imgPreview(fileDom){
+        if (window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("Your device does not support the image preview function, if you need this function, please upgrade your device！");
+        }
+
+        //get file
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        if (!imageType.test(file.type)) {
+            alert("chose file！");
+            return;
+        }
+        reader.onload = function(e) {
+            var img = document.getElementById("preview");
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+        $("#sideValue").css("bottom","45%");
+    }
+
+</script>

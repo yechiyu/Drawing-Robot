@@ -48,10 +48,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/pi/Desktop/CJM_DrawingRobot
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/pi/Desktop/CJM_DrawingRobot/Build
+=======
+CMAKE_SOURCE_DIR = /home/pi/REPT/Drawing-Robot
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/pi/REPT/Drawing-Robot/Build
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +87,15 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles /home/pi/REPT/Drawing-Robot/Build/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 0
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 .PHONY : all
 
 # The main clean target
@@ -111,6 +124,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+<<<<<<< HEAD
 # Target rules for targets named processImages
 
 # Build rule for target.
@@ -122,6 +136,19 @@ processImages: cmake_check_build_system
 processImages/fast:
 	$(MAKE) -f CMakeFiles/processImages.dir/build.make CMakeFiles/processImages.dir/build
 .PHONY : processImages/fast
+=======
+# Target rules for targets named testmotor
+
+# Build rule for target.
+testmotor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testmotor
+.PHONY : testmotor
+
+# fast build rule for target.
+testmotor/fast:
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/build
+.PHONY : testmotor/fast
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 #=============================================================================
 # Target rules for targets named PiMotor
@@ -136,6 +163,7 @@ PiMotor/fast:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/build
 .PHONY : PiMotor/fast
 
+<<<<<<< HEAD
 #=============================================================================
 # Target rules for targets named mainTest
 
@@ -201,6 +229,8 @@ calPosition/fast:
 	$(MAKE) -f CMakeFiles/calPosition.dir/build.make CMakeFiles/calPosition.dir/build
 .PHONY : calPosition/fast
 
+=======
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 src/PiMotor.o: src/PiMotor.cpp.o
 
 .PHONY : src/PiMotor.o
@@ -208,7 +238,10 @@ src/PiMotor.o: src/PiMotor.cpp.o
 # target to build an object file
 src/PiMotor.cpp.o:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o
+=======
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 .PHONY : src/PiMotor.cpp.o
 
 src/PiMotor.i: src/PiMotor.cpp.i
@@ -218,7 +251,10 @@ src/PiMotor.i: src/PiMotor.cpp.i
 # target to preprocess a source file
 src/PiMotor.cpp.i:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.i
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/PiMotor.cpp.i
+=======
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 .PHONY : src/PiMotor.cpp.i
 
 src/PiMotor.s: src/PiMotor.cpp.s
@@ -228,6 +264,7 @@ src/PiMotor.s: src/PiMotor.cpp.s
 # target to generate assembly for a file
 src/PiMotor.cpp.s:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/PiMotor.cpp.s
 .PHONY : src/PiMotor.cpp.s
 
@@ -285,13 +322,21 @@ src/controlMotor.cpp.s:
 	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/controlMotor.cpp.s
 .PHONY : src/controlMotor.cpp.s
 
+=======
+.PHONY : src/PiMotor.cpp.s
+
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 src/mainTest.o: src/mainTest.cpp.o
 
 .PHONY : src/mainTest.o
 
 # target to build an object file
 src/mainTest.cpp.o:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mainTest.dir/build.make CMakeFiles/mainTest.dir/src/mainTest.cpp.o
+=======
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/mainTest.cpp.o
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 .PHONY : src/mainTest.cpp.o
 
 src/mainTest.i: src/mainTest.cpp.i
@@ -300,7 +345,11 @@ src/mainTest.i: src/mainTest.cpp.i
 
 # target to preprocess a source file
 src/mainTest.cpp.i:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mainTest.dir/build.make CMakeFiles/mainTest.dir/src/mainTest.cpp.i
+=======
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/mainTest.cpp.i
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 .PHONY : src/mainTest.cpp.i
 
 src/mainTest.s: src/mainTest.cpp.s
@@ -309,6 +358,7 @@ src/mainTest.s: src/mainTest.cpp.s
 
 # target to generate assembly for a file
 src/mainTest.cpp.s:
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/mainTest.dir/build.make CMakeFiles/mainTest.dir/src/mainTest.cpp.s
 .PHONY : src/mainTest.cpp.s
 
@@ -396,6 +446,11 @@ src/reDecoder.cpp.s:
 	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/src/reDecoder.cpp.s
 .PHONY : src/reDecoder.cpp.s
 
+=======
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/mainTest.cpp.s
+.PHONY : src/mainTest.cpp.s
+
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -403,6 +458,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+<<<<<<< HEAD
 	@echo "... processImages"
 	@echo "... PiMotor"
 	@echo "... edit_cache"
@@ -432,6 +488,17 @@ help:
 	@echo "... src/reDecoder.o"
 	@echo "... src/reDecoder.i"
 	@echo "... src/reDecoder.s"
+=======
+	@echo "... edit_cache"
+	@echo "... testmotor"
+	@echo "... PiMotor"
+	@echo "... src/PiMotor.o"
+	@echo "... src/PiMotor.i"
+	@echo "... src/PiMotor.s"
+	@echo "... src/mainTest.o"
+	@echo "... src/mainTest.i"
+	@echo "... src/mainTest.s"
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 .PHONY : help
 
 

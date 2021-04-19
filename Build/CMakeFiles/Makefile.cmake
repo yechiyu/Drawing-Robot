@@ -11,10 +11,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "../CMakeLists.txt"
+<<<<<<< HEAD
   "/usr/local/share/OpenCV/OpenCVConfig-version.cmake"
   "/usr/local/share/OpenCV/OpenCVConfig.cmake"
   "/usr/local/share/OpenCV/OpenCVModules-release.cmake"
   "/usr/local/share/OpenCV/OpenCVModules.cmake"
+=======
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -55,6 +58,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+<<<<<<< HEAD
   "CMakeFiles/processImages.dir/DependInfo.cmake"
   "CMakeFiles/PiMotor.dir/DependInfo.cmake"
   "CMakeFiles/mainTest.dir/DependInfo.cmake"
@@ -62,4 +66,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/controlMotor.dir/DependInfo.cmake"
   "CMakeFiles/movetoTarget.dir/DependInfo.cmake"
   "CMakeFiles/calPosition.dir/DependInfo.cmake"
+=======
+  "CMakeFiles/testmotor.dir/DependInfo.cmake"
+  "CMakeFiles/PiMotor.dir/DependInfo.cmake"
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
   )

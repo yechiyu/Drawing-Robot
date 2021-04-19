@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/pi/Desktop/CJM_DrawingRobot
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/pi/Desktop/CJM_DrawingRobot/Build
+=======
+CMAKE_SOURCE_DIR = /home/pi/REPT/Drawing-Robot
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/pi/REPT/Drawing-Robot/Build
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PiMotor.dir/depend.make
@@ -59,6 +66,7 @@ include CMakeFiles/PiMotor.dir/flags.make
 
 CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o: CMakeFiles/PiMotor.dir/flags.make
 CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o: ../src/PiMotor.cpp
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o -c /home/pi/Desktop/CJM_DrawingRobot/src/PiMotor.cpp
 
@@ -69,6 +77,18 @@ CMakeFiles/PiMotor.dir/src/PiMotor.cpp.i: cmake_force
 CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/CJM_DrawingRobot/src/PiMotor.cpp -o CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o -c /home/pi/REPT/Drawing-Robot/src/PiMotor.cpp
+
+CMakeFiles/PiMotor.dir/src/PiMotor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PiMotor.dir/src/PiMotor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/REPT/Drawing-Robot/src/PiMotor.cpp > CMakeFiles/PiMotor.dir/src/PiMotor.cpp.i
+
+CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/REPT/Drawing-Robot/src/PiMotor.cpp -o CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 # Object files for target PiMotor
 PiMotor_OBJECTS = \
@@ -80,7 +100,11 @@ PiMotor_EXTERNAL_OBJECTS =
 libPiMotor.a: CMakeFiles/PiMotor.dir/src/PiMotor.cpp.o
 libPiMotor.a: CMakeFiles/PiMotor.dir/build.make
 libPiMotor.a: CMakeFiles/PiMotor.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libPiMotor.a"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libPiMotor.a"
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 	$(CMAKE_COMMAND) -P CMakeFiles/PiMotor.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PiMotor.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +118,10 @@ CMakeFiles/PiMotor.dir/clean:
 .PHONY : CMakeFiles/PiMotor.dir/clean
 
 CMakeFiles/PiMotor.dir/depend:
+<<<<<<< HEAD
 	cd /home/pi/Desktop/CJM_DrawingRobot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/CJM_DrawingRobot /home/pi/Desktop/CJM_DrawingRobot /home/pi/Desktop/CJM_DrawingRobot/Build /home/pi/Desktop/CJM_DrawingRobot/Build /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/PiMotor.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/pi/REPT/Drawing-Robot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/REPT/Drawing-Robot /home/pi/REPT/Drawing-Robot /home/pi/REPT/Drawing-Robot/Build /home/pi/REPT/Drawing-Robot/Build /home/pi/REPT/Drawing-Robot/Build/CMakeFiles/PiMotor.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 .PHONY : CMakeFiles/PiMotor.dir/depend
 
