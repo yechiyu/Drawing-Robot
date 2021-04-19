@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Roboto;
+}
+
+.container {
+  height: 15%;
+  width: 100%;
+  z-index: 22;
+  /*padding-top: 80px;*/
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.phone-bottom {
+  width: 100%;
+  background-color: #4E3CC8;
+  height: 70%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 0px 4px 6px #4E3CC8;
+}
+.phone-bottom .nav {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.phone-bottom .nav .slide {
+  width: calc(100% / 3);
+  height: 100%;
+  content: '';
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.15);
+  z-index: 2;
+  top: 0;
+  border-radius: 4px;
+  transform: translateX(0%);
+  transition: transform 350ms ease;
+}
+.phone-bottom .nav-link {
+  color: #fff;
+  text-decoration: none;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+}
+.phone-bottom .nav-link.active .nav-text {
+  opacity: 1;
+}
+.phone-bottom .nav-link.active i {
+  transform: translateX(0%);
+}
+.phone-bottom .nav-text {
+  text-decoration: none;
+  padding-left: 10px;
+  display: block;
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: opacity 350ms  ease 100ms;
+}
+.phone-bottom .nav i {
+  color: #fff;
+  transform: translateX(80%);
+  transition: transform 350ms ease;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

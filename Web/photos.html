@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html style="background-image:url(img/background.png);
+		opacity:0.8;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center top;
+		background-attachment: fixed;">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=320px, user-scalable=no, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" src="jquery.min.js"></script>
+<title>你好，旧时光</title>
+<style>
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #EEE;
+            -webkit-border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:vertical {
+            height: 3px;
+            background-color: #BBBBBB;
+            -webkit-border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal {
+            width: 3px;
+            background-color: #EEE;
+            -webkit-border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            height: 3px;
+            background-color: #AAAAAA;
+            -webkit-border-radius: 4px;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+	.in{
+		width: 320px;
+	}
+    </style>
+</head>
+
+<body>
+	<div class="yibuFrameContent overflow_hidden v2text_Style1_Item0 view_v2text_32_277516336_Style1_Item0" style="height:100px;width:320px;">
+		<div id="view_v2text_32_277516336_txt" style="cursor:default; min-height:100%; width:100%;overflow-x:hidden;">
+			<div class="editableContent ">
+				<img src="old.png">
+			</div>
+		</div>
+	</div>
+	<form action="backcollect.php" enctype="multipart/form-data" method="post" id="obj" style="height: 600px; width:100%;min-height:100px;position: relative;">
+		<div style="height:75px;width:320px;">
+			<label>1.昵称:<span class="spot" style="color:red">*</span></label><br>
+			<input style="background: transparent;border: 2px solid rgba(255,255,255,0.3);" type="text" class="in" name="nickname" required="required">
+		</div>
+		<div style="height:275px;width:320px;">
+			<label>2.请选择上传照片:<span class="spot" style="color:#ff0000">*</span></label><br>
+			<img id="preview" style="width: 320px;height: 200px;" />
+			<br />
+			<input type="hidden" name="MAX_FILE_SIZE" value="10485760">
+			<input style="background: transparent;border: 2px solid rgba(255,255,255,0.3);" type="file" class="in" name="image" onchange="imgPreview(this)" />
+		</div>
+		<div style="height:75px;width:320px;">
+			<label>3.请对照片背后的故事进行简要描述:<span class="spot" style="color:red">*</span></label><br>
+			<input style="background: transparent;border: 2px solid rgba(255,255,255,0.3);" type="text" class="in" name="backstory" required="required">
+		</div>
+		<div style="height:75px;width:320px;">
+			<label>4.留下您的联系方式(方便我们发放奖品):<span class="spot" style="color:red">*</span></label><br>
+			<input style="background: transparent;border: 2px solid rgba(255,255,255,0.3);" type="text" class="in" name="information" required="required" placeholder="请填写微信、qq或者手机号码">
+		</div>
+		<div style="height:100px;width:320px;">
+		<input style="height:50px;width:320px;background: transparent;border: 1px solid rgba(255,255,255,1);" type="submit" name="submitbtn" value="提交" id="bt">
+		</div>
+	</form>
+</body>
+
+<script type="text/javascript">
+    function imgPreview(fileDom){
+        if (window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+
+        //获取文件
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        if (!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        reader.onload = function(e) {
+            var img = document.getElementById("preview");
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+</script>
+
+
+</html>

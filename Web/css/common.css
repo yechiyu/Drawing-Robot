@@ -1,0 +1,167 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.border{
+border: 1px solid #dc143c;
+}
+
+#interface{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+#imgSubmit{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#butCtrl{
+    height: 40%;
+    width: 100%;
+}
+
+#loadImg{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#loadImg-title{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#preview{
+    width: 80%;
+    height: 70%;
+}
+
+#loadImg-button{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#loadImg-button-left{
+
+}
+
+.buttonSty1{
+    width: 20%;
+    height: 50%;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+}
+
+#initVal{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#initValLa{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#initValLa-text{
+    width: 10%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#initValla-value{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#initValLb{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#initValLb-text{
+    width: 10%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#initVallb-value{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonSty{
+    width: 90%;
+    height: 60%;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 8px;
+}
+
+#camera{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}

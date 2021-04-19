@@ -1,0 +1,14 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  /*z-index: -5;*/
+}
