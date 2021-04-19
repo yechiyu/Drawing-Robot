@@ -31,7 +31,6 @@
             <p>
                 <button onclick="openMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">open camera</button>
                 <button onclick="closeMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">close camera</button>
-<!--                <button onclick="drawMedia()" class="cameraBt border">截取</button>-->
             </p>
 
             <div id="directions" class="border">
@@ -65,7 +64,7 @@
                     <i class="material-icons md-18">camera</i>
                     <span class="nav-text">Camera</span>
                 </a>
-                <a href="#" class="desktop-icon-set nav-link" data-send="../page/profile.html" data-index="2">
+                <a href="#" class="desktop-icon-set1 nav-link" data-send="../page/profile.html" data-index="2">
                     <i class="material-icons md-18">person</i>
                     <span class="nav-text">Profile</span>
                 </a>
@@ -73,7 +72,7 @@
         </div>
     </div>
 
-    <form action="socket.php" enctype="multipart/form-data" method="post" id="drawF">
+    <form action="socket.php" method="post" id="drawF">
         <div id="sidebar" class="border">
             <div id="sidebar-value">input value</div>
             <input type="hidden" class="border" style="display: none" name="MAX_FILE_SIZE" value="10485760">
@@ -104,6 +103,13 @@
                     <input type="submit" class="button round" value="draw" style="height: 70%;width: 60%;">
                 </div>
             </div>
+        </div>
+
+        <div id="valArea" style="display: none">
+            <input type="text" value="up" id="turnUpVal">
+            <input type="text" value="Left" id="turnLeftVal">
+            <input type="text" value="Right" id="turnRightVal">
+            <input type="text" value="Down" id="turnDownVal">
         </div>
     </form>
 </div>
@@ -136,6 +142,62 @@
     $("#play").click(function(){
         $("#play").hide();
         $("#stop").show()
+    });
+
+
+
+    $("#turnUp").click(function(){
+
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnUpVal").val(),
+            },
+            success : function (data) {
+                alert("returen!");
+            },
+        });
+    });
+
+    $("#turnLeft").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnLeftVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
+    $("#turnRight").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnRightVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
+    $("#turnDown").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnDownVal").val(),
+            },
+            success : function (data) {
+            },
+        });
     });
 
     function imgPreview(fileDom){
