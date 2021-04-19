@@ -54,17 +54,23 @@
     height: 10%;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
-    background-color: whitesmoke;
+    justify-content: space-around;
     position: absolute;
     bottom: -200px;
     z-index: 20;
     transition: all  .50s linear;
+    overflow-y: auto;
+    background: #37474F;
+    border-radius: 10px 10px 0 0;
+}
+
+#sidebar div:hover{
+    color: #fff;
 }
 
 #sideValue{
     width: 70%;
-    height: 20%;
+    height: 25%;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -73,17 +79,41 @@
     position: absolute;
     bottom: -200px;
     z-index: 21;
+    border-radius: 15px;
     /*transition: all  .60s linear;*/
 }
 
 #sidebar-inImg{
     width: 100%;
-    height: 45%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 300;
+    border-bottom: 1px solid ghostwhite;
+}
+
+#sidebar-value{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 300;
+    border-bottom: 1px solid ghostwhite;
 }
 
 #sidebar-exit{
     width: 100%;
-    height: 45%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 300;
+    cursor: pointer;
 }
 
 #controller{
@@ -115,7 +145,7 @@
 
 #sideValueLa{
     height: 35%;
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -124,11 +154,12 @@
 
 #sideValueLb{
     height: 35%;
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
+    border-bottom: 1px solid black;
 }
 
 #sideValueBut{
@@ -137,6 +168,22 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    align-items: center;
+}
+
+#sideValueBut-cancel{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sideValueBut-draw{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -251,14 +298,15 @@
 }
 
 #directions-circle{
-    height: 90%;
+    height: 95%;
     width: 70%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
     border-radius: 50%;
-    background: linear-gradient(#8A6BBE, #6A4C9C, #8F77B5);
+    border: 5px solid;
+    border-color: #707C74 #828282 #535953;
 }
 
 .directions-line{

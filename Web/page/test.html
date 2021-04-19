@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+<body>
+<form action="../page/moveCtrl.php" method="post">
+    <input type="text" value="up" id="direction" name="direction">
+    <input type="submit" value="submit">
+</form>
+
+<div id="turnUp" style="width: 100px;height: 100px;border: 1px solid black;"></div>
+</body>
+
+<script>
+    $("#turnUp").click(function(){
+        alert("got it!");
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "html",
+            data : {
+                "direction": "Up",
+            },
+            success : function (data) {
+                alert("returen!");
+            },
+        });
+    });
+</script>
+</html>

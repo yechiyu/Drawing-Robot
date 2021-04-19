@@ -11,10 +11,9 @@ body {
 }
 
 .container {
-  height: 15%;
+  height: 10%;
   width: 100%;
   z-index: 22;
-  /*padding-top: 80px;*/
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -24,7 +23,7 @@ body {
 .phone-bottom {
   width: 100%;
   background-color: #4E3CC8;
-  height: 70%;
+  height: 100%;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   padding: 10px 15px;

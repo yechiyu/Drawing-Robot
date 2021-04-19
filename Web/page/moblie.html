@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="../css/mobile.css">
     <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/button.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
     <link rel="stylesheet" href="../css/menuCtr.css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -28,24 +29,24 @@
 
         <div id="controller" class="border">
             <p>
-                <button onclick="openMedia()" class="cameraBt border">打开</button>
-                <button onclick="closeMedia()" class="cameraBt border">关闭</button>
+                <button onclick="openMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">open camera</button>
+                <button onclick="closeMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">close camera</button>
 <!--                <button onclick="drawMedia()" class="cameraBt border">截取</button>-->
             </p>
 
             <div id="directions" class="border">
                 <div id="directions-circle" class="border">
                     <div class="directions-line border">
-                        <img src="../img/up.svg" alt="" class="ctyDir">
+                        <img src="../img/up.svg" alt="" id="turnUp" class="ctyDir">
                     </div>
                     <div class="directions-line1 border">
-                        <img src="../img/left.svg" alt="" class="ctyDir">
+                        <img src="../img/left.svg" alt="" id="turnLeft" class="ctyDir">
                         <img src="../img/stop.svg" id="stop" alt="" class="ctyDir">
                         <img src="../img/play.svg" id="play" alt="" class="ctyDir" style="display: none">
-                        <img src="../img/right.svg" alt="" class="ctyDir">
+                        <img src="../img/right.svg" alt="" id="turnRight" class="ctyDir">
                     </div>
                     <div class="directions-line border">
-                        <img src="../img/down.svg" alt="" class="ctyDir">
+                        <img src="../img/down.svg" alt="" id="turnDown" class="ctyDir">
                     </div>
                 </div>
             </div>
@@ -58,28 +59,28 @@
                 <div class="slide"></div>
                 <a href="#" class="desktop-icon-set nav-link active" data-send="../page/draw.html" data-index="0">
                     <i class="material-icons md-18">face</i>
-                    <span class="nav-text">Stats</span>
+                    <span class="nav-text">Draw</span>
                 </a>
                 <a href="#" class="desktop-icon-set nav-link" data-send="../page/cameras.html" data-index="1">
                     <i class="material-icons md-18">camera</i>
-                    <span class="nav-text">Inbox</span>
+                    <span class="nav-text">Camera</span>
                 </a>
                 <a href="#" class="desktop-icon-set nav-link" data-send="../page/profile.html" data-index="2">
                     <i class="material-icons md-18">person</i>
-                    <span class="nav-text">Find</span>
+                    <span class="nav-text">Profile</span>
                 </a>
             </nav>
         </div>
     </div>
 
-    <form action="photoRec.php" id="drawF">
+    <form action="socket.php" enctype="multipart/form-data" method="post" id="drawF">
         <div id="sidebar" class="border">
-            <div id="sidebar-value" style="display: none">input value</div>
+            <div id="sidebar-value">input value</div>
             <input type="hidden" class="border" style="display: none" name="MAX_FILE_SIZE" value="10485760">
             <div id="sidebar-inImg">
                 <input type="file" id="loadImg-button-left" class="in border buttonSty1" name="photo" onchange="imgPreview(this)" required="required" />
             </div>
-            <div id="sidebar-exit">exit</div>
+            <div id="sidebar-exit" class="spacialOne border">exit</div>
         </div>
 
         <div id="sideValue" class="border">
@@ -97,10 +98,10 @@
             </div>
             <div id="sideValueBut" class="border">
                 <div id="sideValueBut-cancel">
-                    <input type="button" value="cancel" id="cancelBt">
+                    <input type="button" class="button round" value="cancel" id="cancelBt" style="height: 70%;width: 60%;">
                 </div>
                 <div id="sideValueBut-draw">
-                    <input type="submit" value="draw">
+                    <input type="submit" class="button round" value="draw" style="height: 70%;width: 60%;">
                 </div>
             </div>
         </div>
@@ -119,8 +120,7 @@
     });
 
     $("#sidebar-exit").click(function(){
-        $("#sidebar").css("bottom","-150px");
-
+        $("#sidebar").css("bottom","-200px");
     });
 
     $("#sidebar-value").click(function(){

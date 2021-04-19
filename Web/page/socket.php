@@ -32,21 +32,21 @@ if (!socket_write($socket, $fileName, strlen($fileName))) {
   echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
 } else {
   echo "Message sent to server successful！\n";
-  echo "The content to be sent is: $fileName ";
+  echo "The content to be sent is: fine name = $fileName ";
 }
 
 if (!socket_write($socket, $sideValueLaV, strlen($sideValueLaV))) {
   echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
 } else {
   echo "Message sent to server successful！\n";
-  echo "The content to be sent is: $sideValueLaV ";
+  echo "The content to be sent is: La = $sideValueLaV ";
 }
 
 if (!socket_write($socket, $sideValueLbV, strlen($sideValueLbV))) {
   echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
 } else {
   echo "Message sent to server successful！\n";
-  echo "The content to be sent is: $sideValueLbV ";
+  echo "The content to be sent is: lb = $sideValueLbV ";
 }
 
 while($out = socket_read($socket, 8192)) {
