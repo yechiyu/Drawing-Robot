@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcalPosition.a  CMakeFiles/calPosition.dir/src/calPosition.cpp.o
+/usr/bin/ranlib libcalPosition.a

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/CJM_DrawingRobot/include/reDecoder.h
+pigpio.h
+-
+iostream
+-
+
+/home/pi/Desktop/CJM_DrawingRobot/src/reDecoder.cpp
+../include/reDecoder.h
+/home/pi/Desktop/CJM_DrawingRobot/include/reDecoder.h
+

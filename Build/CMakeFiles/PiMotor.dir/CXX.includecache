@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/CJM_DrawingRobot/include/PiMotor.h
+pigpio.h
+-
+mutex
+-
+iostream
+-
+
+/home/pi/Desktop/CJM_DrawingRobot/src/PiMotor.cpp
+../include/PiMotor.h
+/home/pi/Desktop/CJM_DrawingRobot/include/PiMotor.h
+

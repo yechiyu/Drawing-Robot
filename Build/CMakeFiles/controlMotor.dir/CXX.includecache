@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/CJM_DrawingRobot/include/PiMotor.h
+pigpio.h
+-
+mutex
+-
+iostream
+-
+
+/home/pi/Desktop/CJM_DrawingRobot/include/controlMotor.h
+../include/PiMotor.h
+/home/pi/Desktop/CJM_DrawingRobot/include/PiMotor.h
+../include/reDecoder.h
+/home/pi/Desktop/CJM_DrawingRobot/include/reDecoder.h
+unistd.h
+-
+stdio.h
+-
+chrono
+-
+functional
+-
+
+/home/pi/Desktop/CJM_DrawingRobot/include/reDecoder.h
+pigpio.h
+-
+iostream
+-
+
+/home/pi/Desktop/CJM_DrawingRobot/src/controlMotor.cpp
+../include/controlMotor.h
+/home/pi/Desktop/CJM_DrawingRobot/include/controlMotor.h
+

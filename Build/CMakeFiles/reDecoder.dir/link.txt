@@ -1,0 +1,2 @@
+/usr/bin/ar qc libreDecoder.a  CMakeFiles/reDecoder.dir/src/reDecoder.cpp.o
+/usr/bin/ranlib libreDecoder.a

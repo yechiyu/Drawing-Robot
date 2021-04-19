@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/CJM_DrawingRobot/include/processImages.h
+string
+-
+iostream
+-
+opencv2/opencv.hpp
+-
+fstream
+-
+
+/home/pi/Desktop/CJM_DrawingRobot/src/processImages.cpp
+../include/processImages.h
+/home/pi/Desktop/CJM_DrawingRobot/include/processImages.h
+
