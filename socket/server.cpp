@@ -5,6 +5,9 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 
 #include <iostream>
 #include <string>
@@ -12,7 +15,8 @@
 #include <streambuf>
 using namespace std;
 
-
+#define TEMP_PATH "/sys/class/thermal/thermal_zone0/temp"
+#define MAX_SIZE 32
 void error(const char *msg){
     perror(msg);
     exit(1);
@@ -52,7 +56,25 @@ int main(int argc, char *argv[])
      // Listen for connection
      listen(sockfd, 5);
      clilen = sizeof(cli_addr);
+    
      while (1) {
+	int fd;
+    	double temp = 0;
+    	char buf[MAX_SIZE];
+
+	fd = open(TEMP_PATH, O_RDONLY);
+    	if (fd < 0) {
+        	fprintf(stderr, "failed to open thermal_zone0/temp\n");
+        	return -1;
+    	}
+    
+    	if (read(fd, buf, MAX_SIZE) < 0) {
+        	fprintf(stderr, "failed to read temp\n");
+        	return -1;
+    	}
+    
+   	temp = atoi(buf) / 1000.0;
+    	string tempstr = to_string(temp);	
      	// Accept a connection
      	newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
      	if (newsockfd < 0)
@@ -61,7 +83,7 @@ int main(int argc, char *argv[])
      	bzero(buffer,256);
 
      	// Send data
-     	n = write(newsockfd, str.c_str(), str.length());
+     	n = write(newsockfd, tempstr.c_str(), tempstr.length());
      	if (n < 0) error("ERROR writing to socket");
 
      	// Receive data

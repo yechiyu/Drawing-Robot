@@ -27,11 +27,20 @@ $in .= "first blood\r\n";
 $in1 = "12";
 $out = '';
 
-if(!socket_write($socket, $in1, strlen($in1))) {
+$in2 = $in1+1;
+
+if(!socket_write($socket, $in2, strlen($in2))) {
 	echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
 }else {
 	echo "发送到服务器信息成功！\n";
-	echo "发送的内容为:<font color='red'>$in1</font> <br>";
+	echo "发送的内容为:<font color='red'>$in2</font> <br>";
+}
+
+if(!socket_write($socket, $in1, strlen($in1))) {
+        echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
+}else {
+        echo "发送到服务器信息成功！\n";
+        echo "发送的内容为:<font color='red'>$in1</font> <br>";
 }
 
 while($out = socket_read($socket, 8192)) {
