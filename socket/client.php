@@ -12,13 +12,13 @@ if ($socket < 0) {
 	echo "OK.\n";
 }
 
-echo "试图连接 '$ip' 端口 '$port'...\n";
+echo "trying connect '$ip' port: '$port'...\n";
 
 $result = socket_connect($socket, $ip, $port);
 if ($result < 0) {
 	echo "socket_connect() failed.\nReason: ($result) " . socket_strerror($result) . "\n";
 }else {
-	echo "连接OK\n";
+	echo "connect OK\n";
 }
 
 $in = "Ho\r\n";
@@ -32,24 +32,23 @@ $in2 = $in1+1;
 if(!socket_write($socket, $in2, strlen($in2))) {
 	echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
 }else {
-	echo "发送到服务器信息成功！\n";
-	echo "发送的内容为:<font color='red'>$in2</font> <br>";
+	echo "Message sent to server successful！\n";
+	echo "The content to be sent is:<font color='red'>$in2</font> <br>";
 }
 
 if(!socket_write($socket, $in1, strlen($in1))) {
         echo "socket_write() failed: reason: " . socket_strerror($socket) . "\n";
 }else {
-        echo "发送到服务器信息成功！\n";
-        echo "发送的内容为:<font color='red'>$in1</font> <br>";
+        echo "Message sent to server successful！\n";
+        echo "The content to be sent is:<font color='red'>$in1</font> <br>";
 }
 
 while($out = socket_read($socket, 8192)) {
-	echo "接收服务器回传信息成功！\n";
-	echo "接受的内容为:",$out;
+	echo "The receiving server returned the message successfully！\n";
+	echo "The accepted content is:",$out;
 }
-
-echo "关闭SOCKET...\n";
+echo "close SOCKET...\n";
 socket_close($socket);
-echo "关闭OK\n";
+echo "close OK\n";
 ?>
 
