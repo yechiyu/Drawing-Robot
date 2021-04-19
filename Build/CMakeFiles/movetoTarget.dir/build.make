@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/CJM_DrawingRobot
+CMAKE_SOURCE_DIR = /home/pi/Desktop/DrawingRobot_1.0
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/CJM_DrawingRobot/Build
+CMAKE_BINARY_DIR = /home/pi/Desktop/DrawingRobot_1.0/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/movetoTarget.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/movetoTarget.dir/flags.make
 
 CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o: CMakeFiles/movetoTarget.dir/flags.make
 CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o: ../src/movetoTarget.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o -c /home/pi/Desktop/CJM_DrawingRobot/src/movetoTarget.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o -c /home/pi/Desktop/DrawingRobot_1.0/src/movetoTarget.cpp
 
 CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/CJM_DrawingRobot/src/movetoTarget.cpp > CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/DrawingRobot_1.0/src/movetoTarget.cpp > CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.i
 
 CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/CJM_DrawingRobot/src/movetoTarget.cpp -o CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/DrawingRobot_1.0/src/movetoTarget.cpp -o CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.s
 
 # Object files for target movetoTarget
 movetoTarget_OBJECTS = \
@@ -80,7 +80,7 @@ movetoTarget_EXTERNAL_OBJECTS =
 libmovetoTarget.a: CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o
 libmovetoTarget.a: CMakeFiles/movetoTarget.dir/build.make
 libmovetoTarget.a: CMakeFiles/movetoTarget.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libmovetoTarget.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libmovetoTarget.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/movetoTarget.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/movetoTarget.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/movetoTarget.dir/clean:
 .PHONY : CMakeFiles/movetoTarget.dir/clean
 
 CMakeFiles/movetoTarget.dir/depend:
-	cd /home/pi/Desktop/CJM_DrawingRobot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/CJM_DrawingRobot /home/pi/Desktop/CJM_DrawingRobot /home/pi/Desktop/CJM_DrawingRobot/Build /home/pi/Desktop/CJM_DrawingRobot/Build /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/movetoTarget.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Desktop/DrawingRobot_1.0/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/movetoTarget.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/movetoTarget.dir/depend
 

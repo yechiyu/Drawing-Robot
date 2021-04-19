@@ -44,23 +44,15 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/pi/Desktop/CJM_DrawingRobot
+CMAKE_SOURCE_DIR = /home/pi/Desktop/DrawingRobot_1.0
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/CJM_DrawingRobot/Build
-=======
-CMAKE_SOURCE_DIR = /home/pi/REPT/Drawing-Robot
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/REPT/Drawing-Robot/Build
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
+CMAKE_BINARY_DIR = /home/pi/Desktop/DrawingRobot_1.0/Build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-<<<<<<< HEAD
 all: CMakeFiles/processImages.dir/all
 all: CMakeFiles/PiMotor.dir/all
 all: CMakeFiles/mainTest.dir/all
@@ -68,10 +60,6 @@ all: CMakeFiles/reDecoder.dir/all
 all: CMakeFiles/controlMotor.dir/all
 all: CMakeFiles/movetoTarget.dir/all
 all: CMakeFiles/calPosition.dir/all
-=======
-all: CMakeFiles/testmotor.dir/all
-all: CMakeFiles/PiMotor.dir/all
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 .PHONY : all
 
@@ -81,7 +69,6 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-<<<<<<< HEAD
 clean: CMakeFiles/processImages.dir/clean
 clean: CMakeFiles/PiMotor.dir/clean
 clean: CMakeFiles/mainTest.dir/clean
@@ -89,29 +76,24 @@ clean: CMakeFiles/reDecoder.dir/clean
 clean: CMakeFiles/controlMotor.dir/clean
 clean: CMakeFiles/movetoTarget.dir/clean
 clean: CMakeFiles/calPosition.dir/clean
-=======
-clean: CMakeFiles/testmotor.dir/clean
-clean: CMakeFiles/PiMotor.dir/clean
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 .PHONY : clean
 
 #=============================================================================
-<<<<<<< HEAD
 # Target rules for target CMakeFiles/processImages.dir
 
 # All Build rule for target.
 CMakeFiles/processImages.dir/all:
 	$(MAKE) -f CMakeFiles/processImages.dir/build.make CMakeFiles/processImages.dir/depend
 	$(MAKE) -f CMakeFiles/processImages.dir/build.make CMakeFiles/processImages.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=13,14 "Built target processImages"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=13,14 "Built target processImages"
 .PHONY : CMakeFiles/processImages.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/processImages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/processImages.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 0
 .PHONY : CMakeFiles/processImages.dir/rule
 
 # Convenience name for target.
@@ -123,33 +105,6 @@ processImages: CMakeFiles/processImages.dir/rule
 CMakeFiles/processImages.dir/clean:
 	$(MAKE) -f CMakeFiles/processImages.dir/build.make CMakeFiles/processImages.dir/clean
 .PHONY : CMakeFiles/processImages.dir/clean
-=======
-# Target rules for target CMakeFiles/testmotor.dir
-
-# All Build rule for target.
-CMakeFiles/testmotor.dir/all: CMakeFiles/PiMotor.dir/all
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/depend
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=3,4 "Built target testmotor"
-.PHONY : CMakeFiles/testmotor.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/testmotor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testmotor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 0
-.PHONY : CMakeFiles/testmotor.dir/rule
-
-# Convenience name for target.
-testmotor: CMakeFiles/testmotor.dir/rule
-
-.PHONY : testmotor
-
-# clean rule for target.
-CMakeFiles/testmotor.dir/clean:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/clean
-.PHONY : CMakeFiles/testmotor.dir/clean
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 
 #=============================================================================
 # Target rules for target CMakeFiles/PiMotor.dir
@@ -158,24 +113,14 @@ CMakeFiles/testmotor.dir/clean:
 CMakeFiles/PiMotor.dir/all:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/depend
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/build
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=1,2 "Built target PiMotor"
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=1,2 "Built target PiMotor"
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=1,2 "Built target PiMotor"
 .PHONY : CMakeFiles/PiMotor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/PiMotor.dir/rule: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PiMotor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PiMotor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/REPT/Drawing-Robot/Build/CMakeFiles 0
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 0
 .PHONY : CMakeFiles/PiMotor.dir/rule
 
 # Convenience name for target.
@@ -189,26 +134,25 @@ CMakeFiles/PiMotor.dir/clean:
 .PHONY : CMakeFiles/PiMotor.dir/clean
 
 #=============================================================================
-<<<<<<< HEAD
 # Target rules for target CMakeFiles/mainTest.dir
 
 # All Build rule for target.
+CMakeFiles/mainTest.dir/all: CMakeFiles/processImages.dir/all
 CMakeFiles/mainTest.dir/all: CMakeFiles/PiMotor.dir/all
-CMakeFiles/mainTest.dir/all: CMakeFiles/reDecoder.dir/all
-CMakeFiles/mainTest.dir/all: CMakeFiles/controlMotor.dir/all
 CMakeFiles/mainTest.dir/all: CMakeFiles/movetoTarget.dir/all
 CMakeFiles/mainTest.dir/all: CMakeFiles/calPosition.dir/all
-CMakeFiles/mainTest.dir/all: CMakeFiles/processImages.dir/all
+CMakeFiles/mainTest.dir/all: CMakeFiles/reDecoder.dir/all
+CMakeFiles/mainTest.dir/all: CMakeFiles/controlMotor.dir/all
 	$(MAKE) -f CMakeFiles/mainTest.dir/build.make CMakeFiles/mainTest.dir/depend
 	$(MAKE) -f CMakeFiles/mainTest.dir/build.make CMakeFiles/mainTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=9,10 "Built target mainTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=9,10 "Built target mainTest"
 .PHONY : CMakeFiles/mainTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mainTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 16
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mainTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 0
 .PHONY : CMakeFiles/mainTest.dir/rule
 
 # Convenience name for target.
@@ -228,14 +172,14 @@ CMakeFiles/mainTest.dir/clean:
 CMakeFiles/reDecoder.dir/all:
 	$(MAKE) -f CMakeFiles/reDecoder.dir/build.make CMakeFiles/reDecoder.dir/depend
 	$(MAKE) -f CMakeFiles/reDecoder.dir/build.make CMakeFiles/reDecoder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=15,16 "Built target reDecoder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=15,16 "Built target reDecoder"
 .PHONY : CMakeFiles/reDecoder.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/reDecoder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/reDecoder.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 0
 .PHONY : CMakeFiles/reDecoder.dir/rule
 
 # Convenience name for target.
@@ -255,14 +199,14 @@ CMakeFiles/reDecoder.dir/clean:
 CMakeFiles/controlMotor.dir/all:
 	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/depend
 	$(MAKE) -f CMakeFiles/controlMotor.dir/build.make CMakeFiles/controlMotor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=5,6,7,8 "Built target controlMotor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=5,6,7,8 "Built target controlMotor"
 .PHONY : CMakeFiles/controlMotor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/controlMotor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/controlMotor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 0
 .PHONY : CMakeFiles/controlMotor.dir/rule
 
 # Convenience name for target.
@@ -282,14 +226,14 @@ CMakeFiles/controlMotor.dir/clean:
 CMakeFiles/movetoTarget.dir/all:
 	$(MAKE) -f CMakeFiles/movetoTarget.dir/build.make CMakeFiles/movetoTarget.dir/depend
 	$(MAKE) -f CMakeFiles/movetoTarget.dir/build.make CMakeFiles/movetoTarget.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=11,12 "Built target movetoTarget"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=11,12 "Built target movetoTarget"
 .PHONY : CMakeFiles/movetoTarget.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/movetoTarget.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/movetoTarget.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 0
 .PHONY : CMakeFiles/movetoTarget.dir/rule
 
 # Convenience name for target.
@@ -309,14 +253,14 @@ CMakeFiles/movetoTarget.dir/clean:
 CMakeFiles/calPosition.dir/all:
 	$(MAKE) -f CMakeFiles/calPosition.dir/build.make CMakeFiles/calPosition.dir/depend
 	$(MAKE) -f CMakeFiles/calPosition.dir/build.make CMakeFiles/calPosition.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=3,4 "Built target calPosition"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=3,4 "Built target calPosition"
 .PHONY : CMakeFiles/calPosition.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/calPosition.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/calPosition.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles 0
 .PHONY : CMakeFiles/calPosition.dir/rule
 
 # Convenience name for target.
@@ -330,8 +274,6 @@ CMakeFiles/calPosition.dir/clean:
 .PHONY : CMakeFiles/calPosition.dir/clean
 
 #=============================================================================
-=======
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

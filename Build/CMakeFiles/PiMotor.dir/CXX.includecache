@@ -6,40 +6,15 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
-/home/pi/Desktop/CJM_DrawingRobot/include/PiMotor.h
+/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
 pigpio.h
 -
-=======
-/home/pi/REPT/Drawing-Robot/include/PiMotor.h
-stdint.h
--
-functional
--
-
-/home/pi/REPT/Drawing-Robot/src/PiMotor.cpp
-stdio.h
--
-pigpio.h
--
-unistd.h
--
-../include/PiMotor.h
-/home/pi/REPT/Drawing-Robot/include/PiMotor.h
-thread
--
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 mutex
 -
 iostream
 -
-<<<<<<< HEAD
 
-/home/pi/Desktop/CJM_DrawingRobot/src/PiMotor.cpp
+/home/pi/Desktop/DrawingRobot_1.0/src/PiMotor.cpp
 ../include/PiMotor.h
-/home/pi/Desktop/CJM_DrawingRobot/include/PiMotor.h
-=======
-functional
--
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
+/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
 

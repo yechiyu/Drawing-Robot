@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/testmotor.dir/src/mainTest.cpp.o  -o testmotor  -lpthread -lpigpio libPiMotor.a 

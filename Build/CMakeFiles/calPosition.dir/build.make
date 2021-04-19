@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/CJM_DrawingRobot
+CMAKE_SOURCE_DIR = /home/pi/Desktop/DrawingRobot_1.0
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/CJM_DrawingRobot/Build
+CMAKE_BINARY_DIR = /home/pi/Desktop/DrawingRobot_1.0/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/calPosition.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/calPosition.dir/flags.make
 
 CMakeFiles/calPosition.dir/src/calPosition.cpp.o: CMakeFiles/calPosition.dir/flags.make
 CMakeFiles/calPosition.dir/src/calPosition.cpp.o: ../src/calPosition.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/calPosition.dir/src/calPosition.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calPosition.dir/src/calPosition.cpp.o -c /home/pi/Desktop/CJM_DrawingRobot/src/calPosition.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/calPosition.dir/src/calPosition.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/calPosition.dir/src/calPosition.cpp.o -c /home/pi/Desktop/DrawingRobot_1.0/src/calPosition.cpp
 
 CMakeFiles/calPosition.dir/src/calPosition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/calPosition.dir/src/calPosition.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/CJM_DrawingRobot/src/calPosition.cpp > CMakeFiles/calPosition.dir/src/calPosition.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/DrawingRobot_1.0/src/calPosition.cpp > CMakeFiles/calPosition.dir/src/calPosition.cpp.i
 
 CMakeFiles/calPosition.dir/src/calPosition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/calPosition.dir/src/calPosition.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/CJM_DrawingRobot/src/calPosition.cpp -o CMakeFiles/calPosition.dir/src/calPosition.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/DrawingRobot_1.0/src/calPosition.cpp -o CMakeFiles/calPosition.dir/src/calPosition.cpp.s
 
 # Object files for target calPosition
 calPosition_OBJECTS = \
@@ -80,7 +80,7 @@ calPosition_EXTERNAL_OBJECTS =
 libcalPosition.a: CMakeFiles/calPosition.dir/src/calPosition.cpp.o
 libcalPosition.a: CMakeFiles/calPosition.dir/build.make
 libcalPosition.a: CMakeFiles/calPosition.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcalPosition.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libcalPosition.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/calPosition.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/calPosition.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/calPosition.dir/clean:
 .PHONY : CMakeFiles/calPosition.dir/clean
 
 CMakeFiles/calPosition.dir/depend:
-	cd /home/pi/Desktop/CJM_DrawingRobot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/CJM_DrawingRobot /home/pi/Desktop/CJM_DrawingRobot /home/pi/Desktop/CJM_DrawingRobot/Build /home/pi/Desktop/CJM_DrawingRobot/Build /home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/calPosition.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Desktop/DrawingRobot_1.0/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/calPosition.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/calPosition.dir/depend
 

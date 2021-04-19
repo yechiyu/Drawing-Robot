@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/CJM_DrawingRobot/src/processImages.cpp" "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/processImages.dir/src/processImages.cpp.o"
+  "/home/pi/Desktop/DrawingRobot_1.0/src/processImages.cpp" "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/processImages.dir/src/processImages.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

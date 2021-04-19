@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/CJM_DrawingRobot/src/mainTest.cpp" "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/mainTest.dir/src/mainTest.cpp.o"
+  "/home/pi/Desktop/DrawingRobot_1.0/src/mainTest.cpp" "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/mainTest.dir/src/mainTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,12 +17,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/PiMotor.dir/DependInfo.cmake"
-  "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/reDecoder.dir/DependInfo.cmake"
-  "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/controlMotor.dir/DependInfo.cmake"
-  "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/calPosition.dir/DependInfo.cmake"
-  "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/movetoTarget.dir/DependInfo.cmake"
-  "/home/pi/Desktop/CJM_DrawingRobot/Build/CMakeFiles/processImages.dir/DependInfo.cmake"
+  "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/PiMotor.dir/DependInfo.cmake"
+  "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/reDecoder.dir/DependInfo.cmake"
+  "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/controlMotor.dir/DependInfo.cmake"
+  "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/calPosition.dir/DependInfo.cmake"
+  "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/movetoTarget.dir/DependInfo.cmake"
+  "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/processImages.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(DRAWING_ROBOT)  
 
-<<<<<<< HEAD
 add_executable(mainTest src/mainTest.cpp)
 
 add_library(PiMotor src/PiMotor.cpp)
@@ -29,21 +28,6 @@ target_link_libraries(mainTest PUBLIC
 	calPosition
 	movetoTarget
 	processImages
-=======
-add_executable(testmotor src/mainTest.cpp)
-
-add_library(PiMotor src/PiMotor.cpp)
-
-target_include_directories(testmotor PUBLIC
-	${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-
-find_package(Threads REQUIRED)
-target_link_libraries(testmotor PUBLIC
-	${CMAKE_THREAD_LIBS_INIT}
-	pigpio
-	PiMotor
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
 )
 
 add_compile_options(-Wall -std=c++11 -O2)

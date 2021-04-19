@@ -5,11 +5,7 @@
             "name": "g++ Generate and debug the activity file",
             "type": "cppdbg",
             "request": "launch",
-<<<<<<< HEAD
             "program": "${workspaceFolder}/Build/mainTest",
-=======
-            "program": "${workspaceFolder}/Build/testmotor",
->>>>>>> b77243b2de3386637ade7d9cbdea8aa7800aa470
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

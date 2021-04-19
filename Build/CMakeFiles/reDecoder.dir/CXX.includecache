@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/CJM_DrawingRobot/include/reDecoder.h
+/home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
 pigpio.h
 -
 iostream
 -
 
-/home/pi/Desktop/CJM_DrawingRobot/src/reDecoder.cpp
+/home/pi/Desktop/DrawingRobot_1.0/src/reDecoder.cpp
 ../include/reDecoder.h
-/home/pi/Desktop/CJM_DrawingRobot/include/reDecoder.h
+/home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
 
