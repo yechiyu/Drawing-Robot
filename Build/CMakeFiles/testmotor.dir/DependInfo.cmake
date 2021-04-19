@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp" "/home/pi/REPT/Drawing-Robot/Build/CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o"
+  "/home/pi/REPT/Drawing-Robot/src/mainTest.cpp" "/home/pi/REPT/Drawing-Robot/Build/CMakeFiles/testmotor.dir/src/mainTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

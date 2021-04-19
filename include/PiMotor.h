@@ -13,8 +13,8 @@ class PiMotor {
 private:
     int fPin;
     int rPin;
-    int speed;
-    bool direction;
+    //int speed;
+    //bool direction;
     bool DEBUG = true;
     //std::function<void()> function;
    
@@ -23,9 +23,9 @@ private:
       // { 
       //   function();  // Calls the function
       //  }
-      PiMotor(int, int,int,bool);
-      void Thread_run_left ();
-      void Thread_run_right ();
+      PiMotor(int, int);
+      void Thread_run_left (int ,bool);
+      void Thread_run_right (int,bool);
    
       int Thread_stop_left();
       int Thread_stop_right();

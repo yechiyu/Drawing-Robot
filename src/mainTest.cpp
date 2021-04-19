@@ -32,10 +32,10 @@ sudo ./rot_enc_cpp
 // int m2_A = 6; //Motor 2 Forward
 // int m2_B = 13; //Motor 2 Reverse
 // int speed_right=20;
-int PL1=7;
-int PL2=8;
-int PR1=26;
-int PR2=19;
+int PL1=16;
+int PL2=19;
+int PR1=17;
+int PR2=27;
 int pos[2]={0,0};
 int callback_left(int way)
 {
@@ -49,19 +49,19 @@ int callback_right(int way)
 {
    //static int pos_right = 0;
    pos[1] += way;
-   std::cout << "pos_right=" << pos[1] << std::endl;
+   //std::cout << "pos_right=" << pos[1] << std::endl;
    return pos[1];
 }
 class control:public PiMotor,public re_decoder
 {
   public:
-    void run_left(); // int , int , re_decoderCB_t ,int , int ,int ,bool
-    void run_right(); //int , int , re_decoderCB_t ,int , int ,int ,bool
+    void run_left(int speed_L,bool direction); // int , int , re_decoderCB_t ,int , int ,int ,bool
+    void run_right(int speed_R,bool direction); //int , int , re_decoderCB_t ,int , int ,int ,bool
     void stop_left();
     void stop_right();
     //void stop_right();
-    control(int gpioA, int gpioB, re_decoderCB_t callback ,int forwardPin, int reversePin,int Speed,bool Direction ):
-      re_decoder(gpioA, gpioB, callback),PiMotor(forwardPin,reversePin,Speed,Direction){}
+    control(int gpioA, int gpioB, re_decoderCB_t callback ,int forwardPin, int reversePin ):
+      re_decoder(gpioA, gpioB, callback),PiMotor(forwardPin,reversePin){}
   private:
     // int m1_A; //Motor 1 Forward
     // int m1_B; //Motor 1 Reverse
@@ -71,16 +71,16 @@ class control:public PiMotor,public re_decoder
     // int (*re_decoderCB_t)(int);
 
 };
-void control::run_left()   //int , int , re_decoderCB_t ,int , int ,int ,bool
+void control::run_left(int speed_L,bool direction)   //int , int , re_decoderCB_t ,int , int ,int ,bool
 { 
    re_decoder::encoder_left(PL1,PL2,callback_left);
-   PiMotor::Thread_run_left();
+   PiMotor::Thread_run_left(speed_L,direction);
    
   
 }
-void control::run_right()   //int , int , re_decoderCB_t ,int , int ,int ,bool
+void control::run_right(int speed_R,bool direction)   //int , int , re_decoderCB_t ,int , int ,int ,bool
 {
-   PiMotor::Thread_run_right();
+   PiMotor::Thread_run_right(speed_R,direction);
    re_decoder::encoder_right(PR1,PR2,callback_right);
 }
 void control::stop_left()
@@ -149,28 +149,27 @@ int main(int argc, char *argv[])
     {
       fprintf(stderr, "igpio initialisation is okey.\n\r");
     }
-    control left_motor(7,8,callback_left,20,21,150,1);
-    control right_motor(26,19,callback_right,6,13,87,1);
+    control left_motor(17,27,callback_left,20,21);
+   //control right_motor(16,19,callback_right,6,13);
     
-    left_motor.run_left();
-    right_motor.run_right();
-    usleep(3000000);//5 seconds
-    left_motor.stop_left();
-    right_motor.stop_right();
-    usleep(1000000);//5 seconds
-   left_motor.run_left();
-    right_motor.run_right();
+  left_motor.run_left(30,1);
+    //right_motor.run_right(50,1);
     usleep(2000000);//5 seconds
-    left_motor.stop_left();
-    right_motor.stop_right();
-    // left_motor.stop_left();
-    // right_motor.stop_right;
+   left_motor.stop_left();
+  // right_motor.stop_right();
     usleep(1000000);//5 seconds
-    left_motor.run_left();
-    right_motor.run_right();
-    usleep(1000000);//5 seconds
-    left_motor.stop_left();
-    right_motor.stop_right();
+    left_motor.run_left(40,0);
+  //   right_motor.run_right();
+     usleep(2000000);//5 seconds
+     left_motor.stop_left();
+  //   right_motor.stop_right();
+   
+   // usleep(1000000);//5 seconds
+     left_motor.run_left(50,1);
+  //   right_motor.run_right();
+     usleep(1000000);//5 seconds
+     left_motor.stop_left();
+  //   right_motor.stop_right();
     sleep(SAMPLETIME); // Pause 1 seconds
     gpioTerminate();     
     return 0;

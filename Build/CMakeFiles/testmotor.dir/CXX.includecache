@@ -12,7 +12,7 @@ stdint.h
 functional
 -
 
-/home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp
+/home/pi/REPT/Drawing-Robot/src/mainTest.cpp
 iostream
 -
 pigpio.h

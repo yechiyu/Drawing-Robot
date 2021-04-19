@@ -10,7 +10,7 @@ using namespace std;
 std::mutex x;
 extern int pos[2];
 
-PiMotor::PiMotor(int forwardPin, int reversePin,int Speed,bool Direction)
+PiMotor::PiMotor(int forwardPin, int reversePin)
 {
     if (DEBUG) {
         printf("Creating motor object with pins %i and %i\n\r", forwardPin, reversePin);
@@ -18,8 +18,8 @@ PiMotor::PiMotor(int forwardPin, int reversePin,int Speed,bool Direction)
     
     fPin = forwardPin;
     rPin = reversePin;
-    speed =Speed;
-    direction=Direction;
+    // speed =Speed;
+    // direction=Direction;
     //function=f;
 }
  
@@ -37,6 +37,7 @@ int PiMotor::Thread_stop_left() {
             fprintf(stderr, "PiGPIO initialisation failed.\n\r");
         }
    }
+   
     gpioSetMode(fPin, PI_OUTPUT);
     gpioSetMode(rPin, PI_OUTPUT);
     gpioPWM(fPin, 0);
@@ -50,7 +51,7 @@ int PiMotor::Thread_stop_left() {
     return Posion;
    
    //Free resources & GPIO access
-   //gpioTerminate();   
+   gpioTerminate();   
 }
 
 int PiMotor::Thread_stop_right() {
@@ -75,11 +76,11 @@ int PiMotor::Thread_stop_right() {
     return Posion;
    
    //Free resources & GPIO access
-   //gpioTerminate();   
+   gpioTerminate();   
 }
 
-void PiMotor::Thread_run_right () {
-    cout<<"enter Thread_run_left"<<endl;
+void PiMotor::Thread_run_right (int Speed_R,bool Direction) {
+    cout<<"enter Thread_run_right"<<endl;
     //x.lock();
     if (gpioInitialise() < 0) {
     if (DEBUG) {
@@ -87,14 +88,13 @@ void PiMotor::Thread_run_right () {
     }
     return;
    }
-    gpioSetMode(12, PI_ALT0);
-    gpioWrite(12, 1);// Sets a pull-up.
-  cout<<"before direction is  "<<direction<<endl;
+    
+  cout<<"before direction right is  "<<Direction<<endl;
   int D=0;
-  if (direction == 0) {
+  if (Direction == 0) {
      
       D = rPin;
-  } else if (direction== 1) {
+  } else if (Direction== 1) {
       D = fPin;
   } 
   else {
@@ -103,9 +103,11 @@ void PiMotor::Thread_run_right () {
       }
       return;
   }
-  cout<<"after direction   "<<D<<endl;
+  cout<<"after direction right is  "<<D<<endl;
     gpioInitialise();
-  
+    cout<<"set pin12 high"<<endl;
+    gpioSetMode(12, PI_ALT0);
+    gpioWrite(12, 1);// Sets a pull-up.
    //gpioSetMode(26, PI_ALT0);
 
    //gpioWrite(26, 1);// Sets a pull-up.
@@ -114,7 +116,7 @@ void PiMotor::Thread_run_right () {
    // gpioInitialise();
      gpioSetMode(D, PI_OUTPUT);
     //gpioSetPWMrange(D, 1000);
-    gpioPWM(D,speed);
+    gpioPWM(D,Speed_R);
 
    
   
@@ -129,20 +131,20 @@ void PiMotor::Thread_run_right () {
     
       if (DEBUG) {
         if(D==rPin){
-        printf("Setting speed to %i on motor pin %i \n\r", speed, rPin);}
+        printf("Setting speed to %i on motor pin %i \n\r", Speed_R, rPin);}
         if(D==fPin){
-            printf("Setting speed to %i on motor pin %i \n\r", speed, fPin);}
+            printf("Setting speed to %i on motor pin %i \n\r", Speed_R, fPin);}
     }
     
    
   
    
    //Free resources & GPIO access
-   //gpioTerminate();
+   gpioTerminate();
    //x.unlock();
 }
 
-void PiMotor::Thread_run_left () {
+void PiMotor::Thread_run_left (int Speed_L,bool Direction) {
     cout<<"enter Thread_run_left"<<endl;
     //x.lock();
    if (gpioInitialise() < 0) {
@@ -151,11 +153,12 @@ void PiMotor::Thread_run_left () {
         }
       return;
    }
+    cout<<"before direction left is  "<<Direction<<endl;
    int D=0;
-  if (direction == 0) {
+  if (Direction == 0) {
      
       D= rPin;
-  } else if (direction == 1) {
+  } else if (Direction == 1) {
      D= fPin;
   } 
   else {
@@ -164,7 +167,9 @@ void PiMotor::Thread_run_left () {
       }
       return;
   }
+   cout<<"after direction left is  "<<D<<endl;
     gpioInitialise();
+    cout<<"set pin26 high"<<endl;
     gpioSetMode(26, PI_ALT0);
     //gpioSetMode(12, PI_ALT0);
     gpioWrite(26, 1);// Sets a pull-up.
@@ -174,7 +179,7 @@ void PiMotor::Thread_run_left () {
     //gpioInitialise();
     gpioSetMode(D, PI_OUTPUT);
     //gpioSetPWMrange(D, 1000);
-    gpioPWM(D, speed);
+    gpioPWM(D, Speed_L);
 
    
   
@@ -188,9 +193,9 @@ void PiMotor::Thread_run_left () {
     
     if (DEBUG) {
         if(D==rPin){
-        printf("Setting speed to %i on motor pin %i \n\r", speed, rPin);}
+        printf("Setting speed to %i on motor pin %i \n\r", Speed_L, rPin);}
         if(D==fPin){
-            printf("Setting speed to %i on motor pin %i \n\r", speed, fPin);}
+            printf("Setting speed to %i on motor pin %i \n\r", Speed_L, fPin);}
     }
     
     
@@ -241,6 +246,14 @@ void re_decoder::encoder_left(int gpioA, int gpioB, re_decoderCB_t callback)
    levB=0;
 
    lastGpio = -1;
+    if (gpioInitialise() < 0)
+    {
+      fprintf(stderr, "igpio initialisation failed.\n\r");
+     }
+    else
+    {
+      fprintf(stderr, "igpio initialisation is okey.\n\r");
+    }
    gpioSetMode(gpioA, PI_INPUT);
    gpioSetMode(gpioB, PI_INPUT);
 
@@ -256,7 +269,8 @@ void re_decoder::encoder_left(int gpioA, int gpioB, re_decoderCB_t callback)
    }
 
 void re_decoder::encoder_right(int gpioA, int gpioB, re_decoderCB_t callback)
-{
+{  
+   
    mygpioA = gpioA;
    
    mygpioB = gpioB;
@@ -267,6 +281,14 @@ void re_decoder::encoder_right(int gpioA, int gpioB, re_decoderCB_t callback)
    levB=0;
 
    lastGpio = -1;
+    if (gpioInitialise() < 0)
+    {
+      fprintf(stderr, "igpio initialisation failed.\n\r");
+     }
+    else
+    {
+      fprintf(stderr, "igpio initialisation is okey.\n\r");
+    }
    gpioSetMode(gpioA, PI_INPUT);
    gpioSetMode(gpioB, PI_INPUT);
 

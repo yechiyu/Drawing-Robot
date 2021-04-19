@@ -57,27 +57,27 @@ include CMakeFiles/testmotor.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/testmotor.dir/flags.make
 
-CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o: CMakeFiles/testmotor.dir/flags.make
-CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o: ../src/test_rotary_encoder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o -c /home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp
+CMakeFiles/testmotor.dir/src/mainTest.cpp.o: CMakeFiles/testmotor.dir/flags.make
+CMakeFiles/testmotor.dir/src/mainTest.cpp.o: ../src/mainTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/REPT/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/testmotor.dir/src/mainTest.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testmotor.dir/src/mainTest.cpp.o -c /home/pi/REPT/Drawing-Robot/src/mainTest.cpp
 
-CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp > CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i
+CMakeFiles/testmotor.dir/src/mainTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testmotor.dir/src/mainTest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/REPT/Drawing-Robot/src/mainTest.cpp > CMakeFiles/testmotor.dir/src/mainTest.cpp.i
 
-CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/REPT/Drawing-Robot/src/test_rotary_encoder.cpp -o CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s
+CMakeFiles/testmotor.dir/src/mainTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testmotor.dir/src/mainTest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/REPT/Drawing-Robot/src/mainTest.cpp -o CMakeFiles/testmotor.dir/src/mainTest.cpp.s
 
 # Object files for target testmotor
 testmotor_OBJECTS = \
-"CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o"
+"CMakeFiles/testmotor.dir/src/mainTest.cpp.o"
 
 # External object files for target testmotor
 testmotor_EXTERNAL_OBJECTS =
 
-testmotor: CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o
+testmotor: CMakeFiles/testmotor.dir/src/mainTest.cpp.o
 testmotor: CMakeFiles/testmotor.dir/build.make
 testmotor: libPiMotor.a
 testmotor: CMakeFiles/testmotor.dir/link.txt

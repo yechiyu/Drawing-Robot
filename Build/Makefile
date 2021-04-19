@@ -163,32 +163,32 @@ src/PiMotor.cpp.s:
 	$(MAKE) -f CMakeFiles/PiMotor.dir/build.make CMakeFiles/PiMotor.dir/src/PiMotor.cpp.s
 .PHONY : src/PiMotor.cpp.s
 
-src/test_rotary_encoder.o: src/test_rotary_encoder.cpp.o
+src/mainTest.o: src/mainTest.cpp.o
 
-.PHONY : src/test_rotary_encoder.o
+.PHONY : src/mainTest.o
 
 # target to build an object file
-src/test_rotary_encoder.cpp.o:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.o
-.PHONY : src/test_rotary_encoder.cpp.o
+src/mainTest.cpp.o:
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/mainTest.cpp.o
+.PHONY : src/mainTest.cpp.o
 
-src/test_rotary_encoder.i: src/test_rotary_encoder.cpp.i
+src/mainTest.i: src/mainTest.cpp.i
 
-.PHONY : src/test_rotary_encoder.i
+.PHONY : src/mainTest.i
 
 # target to preprocess a source file
-src/test_rotary_encoder.cpp.i:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.i
-.PHONY : src/test_rotary_encoder.cpp.i
+src/mainTest.cpp.i:
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/mainTest.cpp.i
+.PHONY : src/mainTest.cpp.i
 
-src/test_rotary_encoder.s: src/test_rotary_encoder.cpp.s
+src/mainTest.s: src/mainTest.cpp.s
 
-.PHONY : src/test_rotary_encoder.s
+.PHONY : src/mainTest.s
 
 # target to generate assembly for a file
-src/test_rotary_encoder.cpp.s:
-	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/test_rotary_encoder.cpp.s
-.PHONY : src/test_rotary_encoder.cpp.s
+src/mainTest.cpp.s:
+	$(MAKE) -f CMakeFiles/testmotor.dir/build.make CMakeFiles/testmotor.dir/src/mainTest.cpp.s
+.PHONY : src/mainTest.cpp.s
 
 # Help Target
 help:
@@ -203,9 +203,9 @@ help:
 	@echo "... src/PiMotor.o"
 	@echo "... src/PiMotor.i"
 	@echo "... src/PiMotor.s"
-	@echo "... src/test_rotary_encoder.o"
-	@echo "... src/test_rotary_encoder.i"
-	@echo "... src/test_rotary_encoder.s"
+	@echo "... src/mainTest.o"
+	@echo "... src/mainTest.i"
+	@echo "... src/mainTest.s"
 .PHONY : help
 
 
