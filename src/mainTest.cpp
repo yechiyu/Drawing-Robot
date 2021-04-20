@@ -158,6 +158,8 @@ int main()
           fprintf(stderr, "igpio initialisation is okey.\n\r");
         }
         cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
+        if (speed1>255) speed1=255;
+        if (speed2>255) speed2=255;
         // left_motor.run_left(int(speed1),dir1);
         // right_motor.run_right(int(speed2),dir2);
         // std::thread t1(&MotorL_Tread);

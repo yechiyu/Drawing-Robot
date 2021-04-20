@@ -1,2 +1,0 @@
-/usr/bin/ar qc libprocessImages.a  CMakeFiles/processImages.dir/src/processImages.cpp.o
-/usr/bin/ranlib libprocessImages.a
