@@ -4,6 +4,7 @@
 CMakeFiles/mainTest.dir/src/mainTest.cpp.o: ../include/PiMotor.h
 CMakeFiles/mainTest.dir/src/mainTest.cpp.o: ../include/calPosition.h
 CMakeFiles/mainTest.dir/src/mainTest.cpp.o: ../include/controlMotor.h
+CMakeFiles/mainTest.dir/src/mainTest.cpp.o: ../include/dataTest.h
 CMakeFiles/mainTest.dir/src/mainTest.cpp.o: ../include/movetoTarget.h
 CMakeFiles/mainTest.dir/src/mainTest.cpp.o: ../include/processImages.h
 CMakeFiles/mainTest.dir/src/mainTest.cpp.o: ../include/reDecoder.h

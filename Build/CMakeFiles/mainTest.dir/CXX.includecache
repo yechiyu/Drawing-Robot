@@ -34,6 +34,8 @@ chrono
 functional
 -
 
+/home/pi/Desktop/DrawingRobot_1.0/include/dataTest.h
+
 /home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
 iostream
 -
@@ -65,6 +67,8 @@ iostream
 /home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
 ../include/controlMotor.h
 /home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
+../include/dataTest.h
+/home/pi/Desktop/DrawingRobot_1.0/include/dataTest.h
 iostream
 -
 thread

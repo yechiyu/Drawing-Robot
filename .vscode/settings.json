@@ -48,6 +48,12 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "thread": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "complex": "cpp",
+        "cstring": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "iomanip": "cpp"
     }
 }
