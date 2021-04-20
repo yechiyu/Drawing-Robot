@@ -7,6 +7,6 @@ using namespace std;
 using namespace cv;
 
 int main(){
-    Mat src = imread("../img/4.jpg"); //convert the image to grayscale and read it
+    Mat src = imread("../img/1.jpg"); //convert the image to grayscale and read it
 	imshow("src", src);
 }
