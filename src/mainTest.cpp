@@ -78,81 +78,93 @@ int main()
     // cout << "Initial Y: " << result[1] << endl;
 
     // drawing
-    // for(int i=0;i<9;i++){
-    //obtain the x,y
     pi.process();
-    int i =pi.i;
-    for(int j=0;j<i;j++)
-    {
-      targetX = pi.pointImg[j][0];
-      targetY = pi.pointImg[j][1];
+    string Y,X;
+    ifstream fin("data.txt"); 
+    const int LINE_LENGTH = 100; 
+    char str[LINE_LENGTH];  
+    char *p;
+	  const char *delim = " ";
+    int m =0;
+    while( fin.getline(str,LINE_LENGTH) )
+    {    
+        cout <<"--------------------------"<< m <<"--------------------------"<< endl;
+        m++;
+        cout << str << endl;
+        p = strtok(str, delim);
+        X = p;
+        while(p) {
+              Y = p;
+              p = strtok(NULL, delim);
+        }
+        // cout <<"X:"<< X << endl;
+        // cout <<"Y:"<< Y << endl;
+        targetX = stod(X);
+        targetY = stod(Y);
 
-      cout << "-------------------" << i << "-------------------" << endl;
-      // targetX = dataGroup[i][0];
-      // targetY = dataGroup[i][1];
 
-      cout << "Target Y: " << targetY << endl;
+        cout << "Target Y: " << targetY << endl;
 
-      // current position
-      if(counts1==0 && counts2==0){
-        currrentX = initialX;
-        currrentY = initialY;
-      }else{
-        result = cp.currentPosition(counts1,counts2);
-        currrentX = result[0];
-        currrentY = result[1];
-      }
-      cout << "Current X: " << result[0] << endl;
-      cout << "Current Y: " << result[1] << endl;  
+        // current position
+        if(counts1==0 && counts2==0){
+          currrentX = initialX;
+          currrentY = initialY;
+        }else{
+          result = cp.currentPosition(counts1,counts2);
+          currrentX = result[0];
+          currrentY = result[1];
+        }
+        cout << "Current X: " << result[0] << endl;
+        cout << "Current Y: " << result[1] << endl;  
 
-      // x,y to counts
-      result = mt.calCounts(targetX,targetY,currrentX,currrentY);
-      
-      targetCounts1 = result[0];
-      targetCounts2 = result[1];
+        // x,y to counts
+        result = mt.calCounts(targetX,targetY,currrentX,currrentY);
+        
+        targetCounts1 = result[0];
+        targetCounts2 = result[1];
 
-      cout << "targetCounts1:" << targetCounts1 << endl;
-      cout << "targetCounts2:" << targetCounts2 << endl;
+        cout << "targetCounts1:" << targetCounts1 << endl;
+        cout << "targetCounts2:" << targetCounts2 << endl;
 
-      counts1 = targetCounts1;
-      counts2 = targetCounts2;
+        counts1 = targetCounts1;
+        counts2 = targetCounts2;
 
-      // calculate the speed factor
-      double speedFactor = double(abs(targetCounts2))/double(abs(targetCounts1));
-      if(speedFactor>1){
-          speed1 = speeds;
-          speed2 = speeds*speedFactor;
-      }else{
-          speed2 = speeds;
-          speed1 = speeds/speedFactor;
-      }
+        // calculate the speed factor
+        double speedFactor = double(abs(targetCounts2))/double(abs(targetCounts1));
+        if(speedFactor>1){
+            speed1 = speeds;
+            speed2 = speeds*speedFactor;
+        }else{
+            speed2 = speeds;
+            speed1 = speeds/speedFactor;
+        }
 
-      // control the robot
-      if(targetCounts1 > 0){
-          dir1 = 1;
-      }else{
-          dir1 = 0;
-      }
-      if(targetCounts2 > 0){
-          dir2 = 1;
-      }else{
-          dir2 = 0;
-      }
-      if (gpioInitialise() < 0)
-      {
-        fprintf(stderr, "igpio initialisation failed.\n\r");
-      }
-      else
-      {
-        fprintf(stderr, "igpio initialisation is okey.\n\r");
-      }
-      cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
-      // left_motor.run_left(int(speed1),dir1);
-      // right_motor.run_right(int(speed2),dir2);
-      // std::thread t1(&MotorL_Tread);
-      // std::thread t2(&MotorR_Tread);
-      // t1.join(); 
-      // t2.join();
+        // control the robot
+        if(targetCounts1 > 0){
+            dir1 = 1;
+        }else{
+            dir1 = 0;
+        }
+        if(targetCounts2 > 0){
+            dir2 = 1;
+        }else{
+            dir2 = 0;
+        }
+        if (gpioInitialise() < 0)
+        {
+          fprintf(stderr, "igpio initialisation failed.\n\r");
+        }
+        else
+        {
+          fprintf(stderr, "igpio initialisation is okey.\n\r");
+        }
+        cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
+        // left_motor.run_left(int(speed1),dir1);
+        // right_motor.run_right(int(speed2),dir2);
+        // std::thread t1(&MotorL_Tread);
+        // std::thread t2(&MotorR_Tread);
+        // t1.join(); 
+        // t2.join();
     }
     gpioTerminate(); 
 }

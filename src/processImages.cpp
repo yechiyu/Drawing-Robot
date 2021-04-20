@@ -1,41 +1,47 @@
 #include "../include/processImages.h"
-
+  
 int processImages::process()
 {
-	Mat src = imread("../img/1.jpg"); //convert the image to grayscale and read it
-	imshow("src", src);
- 
-	Mat dst;
-	threshold(src, dst, 100, 255, CV_THRESH_BINARY_INV);  // binary images
-	imshow("dst", dst);
- 
-	nRows = dst.rows;
-	nCols = dst.cols;
- 
-	ofstream fout("data.txt");
-	i = 0;
-	// 2 layer loop traverse the picture, when no line, the pixel is 0;
-	for(int w = 0; w < nCols; w++)
+ Mat src = imread("../img/4.jpg", 0);
+ //imshow("src", src);
+  
+ Mat dst;
+ threshold(src, dst, 100, 255, CV_THRESH_BINARY_INV); //二值化
+ //imshow("dst", dst);
+  
+ int nRows = dst.rows;
+ int nCols = dst.cols;
+  
+ ofstream fout("data.txt");
+
+ i = 0;
+ //按列扫描，求像素和，由于是二值后的图片，没有线条时，该列的像素和为0；扫描到线条时像素大于0
+ for(int w = 0; w < nCols; w++)
+ {
+	int sum = 0;
+	
+	for(int h = 0; h < nRows; h++)
 	{
-		int sum = 0;
+		uchar *pRow = dst.ptr<uchar>(h, w); //该列中每个像素的地址
+		sum += (int)(*pRow);
 		
-		for(int h = 0; h < nRows; h++)
+		if(sum > 0) //到达了线条的上侧，像素和大于0
 		{
-			uchar *pRow = dst.ptr<uchar>(h, w); // point
-			sum += (int)(*pRow);
- 
-			if(sum > 0)
-			{
-				fout << "X:" << w << ",Y:" << h <<  endl; //save the data in text
-				pointImg[i][0] = double(w)/1000;
-				pointImg[i][1] = double(h)/1000;
-				i++;
-				sum = 0;
-				break;
-			}
+			double X = double(w)/1000;
+			double Y = double(h)/1000;
+
+			cout << "找到了线条点"<< i;  //从上往下找，由于线条很细，目前只判断上边界。
+			cout << ",坐标如下： X = " << X << ", Y = " << Y << endl; 
+			fout << X << " " << Y << endl; //控制台会丢失数据，存到文本不会丢失
+
+			sum = 0;
+			i++;
+			break;
 		}
 	}
-	waitKey();
-	cout << endl;
-	return 0;
+ }
+ waitKey();
+ cout << endl;
+ system("pause");
+ return 0;
 }
