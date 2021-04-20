@@ -35,22 +35,22 @@ int main()
     cout << "Current X: " << result[0] << endl;
     cout << "Current Y: " << result[1] << endl;
 
-    // ci.process(url);
-    // int i = ci.i;
-    // for(int j=0;j<i;j++)
-    // {
-    //     targetX = ci.pointImg[j][0];
-    //     targetY = ci.pointImg[j][1];
+    pi.process(url);
+    int i = pi.i;
+    for(int j=0;j<i;j++)
+    {
+        targetX = pi.pointImg[j][0];
+        targetY = pi.pointImg[j][1];
 
-    //     result = mt.calCounts(targetX,targetY,result[0], result[1]);
+        result = mt.calCounts(targetX,targetY,result[0], result[1]);
 
-    //     targetCounts1 = result[0];
-    //     targetCounts2 = result[1];
+        targetCounts1 = result[0];
+        targetCounts2 = result[1];
 
 
-    //     // cout << "counts1:" << counts1 << endl;
-    //     // cout << "counts2:" << counts2 << endl;
-    // } 
+        // cout << "counts1:" << counts1 << endl;
+        // cout << "counts2:" << counts2 << endl;
+    } 
 
     result = mt.calCounts(targetX,targetY,result[0], result[1]);
     

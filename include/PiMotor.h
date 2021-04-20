@@ -10,7 +10,7 @@ class PiMotor {
    private:
       int fPin;
       int rPin;
-      bool DEBUG = true;
+      bool DEBUG = false;
    
   public:
       PiMotor(int, int);
@@ -27,4 +27,5 @@ class PiMotor {
       When the encoder is turned the callback function is called.
    */
 };
+void Pi_servo(int Fre);
 #endif

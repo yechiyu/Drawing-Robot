@@ -1,13 +1,13 @@
 #include "../include/processImages.h"
 
-int processImages::process(string url)
+int processImages::process()
 {
-	Mat src = imread(url,0); //convert the image to grayscale and read it
-	// imshow("src", src);
+	Mat src = imread("../img/1.jpg"); //convert the image to grayscale and read it
+	imshow("src", src);
  
 	Mat dst;
 	threshold(src, dst, 100, 255, CV_THRESH_BINARY_INV);  // binary images
-	// imshow("dst", dst);
+	imshow("dst", dst);
  
 	nRows = dst.rows;
 	nCols = dst.cols;
@@ -27,8 +27,8 @@ int processImages::process(string url)
 			if(sum > 0)
 			{
 				fout << "X:" << w << ",Y:" << h <<  endl; //save the data in text
-				pointImg[i][0] = w;
-				pointImg[i][1] = h;
+				pointImg[i][0] = double(w)/1000;
+				pointImg[i][1] = double(h)/1000;
 				i++;
 				sum = 0;
 				break;

@@ -5,6 +5,7 @@
 #include "../include/dataTest.h"
 #include <iostream>
 #include <thread>
+#include <stdlib.h>
 std::mutex x;
 calPosition cp;
 movetoTarget mt;
@@ -27,6 +28,10 @@ void MotorL_Tread()
         usleep(10000);//5 seconds
       };
       left_motor.stop_left();
+      Pi_servo(1950);
+      usleep(200000);
+      Pi_servo(1500);
+      usleep(200000);
     }
 
 void MotorR_Tread()
@@ -38,17 +43,22 @@ void MotorR_Tread()
         usleep(10000);//5 seconds
       };
       right_motor.stop_right();
-  }
+      Pi_servo(1950);
+      usleep(200000);
+      Pi_servo(1500);
+      usleep(200000);
+   }
     
 int main() 
 {  
     
-    double L1 = 0.425; //the distances between the motors and the pulley（left）
-    double L2 = 0.425; //the distances between the motors and the pulley（right）
+    double L1 = 0.25; //the distances between the motors and the pulley（left）
+    double L2 = 0.25; //the distances between the motors and the pulley（right）
     
     int speeds = 50;
     bool dir1,dir2;
-    // string url = "../img/3.jpg";
+    double speed1,speed2;
+    // string url = "../img/1.jpg";
 
     int counts1 = 0; //the encoders give motor positions in counts
     int counts2 = 0;
@@ -56,29 +66,44 @@ int main()
     double targetX; // target x
     double targetY;  // target y
 
-    double currrentX, currrentY;
+    double currrentX, currrentY, initialX, initialY;
 
     // intial position
     result = cp.initialPosition(L1,L2);
+
+    initialX = result[0];
+    initialY = result[1];
 
     // cout << "Initial X: " << result[0] << endl;
     // cout << "Initial Y: " << result[1] << endl;
 
     // drawing
-    for(int i=0;i<9;i++){
-      targetX = dataGroup[i][0];
-      targetY = dataGroup[i][1];
+    // for(int i=0;i<9;i++){
+    //obtain the x,y
+    pi.process();
+    int i =pi.i;
+    for(int j=0;j<i;j++)
+    {
+      targetX = pi.pointImg[j][0];
+      targetY = pi.pointImg[j][1];
+
+      cout << "-------------------" << i << "-------------------" << endl;
+      // targetX = dataGroup[i][0];
+      // targetY = dataGroup[i][1];
 
       cout << "Target Y: " << targetY << endl;
 
       // current position
-      result = cp.currentPosition(counts1,counts2);
-
-      currrentX = result[0];
-      currrentY = result[1];
-
-      // cout << "Current X: " << result[0] << endl;
-      cout << "Current Y: " << result[1] << endl;
+      if(counts1==0 && counts2==0){
+        currrentX = initialX;
+        currrentY = initialY;
+      }else{
+        result = cp.currentPosition(counts1,counts2);
+        currrentX = result[0];
+        currrentY = result[1];
+      }
+      cout << "Current X: " << result[0] << endl;
+      cout << "Current Y: " << result[1] << endl;  
 
       // x,y to counts
       result = mt.calCounts(targetX,targetY,currrentX,currrentY);
@@ -91,6 +116,16 @@ int main()
 
       counts1 = targetCounts1;
       counts2 = targetCounts2;
+
+      // calculate the speed factor
+      double speedFactor = double(abs(targetCounts2))/double(abs(targetCounts1));
+      if(speedFactor>1){
+          speed1 = speeds;
+          speed2 = speeds*speedFactor;
+      }else{
+          speed2 = speeds;
+          speed1 = speeds/speedFactor;
+      }
 
       // control the robot
       if(targetCounts1 > 0){
@@ -111,32 +146,13 @@ int main()
       {
         fprintf(stderr, "igpio initialisation is okey.\n\r");
       }
-
-      left_motor.run_left(speeds,dir1);
-      right_motor.run_right(speeds,dir2);
-      std::thread t1(&MotorL_Tread);
-      std::thread t2(&MotorR_Tread);
-      t1.join(); 
-      t2.join();
+      cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
+      // left_motor.run_left(int(speed1),dir1);
+      // right_motor.run_right(int(speed2),dir2);
+      // std::thread t1(&MotorL_Tread);
+      // std::thread t2(&MotorR_Tread);
+      // t1.join(); 
+      // t2.join();
     }
-
-    // obtain the x,y
-    // ci.process(url);
-    // int i = ci.i;
-    // for(int j=0;j<i;j++)
-    // {
-    //     targetX = ci.pointImg[j][0];
-    //     targetY = ci.pointImg[j][1];
-
-    //     result = mt.calCounts(targetX,targetY,result[0], result[1]);
-
-    //     targetCounts1 = result[0];
-    //     targetCounts2 = result[1];
-
-
-    //     // cout << "counts1:" << counts1 << endl;
-    //     // cout << "counts2:" << counts2 << endl;
-    // } 
-
     gpioTerminate(); 
 }

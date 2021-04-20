@@ -14,8 +14,8 @@ class processImages {
         int nRows;
         int nCols;
     public:
-        int process(string url);
+        int process();
         int i;
-        int pointImg[][2];
+        double pointImg[][2];
 };
 #endif

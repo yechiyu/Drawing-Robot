@@ -3,7 +3,7 @@
 int processImages::process(string url)
 {
 	Mat src = imread(url,0); //convert the image to grayscale and read it
-	// imshow("src", src);
+	imshow("src", src);
  
 	Mat dst;
 	threshold(src, dst, 100, 255, CV_THRESH_BINARY_INV);  // binary images

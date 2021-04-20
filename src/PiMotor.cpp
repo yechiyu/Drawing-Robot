@@ -84,9 +84,9 @@ void PiMotor::Run_right (int Speed_R,bool Direction) {
         }
         return;
     }
-    cout<<"after direction right is  "<<D<<endl;
+    // cout<<"after direction right is  "<<D<<endl;
     gpioInitialise();
-    cout<<"set pin12 high"<<endl;
+    // cout<<"set pin12 high"<<endl;
     gpioSetMode(12, PI_ALT0);
     gpioWrite(12, 1);// Sets a pull-up.
     gpioSetMode(D, PI_OUTPUT);
@@ -101,7 +101,7 @@ void PiMotor::Run_right (int Speed_R,bool Direction) {
 }
 
 void PiMotor::Run_left (int Speed_L,bool Direction) {
-    cout<<"enter Thread_run_left"<<endl;
+    // cout<<"enter Thread_run_left"<<endl;
     //x.lock();
     if (gpioInitialise() < 0) {
             if (DEBUG) {
@@ -109,7 +109,7 @@ void PiMotor::Run_left (int Speed_L,bool Direction) {
             }
         return;
     }
-    cout<<"before direction left is  "<<Direction<<endl;
+    // cout<<"before direction left is  "<<Direction<<endl;
     int D=0;
     if (Direction == 0) {
         
@@ -123,9 +123,9 @@ void PiMotor::Run_left (int Speed_L,bool Direction) {
         }
         return;
     }
-    cout<<"after direction left is  "<<D<<endl;
+    // cout<<"after direction left is  "<<D<<endl;
     gpioInitialise();
-    cout<<"set pin26 high"<<endl;
+    // cout<<"set pin26 high"<<endl;
     gpioSetMode(26, PI_ALT0);
     gpioWrite(26, 1);// Sets a pull-up.
     gpioSetMode(D, PI_OUTPUT);
@@ -137,4 +137,20 @@ void PiMotor::Run_left (int Speed_L,bool Direction) {
         if(D==fPin){
             printf("Setting speed to %i on motor pin %i \n\r", Speed_L, fPin);}
     }
+}
+
+void Pi_servo(int Fre)//1500 undraw 2500draw
+{
+    if(gpioInitialise()<0)
+     {
+        cout<<"pigpio intialisation failed."<<endl;
+     }
+    else
+     {
+         cout<<"pigpio initialised okay"<<endl;
+     }
+    int servo_pin=18;
+    gpioSetMode(servo_pin,PI_OUTPUT);
+    gpioSetPWMfrequency(servo_pin, 400);
+    gpioServo(servo_pin,Fre);
 }
