@@ -1,0 +1,9 @@
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/processImages.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/PiMotor.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/edit_cache.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/mainTest.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/reDecoder.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/controlMotor.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/movetoTarget.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/calPosition.dir

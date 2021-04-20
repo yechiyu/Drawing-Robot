@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+iostream
+-
+cmath
+-
+
+/home/pi/Desktop/DrawingRobot_1.0/src/movetoTarget.cpp
+../include/movetoTarget.h
+/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+

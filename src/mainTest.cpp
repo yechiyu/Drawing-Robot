@@ -2,8 +2,6 @@
 #include "../include/movetoTarget.h"
 #include "../include/processImages.h"
 #include "../include/controlMotor.h"
-#include "../include/dataTest.h"
-#include <iostream>
 #include <thread>
 #include <stdlib.h>
 std::mutex x;
@@ -52,10 +50,10 @@ void MotorR_Tread()
 int main() 
 {  
     pi.process();
-    double L1 = 0.25; //the distances between the motors and the pulley（left）
-    double L2 = 0.25; //the distances between the motors and the pulley（right）
+    double L1 = 0.29; //the distances between the motors and the pulley（left）
+    double L2 = 0.29; //the distances between the motors and the pulley（right）
     
-    int speeds = 50;
+    int speeds = 70;
     bool dir1,dir2;
     double speed1,speed2;
     // string url = "../img/1.jpg";
@@ -79,7 +77,7 @@ int main()
 
     // drawing
     string Y,X;
-    ifstream fin("data.txt"); 
+    ifstream fin("originalData.txt"); 
     const int LINE_LENGTH = 100; 
     char str[LINE_LENGTH];  
     char *p;
@@ -98,11 +96,65 @@ int main()
         }
         // cout <<"X:"<< X << endl;
         // cout <<"Y:"<< Y << endl;
-        targetX = stod(X);
-        targetY = stod(Y);
+        double xPix = stod(X);
+        double yPix = stod(Y);
+        cout << "xPix:" << xPix << endl;
+        cout << "yPix:" << yPix << endl;
 
 
-        cout << "Target Y: " << targetY << endl;
+        double fraction = 0.3;
+
+        double xLim[2] = {0.06,0.495};
+        double yLim[2] = {0.13,0.51};
+
+        double xLimPix[2] = {24,460}; // obatin from the pic
+        double yLimPix[2] = {51,452};
+
+        double xMinM = xLim[0];
+        double yMinM = yLim[0];
+
+        double xRangeM = xLim[1] - xLim[0];
+        double yRangeM = yLim[1] - yLim[0];
+
+        double xMinPix = xLimPix[0];
+        double yMinPix = yLimPix[0];
+
+        double xRangePix = xLimPix[1] - xLimPix[0];
+        double yRangePix = yLimPix[1] - yLimPix[0];
+
+        double xScaleFactor = fraction*xRangeM/xRangePix;
+        double yScaleFactor = fraction*yRangeM/yRangePix;
+
+        cout <<"xScaleFactor:"<< xScaleFactor << endl;
+        cout <<"yScaleFactor:"<< yScaleFactor << endl;
+        
+        double pix2M = std::min(xScaleFactor,yScaleFactor);
+        cout << pix2M << endl;
+        if(pix2M == NAN){
+            pix2M = 0;
+        }
+
+        double centerMeters[2];
+        centerMeters[0] = xMinM + xRangeM/2;
+        centerMeters[1] = yMinM + yRangeM/2;
+
+        double drawingOriginM[2];
+        drawingOriginM[0] = centerMeters[0] - pix2M*xRangeM/2;
+        drawingOriginM[1] = centerMeters[1] - pix2M*yRangeM/2;
+
+        int n; //the length of data
+        double segmentsMeters[n][2] = {0};
+        int nSegments = n;
+
+        // double coordsPix = fliplr(coordsPix)
+        double coorsMemterX = pix2M*(xPix - xMinPix) + drawingOriginM[0];
+        double coorsMemterY = pix2M*(yPix- yMinPix) + drawingOriginM[1];
+        cout << "coorsMemterX:" << coorsMemterX << endl;
+        cout << "coorsMemterY:" << coorsMemterY << endl;
+
+        targetX = coorsMemterX;
+        targetY = coorsMemterY;
+        // cout << "Target Y: " << targetY << endl;
 
         // current position
         if(counts1==0 && counts2==0){

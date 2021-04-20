@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcontrolMotor.a  CMakeFiles/controlMotor.dir/src/controlMotor.cpp.o CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o
+/usr/bin/ranlib libcontrolMotor.a

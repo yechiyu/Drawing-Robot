@@ -6,7 +6,7 @@ using namespace cv;
   
 int main()
 {
- Mat src = imread("../img/1.jpg", 0);
+ Mat src = imread("../img/4.jpg", 0);
  //imshow("src", src);
   
  Mat dst;
@@ -31,12 +31,9 @@ int main()
 		
 		if(sum > 0) //到达了线条的上侧，像素和大于0
 		{
-			double X = double(w)/1000;
-			double Y = double(h)/1000;
-
-			cout << "找到了线条点"<< i << endl;  //从上往下找，由于线条很细，目前只判断上边界。
+			// cout << "找到了线条点"<< i << endl;  //从上往下找，由于线条很细，目前只判断上边界。
 			// cout << ",坐标如下： X = " << X << ", Y = " << Y << endl; 
-			fout << X << " " << Y << endl; //控制台会丢失数据，存到文本不会丢失
+			fout << w << " " << h << endl; //控制台会丢失数据，存到文本不会丢失
 
 			sum = 0;
 			i++;

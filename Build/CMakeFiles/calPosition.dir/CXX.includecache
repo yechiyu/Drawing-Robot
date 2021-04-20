@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
+iostream
+-
+cmath
+-
+
+/home/pi/Desktop/DrawingRobot_1.0/src/calPosition.cpp
+../include/calPosition.h
+/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
+
