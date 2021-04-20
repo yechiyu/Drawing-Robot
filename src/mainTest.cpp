@@ -51,7 +51,7 @@ void MotorR_Tread()
     
 int main() 
 {  
-    
+    pi.process();
     double L1 = 0.25; //the distances between the motors and the pulley（left）
     double L2 = 0.25; //the distances between the motors and the pulley（right）
     
@@ -78,7 +78,6 @@ int main()
     // cout << "Initial Y: " << result[1] << endl;
 
     // drawing
-    pi.process();
     string Y,X;
     ifstream fin("data.txt"); 
     const int LINE_LENGTH = 100; 

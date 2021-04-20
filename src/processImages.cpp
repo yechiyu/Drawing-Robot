@@ -14,7 +14,7 @@ int processImages::process()
   
  ofstream fout("data.txt");
 
- i = 0;
+ int i = 0;
  //按列扫描，求像素和，由于是二值后的图片，没有线条时，该列的像素和为0；扫描到线条时像素大于0
  for(int w = 0; w < nCols; w++)
  {
@@ -30,8 +30,8 @@ int processImages::process()
 			double X = double(w)/1000;
 			double Y = double(h)/1000;
 
-			cout << "找到了线条点"<< i;  //从上往下找，由于线条很细，目前只判断上边界。
-			cout << ",坐标如下： X = " << X << ", Y = " << Y << endl; 
+			cout << "找到了线条点"<< i << endl;  //从上往下找，由于线条很细，目前只判断上边界。
+			// cout << ",坐标如下： X = " << X << ", Y = " << Y << endl; 
 			fout << X << " " << Y << endl; //控制台会丢失数据，存到文本不会丢失
 
 			sum = 0;
@@ -40,6 +40,7 @@ int processImages::process()
 		}
 	}
  }
+  
  waitKey();
  cout << endl;
  system("pause");
