@@ -37,5 +37,22 @@ add_compile_options(-Wall -std=c++11 -O2)
 set(CMAKE_CXX_FLAGES "${CMAKE_CXX_FLAGES} -wall")
 set(CMAKE_BUILD_TYPE Debug)
 
+# cmake_minimum_required(VERSION 3.0)
+# project(DRAWING_ROBOT)  
 
+# add_executable(imagetest src/processImages.cpp)
+# add_library(processImages src/processImages.cpp)
+# target_include_directories(processImages PUBLIC
+# 	${CMAKE_CURRENT_SOURCE_DIR}/include)
+# target_link_libraries(imagetest PUBLIC
+# 	${CMAKE_THREAD_LIBS_INIT}
+	
+# 	processImages
+# )
+# find_package(OpenCV REQUIRED)
+# include_directories(${OpenCV_INCLUDE_DIRS}/include)
+# target_link_libraries( processImages ${OpenCV_LIBS})
+# add_compile_options(-Wall -std=c++11 -O2)
 
+# set(CMAKE_CXX_FLAGES "${CMAKE_CXX_FLAGES} -wall")
+# set(CMAKE_BUILD_TYPE Debug)
