@@ -2,7 +2,7 @@
   
 int process()
 {
- Mat src = imread("../img/H.jpg", 0);
+ Mat src = imread("../img/10.png", 0);
  imshow("src", src);
   
  Mat dst;

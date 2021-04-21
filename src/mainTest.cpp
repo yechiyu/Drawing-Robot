@@ -2,7 +2,7 @@
 
 
         
-int speeds = 40;
+int speeds = 70;
 bool dir1,dir2;
 double speed1,speed2;
         // string url = "../img/1.jpg";
@@ -16,9 +16,9 @@ double targetY;  // target y
 double currrentX, currrentY, initialX, initialY;
 int main() 
 {  
-    double L1 = 0.360; //the distances between the motors and the pulley（left）
-    double L2 = 0.360; //the distances between the motors and the pulley（right）
-    process();
+    double L1 = 0.275; //the distances between the motors and the pulley（left）
+    double L2 = 0.275; //the distances between the motors and the pulley（right）
+    // process();
     pixToM();
     // intial position
     result = cp.initialPosition(L1,L2);
@@ -28,15 +28,15 @@ int main()
     // Drawing start 
     string Y,X;
     ifstream fin("newData.txt"); 
-    cout <<"!!!!!"<< endl;
-    const int LINE_LENGTH = 311; 
+    // cout <<"!!!!!"<< endl;
+    const int LINE_LENGTH = 380; 
     char str[LINE_LENGTH];  
     char *p;
 	  const char *delim = " ";
     int m =0;
     while( fin.getline(str,LINE_LENGTH) )
     {    
-        cout <<"--------------------------"<< m <<"--------------------------"<< endl;
+        // cout <<"--------------------------"<< m <<"--------------------------"<< endl;
         m++;
         cout << str << endl;
         p = strtok(str, delim);
@@ -49,8 +49,8 @@ int main()
         targetX = stod(X);
         targetY = stod(Y);
 
-        cout << "Target X: " << targetX << endl;
-        cout << "Target Y: " << targetY << endl;
+        // cout << "Target X: " << targetX << endl;
+        // cout << "Target Y: " << targetY << endl;
 
         // current position
         if(counts1==0 && counts2==0){
@@ -70,8 +70,8 @@ int main()
         targetCounts1 = result[0];
         targetCounts2 = result[1];
 
-        cout << "targetCounts1:" << targetCounts1 << endl;
-        cout << "targetCounts2:" << targetCounts2 << endl;
+        // cout << "targetCounts1:" << targetCounts1 << endl;
+        // cout << "targetCounts2:" << targetCounts2 << endl;
 
         counts1 = targetCounts1;
         counts2 = targetCounts2;
@@ -112,26 +112,14 @@ int main()
         }
         cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
         
-        // run
+        //run
         
-        // left_motor.run_left(50,0);
-        // usleep(2000000);
-        // left_motor.stop_left();
-        // right_motor.run_right(70,0);
-        // usleep(2000000);
-        // right_motor.stop_left();
-        // gpioTerminate(); 
         left_motor.run_left(int(speed1),dir1);
         right_motor.run_right(int(speed2),dir2);
         std::thread t1(&MotorL_Tread);
         std::thread t2(&MotorR_Tread);
         t1.join(); 
         t2.join();
-        // Pi_servo(1950);
-        // usleep(100000);
-        // Pi_servo(1500);
-        // usleep(100000);
-        // // gpioTerminate(); 
     }
     gpioTerminate(); 
 }

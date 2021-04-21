@@ -1,0 +1,265 @@
+Looking for git in: git
+Using git 2.20.1 from git
+> git rev-parse --git-dir
+Open repository: /home/pi/Desktop/DrawingRobot_1.0
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :dataTest/data.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/dataTest/data.txt
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :src/mainTest.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/mainTest.cpp
+> git cat-file -s 2170952ac7fe783e6791e6a42d1ae05c65ed6e56
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :Build/newData.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/Build/newData.txt
+> git show --textconv :src/mainTest.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/mainTest.cpp
+> git cat-file -s 2170952ac7fe783e6791e6a42d1ae05c65ed6e56
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :Build/newData.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/Build/newData.txt
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :src/pixtoMeter.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp
+> git cat-file -s ce94999572bb849124e22c16ae98231012f5445c
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :Build/newData.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/Build/newData.txt
+> git show --textconv :src/pixtoMeter.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp
+> git cat-file -s ce94999572bb849124e22c16ae98231012f5445c
+> git show --textconv :Build/newData.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/Build/newData.txt
+> git show --textconv :src/pixtoMeter.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp
+> git cat-file -s ce94999572bb849124e22c16ae98231012f5445c
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :Build/newData.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/Build/newData.txt
+> git show --textconv :src/pixtoMeter.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp
+> git cat-file -s ce94999572bb849124e22c16ae98231012f5445c
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :Build/newData.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/Build/newData.txt
+> git show --textconv :src/processImages.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/processImages.cpp
+> git cat-file -s 38b2dfd7a664fb111eac7edf26ba101cc0ae8b27
+> git show --textconv :Build/newData.txt
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/Build/newData.txt
+> git show --textconv :src/mainTest.cpp
+> git ls-files --stage -- /home/pi/Desktop/DrawingRobot_1.0/src/mainTest.cpp
+> git cat-file -s 2170952ac7fe783e6791e6a42d1ae05c65ed6e56
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/DrawingRobot_1.0 refs/remotes/DrawingRobot_1.0
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template

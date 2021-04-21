@@ -7,14 +7,14 @@ double* movetoTarget::calCounts(double targetX, double targetY, double x, double
     double Z1 = sqrt(x*x+y*y);
     double Z2 = sqrt((Base - x)*(Base - x) + y*y);
 
-    cout << "Z1: " << Z1 << endl;
-    cout << "Z2: " << Z2 << endl;
+    // cout << "Z1: " << Z1 << endl;
+    // cout << "Z2: " << Z2 << endl;
 
     targetZ1 = sqrt(targetX*targetX+targetY*targetY);
     targetZ2 = sqrt((Base - targetX)*(Base - targetX) + targetY*targetY);
     
-    cout << "targetZ1: " << targetZ1 << endl;
-    cout << "targetZ2: " << targetZ2 << endl;
+    // cout << "targetZ1: " << targetZ1 << endl;
+    // cout << "targetZ2: " << targetZ2 << endl;
 
     dZ1 = targetZ1 - Z1;
     dZ2 = targetZ2 - Z2;

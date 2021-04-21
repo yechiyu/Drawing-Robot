@@ -4,8 +4,8 @@
  void pixToM(){
      // drawing
     string Y,X;
-    ifstream fin("originalData.txt"); 
-    const int LINE_LENGTH = 311; 
+    ifstream fin("../dataTest/data.txt"); 
+    const int LINE_LENGTH = 380;
     char str[LINE_LENGTH];  
     char *p;
 	  const char *delim = " ";
@@ -13,29 +13,28 @@
     ofstream fout("newData.txt");
     while( fin.getline(str,LINE_LENGTH) )
     {    
-        // cout <<"--------------------------"<< m <<"--------------------------"<< endl;
+        cout <<"--------------------------"<< m <<"--------------------------"<< endl;
         m++;
-        // cout << str << endl;
         p = strtok(str, delim);
         X = p;
         while(p) {
               Y = p;
               p = strtok(NULL, delim);
         }
-        // cout <<"X:"<< X << endl;
-        // cout <<"Y:"<< Y << endl;
+        cout <<"X:"<< X << endl;
+        cout <<"Y:"<< Y << endl;
         double xPix = stod(X);
         double yPix = stod(Y);
         // cout << "xPix:" << xPix << endl;
         // cout << "yPix:" << yPix << endl;
 
-        double xLim[2] = {0.1,0.475};
+        double xLim[2] = {0.06,0.480};
         double yLim[2] = {0.2,0.46};
     
         double fraction = 0.6;
 
-        double xLimPix[2] = {21,331}; // obatin from the pic
-        double yLimPix[2] = {16,314};
+        double xLimPix[2] = {244,397}; // obatin from the pic
+        double yLimPix[2] = {146,275};
 
         double xMinM = xLim[0];
         double yMinM = yLim[0];
@@ -53,7 +52,7 @@
         double yScaleFactor = fraction*yRangeM/yRangePix;
 
         double pix2M = std::min(xScaleFactor,yScaleFactor);
-        // cout << pix2M << endl;
+
         if(pix2M == NAN){
             pix2M = 0;
         }
@@ -66,12 +65,10 @@
         drawingOriginM[0] = centerMeters[0] - pix2M*xRangePix/2;
         drawingOriginM[1] = centerMeters[1] - pix2M*yRangePix/2;
 
-        int n = 437;
-        double segmentsMeters[437][2] = {0};// ?
+        int n = 380;
+        double segmentsMeters[380][2] = {0};// 
         int nSegments = n;
         
-       
-        // double coordsPix = fliplr(coordsPix)
         double coorsMemterX = pix2M*(xPix - xMinPix) + drawingOriginM[0];
         double coorsMemterY = pix2M*(yPix - yMinPix) + drawingOriginM[1];
 
