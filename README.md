@@ -11,7 +11,7 @@ TRIGONOMETRY
 
 <div align="center">
   <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/pic5.jpg" width="400"> <br/>
-  <a href=""><img height=40 src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/youtube.svg"></img></a>
+  <a href="https://youtu.be/syOKDyHR77g"><img height=40 src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/youtube.svg"></img></a>
 </div>
 
 # Everything We Need
