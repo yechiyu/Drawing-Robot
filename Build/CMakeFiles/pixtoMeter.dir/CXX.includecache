@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+string
+-
+iostream
+-
+fstream
+-
+string.h
+-
+cmath
+-
+
+/home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp
+../include/pixtoMeter.h
+/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+

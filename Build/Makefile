@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named pixtoMeter
+
+# Build rule for target.
+pixtoMeter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pixtoMeter
+.PHONY : pixtoMeter
+
+# fast build rule for target.
+pixtoMeter/fast:
+	$(MAKE) -f CMakeFiles/pixtoMeter.dir/build.make CMakeFiles/pixtoMeter.dir/build
+.PHONY : pixtoMeter/fast
+
+#=============================================================================
 # Target rules for targets named processImages
 
 # Build rule for target.
@@ -339,6 +352,33 @@ src/movetoTarget.cpp.s:
 	$(MAKE) -f CMakeFiles/movetoTarget.dir/build.make CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.s
 .PHONY : src/movetoTarget.cpp.s
 
+src/pixtoMeter.o: src/pixtoMeter.cpp.o
+
+.PHONY : src/pixtoMeter.o
+
+# target to build an object file
+src/pixtoMeter.cpp.o:
+	$(MAKE) -f CMakeFiles/pixtoMeter.dir/build.make CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o
+.PHONY : src/pixtoMeter.cpp.o
+
+src/pixtoMeter.i: src/pixtoMeter.cpp.i
+
+.PHONY : src/pixtoMeter.i
+
+# target to preprocess a source file
+src/pixtoMeter.cpp.i:
+	$(MAKE) -f CMakeFiles/pixtoMeter.dir/build.make CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.i
+.PHONY : src/pixtoMeter.cpp.i
+
+src/pixtoMeter.s: src/pixtoMeter.cpp.s
+
+.PHONY : src/pixtoMeter.s
+
+# target to generate assembly for a file
+src/pixtoMeter.cpp.s:
+	$(MAKE) -f CMakeFiles/pixtoMeter.dir/build.make CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.s
+.PHONY : src/pixtoMeter.cpp.s
+
 src/processImages.o: src/processImages.cpp.o
 
 .PHONY : src/processImages.o
@@ -403,6 +443,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... pixtoMeter"
 	@echo "... processImages"
 	@echo "... PiMotor"
 	@echo "... edit_cache"
@@ -426,6 +467,9 @@ help:
 	@echo "... src/movetoTarget.o"
 	@echo "... src/movetoTarget.i"
 	@echo "... src/movetoTarget.s"
+	@echo "... src/pixtoMeter.o"
+	@echo "... src/pixtoMeter.i"
+	@echo "... src/pixtoMeter.s"
 	@echo "... src/processImages.o"
 	@echo "... src/processImages.i"
 	@echo "... src/processImages.s"

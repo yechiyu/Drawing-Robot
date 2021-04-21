@@ -34,8 +34,36 @@ chrono
 functional
 -
 
+/home/pi/Desktop/DrawingRobot_1.0/include/define.h
+../include/calPosition.h
+/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
+../include/movetoTarget.h
+/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+../include/processImages.h
+/home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
+../include/controlMotor.h
+/home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
+../include/pixtoMeter.h
+/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+thread
+-
+stdlib.h
+-
+
 /home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
 iostream
+-
+cmath
+-
+
+/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+string
+-
+iostream
+-
+fstream
+-
+string.h
 -
 cmath
 -
@@ -57,16 +85,6 @@ iostream
 -
 
 /home/pi/Desktop/DrawingRobot_1.0/src/mainTest.cpp
-../include/calPosition.h
-/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
-../include/movetoTarget.h
-/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
-../include/processImages.h
-/home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
-../include/controlMotor.h
-/home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
-thread
--
-stdlib.h
--
+../include/define.h
+/home/pi/Desktop/DrawingRobot_1.0/include/define.h
 

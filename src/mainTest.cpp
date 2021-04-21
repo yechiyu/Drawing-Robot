@@ -1,89 +1,38 @@
-#include "../include/calPosition.h"
-#include "../include/movetoTarget.h"
-#include "../include/processImages.h"
-#include "../include/controlMotor.h"
-#include <thread>
-#include <stdlib.h>
-std::mutex x;
-calPosition cp;
-movetoTarget mt;
-processImages pi;
-
-extern int pos[2];
-int targetCounts1, targetCounts2;
-double *result;
-control left_motor(17,27,callback_left,20,21);
-control right_motor(16,19,callback_right,6,13);
+#include "../include/define.h"
 
 
-void MotorL_Tread()
-    { 
-      // std::lock_guard<std::mutex> locker(x);
-      // cout<<"b= "<<targetCounts1<<endl;
-      while(abs(pos[0]) < abs(targetCounts1))
-      {
-        // cout<<"l= "<<pos[0]<<endl;
-        usleep(10000);//5 seconds
-      };
-      left_motor.stop_left();
-      Pi_servo(1950);
-      usleep(200000);
-      Pi_servo(1500);
-      usleep(200000);
-    }
+        
+int speeds = 50;
+bool dir1,dir2;
+double speed1,speed2;
+        // string url = "../img/1.jpg";
 
-void MotorR_Tread()
-   {  
-      // std::lock_guard<std::mutex> locker(x);
-      while(abs(pos[1]) < abs(targetCounts2))
-      {
-        // cout<<"r= "<<pos[1]<<endl;
-        usleep(10000);//5 seconds
-      };
-      right_motor.stop_right();
-      Pi_servo(1950);
-      usleep(200000);
-      Pi_servo(1500);
-      usleep(200000);
-   }
-    
+int counts1 = 0; //the encoders give motor positions in counts
+int counts2 = 0;
+
+double targetX; // target x
+double targetY;  // target y
+
+double currrentX, currrentY, initialX, initialY;
 int main() 
 {  
-    pi.process();
-    double L1 = 0.275; //the distances between the motors and the pulley（left）
-    double L2 = 0.275; //the distances between the motors and the pulley（right）
-    
-    int speeds = 90;
-    bool dir1,dir2;
-    double speed1,speed2;
-    // string url = "../img/1.jpg";
-
-    int counts1 = 0; //the encoders give motor positions in counts
-    int counts2 = 0;
-
-    double targetX; // target x
-    double targetY;  // target y
-
-    double currrentX, currrentY, initialX, initialY;
-
+    double L1 = 0.260; //the distances between the motors and the pulley（left）
+    double L2 = 0.250; //the distances between the motors and the pulley（right）
+    process();
+    pixToM();
     // intial position
     result = cp.initialPosition(L1,L2);
-
     initialX = result[0];
     initialY = result[1];
 
-    // cout << "Initial X: " << result[0] << endl;
-    // cout << "Initial Y: " << result[1] << endl;
-
-    // drawing
+    // Drawing start 
     string Y,X;
-    ifstream fin("originalData.txt"); 
+    ifstream fin("newData.txt"); 
     const int LINE_LENGTH = 437; 
     char str[LINE_LENGTH];  
     char *p;
 	  const char *delim = " ";
     int m =0;
-    ofstream fout("newData.txt");
     while( fin.getline(str,LINE_LENGTH) )
     {    
         cout <<"--------------------------"<< m <<"--------------------------"<< endl;
@@ -95,65 +44,11 @@ int main()
               Y = p;
               p = strtok(NULL, delim);
         }
-        // cout <<"X:"<< X << endl;
-        // cout <<"Y:"<< Y << endl;
-        double xPix = stod(X);
-        double yPix = stod(Y);
-        cout << "xPix:" << xPix << endl;
-        cout << "yPix:" << yPix << endl;
-
-        double xLim[2] = {0.1,0.475};
-        double yLim[2] = {0.2,0.46};
-    
-        double fraction = 0.6;
-
-        double xLimPix[2] = {24,460}; // obatin from the pic
-        double yLimPix[2] = {51,452};
-
-        double xMinM = xLim[0];
-        double yMinM = yLim[0];
-
-        double xRangeM = xLim[1] - xLim[0];
-        double yRangeM = yLim[1] - yLim[0];
-
-        double xMinPix = xLimPix[0];
-        double yMinPix = yLimPix[0];
-
-        double xRangePix = xLimPix[1] - xLimPix[0];
-        double yRangePix = yLimPix[1] - yLimPix[0];
-
-        double xScaleFactor = fraction*xRangeM/xRangePix;
-        double yScaleFactor = fraction*yRangeM/yRangePix;
-
-        double pix2M = std::min(xScaleFactor,yScaleFactor);
-        cout << pix2M << endl;
-        if(pix2M == NAN){
-            pix2M = 0;
-        }
-
-        double centerMeters[2];
-        centerMeters[0] = xMinM + xRangeM/2;
-        centerMeters[1] = yMinM + yRangeM/2;
-
-        double drawingOriginM[2];
-        drawingOriginM[0] = centerMeters[0] - pix2M*xRangePix/2;
-        drawingOriginM[1] = centerMeters[1] - pix2M*yRangePix/2;
-
-        int n = 437;
-        double segmentsMeters[437][2] = {0};// ?
-        int nSegments = n;
         
-       
-        // double coordsPix = fliplr(coordsPix)
-        double coorsMemterX = pix2M*(xPix - xMinPix) + drawingOriginM[0];
-        double coorsMemterY = pix2M*(yPix - yMinPix) + drawingOriginM[1];
+        targetX = stod(X);
+        targetY = stod(Y);
 
-        cout << "Traget X:" << coorsMemterX << endl;
-        cout << "Traget Y:" << coorsMemterY << endl;
-        fout << coorsMemterX << "," << coorsMemterY << endl;
-        
-        targetX = coorsMemterX;
-        targetY = coorsMemterY;
+        // cout << "Target X: " << targetX << endl;
         // cout << "Target Y: " << targetY << endl;
 
         // current position
@@ -165,8 +60,8 @@ int main()
           currrentX = result[0];
           currrentY = result[1];
         }
-        cout << "Current X: " << result[0] << endl;
-        cout << "Current Y: " << result[1] << endl;  
+        // cout << "Current X: " << result[0] << endl;
+        // cout << "Current Y: " << result[1] << endl;  
 
         // x,y to counts
         result = mt.calCounts(targetX,targetY,currrentX,currrentY);
@@ -174,8 +69,8 @@ int main()
         targetCounts1 = result[0];
         targetCounts2 = result[1];
 
-        cout << "targetCounts1:" << targetCounts1 << endl;
-        cout << "targetCounts2:" << targetCounts2 << endl;
+        // cout << "targetCounts1:" << targetCounts1 << endl;
+        // cout << "targetCounts2:" << targetCounts2 << endl;
 
         counts1 = targetCounts1;
         counts2 = targetCounts2;
@@ -190,7 +85,10 @@ int main()
             speed1 = speeds/speedFactor;
         }
 
-        // control the robot
+        if (speed1>255) speed1=255;
+        if (speed2>255) speed2=255;
+
+        // control the direction of robot
         if(targetCounts1 > 0){
             dir1 = 0;
         }else{
@@ -201,6 +99,8 @@ int main()
         }else{
             dir2 = 0;
         }
+        
+        // initialise
         if (gpioInitialise() < 0)
         {
           fprintf(stderr, "igpio initialisation failed.\n\r");
@@ -209,15 +109,27 @@ int main()
         {
           fprintf(stderr, "igpio initialisation is okey.\n\r");
         }
-        cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
-        if (speed1>255) speed1=255;
-        if (speed2>255) speed2=255;
+        // cout << "!!!!speed" << df.speed1 << "," << df.speed2 <<endl;
+        
+        // run
+        
+        // left_motor.run_left(50,0);
+        // usleep(2000000);
+        // left_motor.stop_left();
+        // right_motor.run_right(70,0);
+        // usleep(2000000);
+        // right_motor.stop_left();
+        // gpioTerminate(); 
         left_motor.run_left(int(speed1),dir1);
         right_motor.run_right(int(speed2),dir2);
         std::thread t1(&MotorL_Tread);
         std::thread t2(&MotorR_Tread);
         t1.join(); 
         t2.join();
+        // Pi_servo(1950);
+        // usleep(100000);
+        // Pi_servo(1500);
+        // usleep(100000);
         // // gpioTerminate(); 
     }
     gpioTerminate(); 

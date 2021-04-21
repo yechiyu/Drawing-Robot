@@ -5,7 +5,9 @@ CMakeFiles/mainTest.dir/src/mainTest.cpp.o
  /home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
  /home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
  /home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
+ /home/pi/Desktop/DrawingRobot_1.0/include/define.h
  /home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+ /home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
  /home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
  /home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
  /home/pi/Desktop/DrawingRobot_1.0/src/mainTest.cpp

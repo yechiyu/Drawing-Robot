@@ -23,6 +23,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/calPosition.dir/DependInfo.cmake"
   "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/movetoTarget.dir/DependInfo.cmake"
   "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/processImages.dir/DependInfo.cmake"
+  "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/pixtoMeter.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

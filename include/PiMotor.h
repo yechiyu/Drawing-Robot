@@ -10,7 +10,7 @@ class PiMotor {
    private:
       int fPin;
       int rPin;
-      bool DEBUG = false;
+      bool DEBUG = true;
    
   public:
       PiMotor(int, int);

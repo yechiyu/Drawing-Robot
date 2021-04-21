@@ -9,8 +9,7 @@
 using namespace std;
 using namespace cv;
 
-class processImages {
-    public:
-        int process();
-};
+
+int process();
+
 #endif

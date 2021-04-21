@@ -85,6 +85,7 @@ mainTest: libcontrolMotor.a
 mainTest: libcalPosition.a
 mainTest: libmovetoTarget.a
 mainTest: libprocessImages.a
+mainTest: libpixtoMeter.a
 mainTest: /usr/local/lib/libopencv_dnn.so.3.4.13
 mainTest: /usr/local/lib/libopencv_highgui.so.3.4.13
 mainTest: /usr/local/lib/libopencv_ml.so.3.4.13

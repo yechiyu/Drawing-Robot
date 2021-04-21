@@ -9,6 +9,7 @@ add_library(controlMotor src/controlMotor.cpp src/PiMotor.cpp src/reDecoder.cpp)
 add_library(calPosition src/calPosition.cpp)
 add_library(movetoTarget src/movetoTarget.cpp)
 add_library(processImages src/processImages.cpp)
+add_library(pixtoMeter src/pixtoMeter.cpp)
 
 target_include_directories(mainTest PUBLIC
 	${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -28,6 +29,7 @@ target_link_libraries(mainTest PUBLIC
 	calPosition
 	movetoTarget
 	processImages
+	pixtoMeter
 )
 
 add_compile_options(-Wall -std=c++11 -O2)

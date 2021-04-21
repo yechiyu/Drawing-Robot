@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpixtoMeter.a  CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o
+/usr/bin/ranlib libpixtoMeter.a

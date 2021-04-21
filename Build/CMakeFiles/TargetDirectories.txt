@@ -1,4 +1,5 @@
 /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/rebuild_cache.dir
+/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/pixtoMeter.dir
 /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/processImages.dir
 /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/PiMotor.dir
 /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/edit_cache.dir
