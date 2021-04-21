@@ -7,7 +7,7 @@ using namespace std;
 
 class calPosition {
     private:       
-        double Base = 0.535;  // the distance between the two pulleys（0.535）
+        double Base = 0.575;  // the distance between the two pulleys（0.535）
         double r_spool = 0.0045;    //the radius of the spool
         double Larm = 0.075;     
         int countsPerRevolution = 1200;     // the gear ratio is 100, the encoder spec are 12 counts per revolution

@@ -50,10 +50,10 @@ void MotorR_Tread()
 int main() 
 {  
     pi.process();
-    double L1 = 0.29; //the distances between the motors and the pulley（left）
-    double L2 = 0.29; //the distances between the motors and the pulley（right）
+    double L1 = 0.275; //the distances between the motors and the pulley（left）
+    double L2 = 0.275; //the distances between the motors and the pulley（right）
     
-    int speeds = 70;
+    int speeds = 90;
     bool dir1,dir2;
     double speed1,speed2;
     // string url = "../img/1.jpg";
@@ -78,11 +78,12 @@ int main()
     // drawing
     string Y,X;
     ifstream fin("originalData.txt"); 
-    const int LINE_LENGTH = 100; 
+    const int LINE_LENGTH = 437; 
     char str[LINE_LENGTH];  
     char *p;
 	  const char *delim = " ";
     int m =0;
+    ofstream fout("newData.txt");
     while( fin.getline(str,LINE_LENGTH) )
     {    
         cout <<"--------------------------"<< m <<"--------------------------"<< endl;
@@ -101,11 +102,10 @@ int main()
         cout << "xPix:" << xPix << endl;
         cout << "yPix:" << yPix << endl;
 
-
-        double fraction = 0.3;
-
-        double xLim[2] = {0.06,0.495};
-        double yLim[2] = {0.13,0.51};
+        double xLim[2] = {0.1,0.475};
+        double yLim[2] = {0.2,0.46};
+    
+        double fraction = 0.6;
 
         double xLimPix[2] = {24,460}; // obatin from the pic
         double yLimPix[2] = {51,452};
@@ -125,9 +125,6 @@ int main()
         double xScaleFactor = fraction*xRangeM/xRangePix;
         double yScaleFactor = fraction*yRangeM/yRangePix;
 
-        cout <<"xScaleFactor:"<< xScaleFactor << endl;
-        cout <<"yScaleFactor:"<< yScaleFactor << endl;
-        
         double pix2M = std::min(xScaleFactor,yScaleFactor);
         cout << pix2M << endl;
         if(pix2M == NAN){
@@ -139,19 +136,22 @@ int main()
         centerMeters[1] = yMinM + yRangeM/2;
 
         double drawingOriginM[2];
-        drawingOriginM[0] = centerMeters[0] - pix2M*xRangeM/2;
-        drawingOriginM[1] = centerMeters[1] - pix2M*yRangeM/2;
+        drawingOriginM[0] = centerMeters[0] - pix2M*xRangePix/2;
+        drawingOriginM[1] = centerMeters[1] - pix2M*yRangePix/2;
 
-        int n; //the length of data
-        double segmentsMeters[n][2] = {0};
+        int n = 437;
+        double segmentsMeters[437][2] = {0};// ?
         int nSegments = n;
-
+        
+       
         // double coordsPix = fliplr(coordsPix)
         double coorsMemterX = pix2M*(xPix - xMinPix) + drawingOriginM[0];
-        double coorsMemterY = pix2M*(yPix- yMinPix) + drawingOriginM[1];
-        cout << "coorsMemterX:" << coorsMemterX << endl;
-        cout << "coorsMemterY:" << coorsMemterY << endl;
+        double coorsMemterY = pix2M*(yPix - yMinPix) + drawingOriginM[1];
 
+        cout << "Traget X:" << coorsMemterX << endl;
+        cout << "Traget Y:" << coorsMemterY << endl;
+        fout << coorsMemterX << "," << coorsMemterY << endl;
+        
         targetX = coorsMemterX;
         targetY = coorsMemterY;
         // cout << "Target Y: " << targetY << endl;
@@ -192,9 +192,9 @@ int main()
 
         // control the robot
         if(targetCounts1 > 0){
-            dir1 = 1;
-        }else{
             dir1 = 0;
+        }else{
+            dir1 = 1;
         }
         if(targetCounts2 > 0){
             dir2 = 1;
@@ -212,12 +212,13 @@ int main()
         cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
         if (speed1>255) speed1=255;
         if (speed2>255) speed2=255;
-        // left_motor.run_left(int(speed1),dir1);
-        // right_motor.run_right(int(speed2),dir2);
-        // std::thread t1(&MotorL_Tread);
-        // std::thread t2(&MotorR_Tread);
-        // t1.join(); 
-        // t2.join();
+        left_motor.run_left(int(speed1),dir1);
+        right_motor.run_right(int(speed2),dir2);
+        std::thread t1(&MotorL_Tread);
+        std::thread t2(&MotorR_Tread);
+        t1.join(); 
+        t2.join();
+        // // gpioTerminate(); 
     }
     gpioTerminate(); 
 }
