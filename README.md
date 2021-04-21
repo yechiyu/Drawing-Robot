@@ -77,6 +77,10 @@ location ~ \.php$ {
 * `git clone https://github.com/yechiyu/Drawing-Robot.git`
 * `cd Drawing-Robot`
 
+### Open the socket listening port
+* `cd socket`
+* `sudo ./server 8080`
+
 # Author
   <ul>
     <li><a href="https://github.com/Jin-Tao-208/">Jin Tao</a></li>
