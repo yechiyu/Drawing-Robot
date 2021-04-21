@@ -31,8 +31,8 @@ TRIGONOMETRY
 
 # Drawing Robot picture
 <div align="center" >
-  <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/pic5.jpg" width="300"> 
-  <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/pic5.jpg" width="300"> 
+  <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/R1.jpg" width="300"> 
+  <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/R2.jpg" width="300"> 
 </div>
 
 # Equipment assembly
