@@ -29,6 +29,12 @@ TRIGONOMETRY
 
 ![alt DC motor and servo motor](https://github.com/yechiyu/Drawing-Robot/blob/main/picture/1.jpg)
 
+# Drawing Robot picture
+<div align="center" >
+  <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/R1.jpg" width="300"> 
+  <img src="https://github.com/yechiyu/Drawing-Robot/blob/main/picture/R2.jpg" width="300"> 
+</div>
+
 # Equipment assembly
 
 ## The operating environment
