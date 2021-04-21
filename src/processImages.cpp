@@ -2,18 +2,18 @@
   
 int process()
 {
- Mat src = imread("../img/1.jpg", 0);
-//  imshow("src", src);
+ Mat src = imread("../img/H.jpg", 0);
+ imshow("src", src);
   
  Mat dst;
  threshold(src, dst, 100, 255, CV_THRESH_BINARY_INV); //二值化
-//  imshow("dst", dst);
+ imshow("dst", dst);
   
  int nRows = dst.rows;
  int nCols = dst.cols;
 
-//  cout <<"nRows:"<< nRows << endl;
-//  cout <<"nCols:"<< nCols << endl;
+ cout <<"nRows:"<< nRows << endl;
+ cout <<"nCols:"<< nCols << endl;
   
  ofstream fout;
  fout.open("originalData.txt");

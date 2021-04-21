@@ -2,7 +2,7 @@
 
 
         
-int speeds = 50;
+int speeds = 40;
 bool dir1,dir2;
 double speed1,speed2;
         // string url = "../img/1.jpg";
@@ -16,8 +16,8 @@ double targetY;  // target y
 double currrentX, currrentY, initialX, initialY;
 int main() 
 {  
-    double L1 = 0.260; //the distances between the motors and the pulley（left）
-    double L2 = 0.250; //the distances between the motors and the pulley（right）
+    double L1 = 0.360; //the distances between the motors and the pulley（left）
+    double L2 = 0.360; //the distances between the motors and the pulley（right）
     process();
     pixToM();
     // intial position
@@ -28,7 +28,8 @@ int main()
     // Drawing start 
     string Y,X;
     ifstream fin("newData.txt"); 
-    const int LINE_LENGTH = 437; 
+    cout <<"!!!!!"<< endl;
+    const int LINE_LENGTH = 311; 
     char str[LINE_LENGTH];  
     char *p;
 	  const char *delim = " ";
@@ -48,8 +49,8 @@ int main()
         targetX = stod(X);
         targetY = stod(Y);
 
-        // cout << "Target X: " << targetX << endl;
-        // cout << "Target Y: " << targetY << endl;
+        cout << "Target X: " << targetX << endl;
+        cout << "Target Y: " << targetY << endl;
 
         // current position
         if(counts1==0 && counts2==0){
@@ -69,8 +70,8 @@ int main()
         targetCounts1 = result[0];
         targetCounts2 = result[1];
 
-        // cout << "targetCounts1:" << targetCounts1 << endl;
-        // cout << "targetCounts2:" << targetCounts2 << endl;
+        cout << "targetCounts1:" << targetCounts1 << endl;
+        cout << "targetCounts2:" << targetCounts2 << endl;
 
         counts1 = targetCounts1;
         counts2 = targetCounts2;
@@ -109,7 +110,7 @@ int main()
         {
           fprintf(stderr, "igpio initialisation is okey.\n\r");
         }
-        // cout << "!!!!speed" << df.speed1 << "," << df.speed2 <<endl;
+        cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
         
         // run
         

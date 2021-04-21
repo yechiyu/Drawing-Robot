@@ -26,7 +26,7 @@ void MotorL_Tread()
       // cout<<"b= "<<targetCounts1<<endl;
       while(abs(pos[0]) < abs(targetCounts1))
       {
-        // cout<<"l= "<<pos[0]<<endl;
+        cout<<"l= "<<pos[0]<<endl;
         usleep(10000);//5 seconds
       };
       left_motor.stop_left();
@@ -34,6 +34,7 @@ void MotorL_Tread()
       usleep(100000);
       Pi_servo(1500);
       usleep(100000);
+      cout<<"Finishing!!!!L"<<endl;
     }
 
 void MotorR_Tread()
@@ -41,7 +42,7 @@ void MotorR_Tread()
       // std::lock_guard<std::mutex> locker(x);
       while(abs(pos[1]) < abs(targetCounts2))
       {
-        // cout<<"r= "<<pos[1]<<endl;
+        cout<<"r= "<<pos[1]<<endl;
         usleep(10000);//5 seconds
       };
       right_motor.stop_right();
@@ -49,6 +50,7 @@ void MotorR_Tread()
       usleep(100000);
       Pi_servo(1500);
       usleep(100000);
+      cout<<"Finishing!!!!R"<<endl;
    }
 
 

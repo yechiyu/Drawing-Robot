@@ -5,7 +5,7 @@
      // drawing
     string Y,X;
     ifstream fin("originalData.txt"); 
-    const int LINE_LENGTH = 437; 
+    const int LINE_LENGTH = 311; 
     char str[LINE_LENGTH];  
     char *p;
 	  const char *delim = " ";
@@ -34,8 +34,8 @@
     
         double fraction = 0.6;
 
-        double xLimPix[2] = {24,460}; // obatin from the pic
-        double yLimPix[2] = {51,452};
+        double xLimPix[2] = {21,331}; // obatin from the pic
+        double yLimPix[2] = {16,314};
 
         double xMinM = xLim[0];
         double yMinM = yLim[0];
@@ -75,6 +75,6 @@
         double coorsMemterX = pix2M*(xPix - xMinPix) + drawingOriginM[0];
         double coorsMemterY = pix2M*(yPix - yMinPix) + drawingOriginM[1];
 
-        fout << coorsMemterX << "," << coorsMemterY << endl;
+        fout << coorsMemterX << " " << coorsMemterY << endl;
     }
  }
