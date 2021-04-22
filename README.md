@@ -81,6 +81,9 @@ location ~ \.php$ {
 * `cd socket`
 * `sudo ./server 8080`
 
+### Open the socket listening port
+* main sites: `https:/IP/Web/page/moblie.html`
+
 # Author
   <ul>
     <li><a href="https://github.com/Jin-Tao-208/">Jin Tao</a></li>
