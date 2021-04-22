@@ -10,7 +10,7 @@ move_uploaded_file($file, $path . $fileName);
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 if ($socket < 0) {
   echo "socket_create() failed: reason: " . socket_strerror($socket) . "\n";
-} 
+}
 
 $result = socket_connect($socket, $ip, $port);
 if ($result < 0) {

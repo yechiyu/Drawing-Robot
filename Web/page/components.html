@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="../css/intro.css">
+
+<div id="intro-title">
+    <div id="intro-title-icon" data-send="../page/profile.html"></div>
+    <div id="intro-title-text">components</div>
+</div>
+<div id="intro-content">
+    <a href="https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052740158">Raspberry Pi 4 Model B</a>
+    <a href="https://thepihut.com/products/raspberry-pi-psu-uk?variant=20064004505662">Official UK Raspberry Pi 4 Power Supply (5.1V 3A)</a>
+    <a href="https://thepihut.com/products/noobs-preinstalled-sd-card?variant=20649315598398">'NOOBS' Preinstalled Micro SD Card (Latest v3.4.0)</a>
+    <a href="https://thepihut.com/products/usb-2-0-microsd-card-reader-microsd-to-usb?variant=26720977160">USB 2.0 MicroSD Card Reader (MicroSD to USB)</a>
+    <a href="https://thepihut.com/products/premium-female-female-jumper-wires-20-x-6-150mm?variant=27739698449">Premium Female/Female Jumper Wires - 20 x 6" (150mm)</a>
+    <a href="https://thepihut.com/products/raspberry-pi-motor-driver-board?variant=32051314589758">Raspberry Pi Motor Driver Board</a>
+    <div>3D printing model</div>
+</div>
+
+<script>
+
+    $("#intro-title-icon").click(function(){
+        $("#interface").load($(this).data("send"), function(){
+        });
+
+        $.ajax({
+            type:"post",
+            url:"../page/profile.php",
+            dataType:"html",
+            success:function(data){
+                $("#profile-sys-cpu").html(data);
+            }
+        })
+    });
+
+
+</script>

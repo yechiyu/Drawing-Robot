@@ -19,8 +19,8 @@
             </div>
             <div class="directions-line1 border">
                 <img src="../img/left.svg" alt="" class="ctyDir">
-                <img src="../img/stop.svg" id="stop" alt="" class="ctyDir">
-                <img src="../img/play.svg" id="play" alt="" class="ctyDir" style="display: none">
+                <img src="../img/stop1.svg" id="stop" alt="" class="ctyDir">
+                <img src="../img/play1.svg" id="play" alt="" class="ctyDir" style="display: none">
                 <img src="../img/right.svg" alt="" class="ctyDir">
             </div>
             <div class="directions-line border">
@@ -59,9 +59,9 @@
     var mediaOpts = {
         audio: false,
         video: true,
-        video: { facingMode: "environment"} // 或者 "user"
+        video: { facingMode: "environment"} // or "user"
         // video: { width: 1280, height: 720 }
-        // video: { facingMode: { exact: "environment" } }// 或者 "user"
+        // video: { facingMode: { exact: "environment" } }// or "user"
     }
 
     // The callback
@@ -100,14 +100,95 @@
     }
 
     $("#stop").click(function(){
+
         $("#stop").hide();
-        $("#play").show()
+        $("#play").show();
+
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnStopVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+
+
     });
 
     $("#play").click(function(){
         $("#play").hide();
-        $("#stop").show()
+        $("#stop").show();
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnPlayVal").val(),
+            },
+            success : function (data) {
+            },
+        });
     });
+
+
+
+    $("#turnUp").click(function(){
+
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnUpVal").val(),
+            },
+            success : function (data) {
+                alert("returen!");
+            },
+        });
+    });
+
+    $("#turnLeft").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnLeftVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
+    $("#turnRight").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnRightVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
+    $("#turnDown").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnDownVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
 
 </script>
 
