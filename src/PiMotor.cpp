@@ -90,6 +90,7 @@ void PiMotor::Run_right (int Speed_R,bool Direction) {
     gpioSetMode(12, PI_ALT0);
     gpioWrite(12, 1);// Sets a pull-up.
     gpioSetMode(D, PI_OUTPUT);
+    gpioSetPWMrange(D, 2000);
     gpioPWM(D,Speed_R);
     
     if (DEBUG) {
@@ -129,6 +130,7 @@ void PiMotor::Run_left (int Speed_L,bool Direction) {
     gpioSetMode(26, PI_ALT0);
     gpioWrite(26, 1);// Sets a pull-up.
     gpioSetMode(D, PI_OUTPUT);
+    gpioSetPWMrange(D, 2000);
     gpioPWM(D, Speed_L);
 
     if (DEBUG) {

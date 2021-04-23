@@ -4,13 +4,16 @@ int pos[2]={0,0};
 int callback_left(int way)
 {
    pos[0] += way;
+   cout<<"l= "<<pos[0]<<endl;
    return pos[0];
 }
 
 int callback_right(int way)
 {
    pos[1] += way;
+   cout<<"r= "<<pos[1]<<endl;
    return pos[1];
+  
 }
 
 void control::run_left(int speed_L,bool direction)   //int , int , re_decoderCB_t ,int , int ,int ,bool
@@ -22,7 +25,8 @@ void control::run_left(int speed_L,bool direction)   //int , int , re_decoderCB_
 void control::run_right(int speed_R,bool direction)   //int , int , re_decoderCB_t ,int , int ,int ,bool
 {
    PiMotor::Run_right(speed_R,direction);
-   re_decoder::encoder_right(16,19,callback_right);
+   re_decoder::encoder_right(23,24,callback_right);
+  
 }
 
 void control::stop_left()

@@ -5,7 +5,7 @@
      // drawing
     string Y,X;
     ifstream fin("PixData.txt"); 
-    const int LINE_LENGTH = 2866;
+    const int LINE_LENGTH = 1190;
     char str[LINE_LENGTH];  
     char *p;
 	const char *delim = ",";
@@ -31,13 +31,13 @@
         // cout << "xPix:" << xPix << endl;
         // cout << "yPix:" << yPix << endl;
 
-        double xLim[2] = {0.06,0.569};
-        double yLim[2] = {0.2,0.46};
+        double xLim[2] = {0.2,0.47};
+        double yLim[2] = {0.2,0.47};
     
-        double fraction = 0.9;
+        double fraction = 0.8;
 
-        double xLimPix[2] = {9,750}; // obatin from the pic
-        double yLimPix[2] = {0,416};
+        double xLimPix[2] = {15,209}; // obatin from the pic
+        double yLimPix[2] = {19,205};
 
         double xMinM = xLim[0];
         double yMinM = yLim[0];

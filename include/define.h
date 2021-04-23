@@ -17,7 +17,7 @@ extern int pos[2];
 int targetCounts1, targetCounts2;
 double *result;
 control left_motor(17,27,callback_left,20,21);
-control right_motor(16,19,callback_right,6,13);
+control right_motor(23,24,callback_right,6,13);
 
 
 void MotorL_Tread()
@@ -26,7 +26,7 @@ void MotorL_Tread()
       // cout<<"b= "<<targetCounts1<<endl;
       while(abs(pos[0]) < abs(targetCounts1))
       {
-        cout<<"l= "<<pos[0]<<endl;
+        // cout<<"l= "<<pos[0]<<endl;
         usleep(10000);//5 seconds
       };
       left_motor.stop_left();
