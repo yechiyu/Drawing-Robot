@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
-string
+/home/pi/Drawing-Robot/include/processImages.h
+opencv2/opencv.hpp
 -
 iostream
 -
-opencv2/opencv.hpp
+math.h
 -
 fstream
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/src/processImages.cpp
+/home/pi/Drawing-Robot/src/processImages.cpp
 ../include/processImages.h
-/home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
+/home/pi/Drawing-Robot/include/processImages.h
 

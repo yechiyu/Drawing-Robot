@@ -1,48 +1,48 @@
 #include "../include/processImages.h"
   
-int process()
-{
- Mat src = imread("../img/10.png", 0);
- imshow("src", src);
-  
- Mat dst;
- threshold(src, dst, 100, 255, CV_THRESH_BINARY_INV); //二值化
- imshow("dst", dst);
-  
- int nRows = dst.rows;
- int nCols = dst.cols;
+Mat src, dst;
+const char* output_win = "findcontours-demo";
+int threshold_value = 100;
+int threshold_max = 255;
+RNG rng;
 
- cout <<"nRows:"<< nRows << endl;
- cout <<"nCols:"<< nCols << endl;
-  
- ofstream fout;
- fout.open("originalData.txt");
- int i = 0;
- //按列扫描，求像素和，由于是二值后的图片，没有线条时，该列的像素和为0；扫描到线条时像素大于0
- for(int w = 0; w < nCols; w++)
- {
-	int sum = 0;
-	
-	for(int h = 0; h < nRows; h++)
-	{
-		uchar *pRow = dst.ptr<uchar>(h, w); //该列中每个像素的地址
-		sum += (int)(*pRow);
-		
-		if(sum > 0) //到达了线条的上侧，像素和大于0
-		{
-			cout << "找到了线条点"<< i << endl;  //从上往下找，由于线条很细，目前只判断上边界。
-			cout << ",X = " << w << ", Y = " << h << endl; 
-			fout << w << " " << h << endl; //控制台会丢失数据，存到文本不会丢失
-			sum = 0;
-			i++;
-			break;
-		}
-	}
+int process() {
+ src = imread("../img/heart.png");
+ if (src.empty()) {
+  printf("could not load image...\n");
+  return -1;
  }
+ namedWindow("input-image", CV_WINDOW_AUTOSIZE);
+ namedWindow(output_win, CV_WINDOW_AUTOSIZE);
+ imshow("input-image", src);
+ cvtColor(src, src, CV_BGR2GRAY);
 
- fout.close();
- waitKey();
- cout << endl;
- system("pause");
+ const char* trackbar_title = "Threshold Value:";
+ createTrackbar(trackbar_title, output_win, &threshold_value, threshold_max, Demo_Contours);
+ Demo_Contours(0, 0);
+
+ waitKey(0);
  return 0;
+}
+
+void Demo_Contours(int, void*) {
+ ofstream fout("PixData.txt");
+ Mat canny_output;
+ vector<vector<Point>> contours;
+ vector<Vec4i> hierachy;
+ Canny(src, canny_output, threshold_value, threshold_value * 2, 3, false);
+ findContours(canny_output, contours, hierachy, RETR_TREE, CHAIN_APPROX_SIMPLE, Point(0, 0));
+ dst = Mat::zeros(src.size(), CV_8UC3);
+ RNG rng(12345);
+ for (size_t i = 0; i < contours.size(); i++) {
+  Scalar color = Scalar(rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255));
+  drawContours(dst, contours, i, color, 2, 8, hierachy, 0, Point(0, 0));
+ }
+ for (int i = 0; i<contours.size(); i++){
+  for(int j = 0; j < contours[i].size(); j++){
+//    cout << contours[i][j]<<endl;
+   fout << contours[i][j]<<endl;
+  } 
+ }
+ imshow(output_win, dst);
 }

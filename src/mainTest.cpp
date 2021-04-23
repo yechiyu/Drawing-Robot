@@ -2,7 +2,7 @@
 
 
         
-int speeds = 70;
+int speeds = 50;
 bool dir1,dir2;
 double speed1,speed2;
         // string url = "../img/1.jpg";
@@ -18,7 +18,7 @@ int main()
 {  
     double L1 = 0.275; //the distances between the motors and the pulley（left）
     double L2 = 0.275; //the distances between the motors and the pulley（right）
-    // process();
+    process();
     pixToM();
     // intial position
     result = cp.initialPosition(L1,L2);
@@ -36,7 +36,7 @@ int main()
     int m =0;
     while( fin.getline(str,LINE_LENGTH) )
     {    
-        // cout <<"--------------------------"<< m <<"--------------------------"<< endl;
+        cout <<"--------------------------"<< m <<"--------------------------"<< endl;
         m++;
         cout << str << endl;
         p = strtok(str, delim);
@@ -49,8 +49,8 @@ int main()
         targetX = stod(X);
         targetY = stod(Y);
 
-        // cout << "Target X: " << targetX << endl;
-        // cout << "Target Y: " << targetY << endl;
+        cout << "Target X: " << targetX << endl;
+        cout << "Target Y: " << targetY << endl;
 
         // current position
         if(counts1==0 && counts2==0){
@@ -61,8 +61,8 @@ int main()
           currrentX = result[0];
           currrentY = result[1];
         }
-        // cout << "Current X: " << result[0] << endl;
-        // cout << "Current Y: " << result[1] << endl;  
+        cout << "Current X: " << result[0] << endl;
+        cout << "Current Y: " << result[1] << endl;  
 
         // x,y to counts
         result = mt.calCounts(targetX,targetY,currrentX,currrentY);
@@ -70,8 +70,8 @@ int main()
         targetCounts1 = result[0];
         targetCounts2 = result[1];
 
-        // cout << "targetCounts1:" << targetCounts1 << endl;
-        // cout << "targetCounts2:" << targetCounts2 << endl;
+        cout << "targetCounts1:" << targetCounts1 << endl;
+        cout << "targetCounts2:" << targetCounts2 << endl;
 
         counts1 = targetCounts1;
         counts2 = targetCounts2;
@@ -112,7 +112,7 @@ int main()
         }
         cout << "!!!!speed" << speed1 << "," << speed2 <<endl;
         
-        //run
+        // run
         
         left_motor.run_left(int(speed1),dir1);
         right_motor.run_right(int(speed2),dir2);

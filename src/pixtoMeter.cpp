@@ -4,37 +4,40 @@
  void pixToM(){
      // drawing
     string Y,X;
-    ifstream fin("../dataTest/data.txt"); 
-    const int LINE_LENGTH = 380;
+    ifstream fin("PixData.txt"); 
+    const int LINE_LENGTH = 2866;
     char str[LINE_LENGTH];  
     char *p;
-	  const char *delim = " ";
+	const char *delim = ",";
+    const char *delim1 = "[";
+    const char *delim2 = "]";
     int m =0;
-    ofstream fout("newData.txt");
+    ofstream fout("MeterData.txt");
     while( fin.getline(str,LINE_LENGTH) )
     {    
-        cout <<"--------------------------"<< m <<"--------------------------"<< endl;
         m++;
-        p = strtok(str, delim);
+        p = strtok(str, delim1);
+        p = strtok(p, delim2);
+        p = strtok(p, delim);
         X = p;
         while(p) {
               Y = p;
               p = strtok(NULL, delim);
         }
-        cout <<"X:"<< X << endl;
-        cout <<"Y:"<< Y << endl;
+        // cout <<"X:"<< X << endl;
+        // cout <<"Y:"<< Y << endl;
         double xPix = stod(X);
         double yPix = stod(Y);
         // cout << "xPix:" << xPix << endl;
         // cout << "yPix:" << yPix << endl;
 
-        double xLim[2] = {0.06,0.480};
+        double xLim[2] = {0.06,0.569};
         double yLim[2] = {0.2,0.46};
     
-        double fraction = 0.6;
+        double fraction = 0.9;
 
-        double xLimPix[2] = {244,397}; // obatin from the pic
-        double yLimPix[2] = {146,275};
+        double xLimPix[2] = {9,750}; // obatin from the pic
+        double yLimPix[2] = {0,416};
 
         double xMinM = xLim[0];
         double yMinM = yLim[0];
@@ -64,14 +67,12 @@
         double drawingOriginM[2];
         drawingOriginM[0] = centerMeters[0] - pix2M*xRangePix/2;
         drawingOriginM[1] = centerMeters[1] - pix2M*yRangePix/2;
-
-        int n = 380;
-        double segmentsMeters[380][2] = {0};// 
-        int nSegments = n;
         
         double coorsMemterX = pix2M*(xPix - xMinPix) + drawingOriginM[0];
         double coorsMemterY = pix2M*(yPix - yMinPix) + drawingOriginM[1];
 
         fout << coorsMemterX << " " << coorsMemterY << endl;
+        // fout << coorsMemterX << endl;
+        // fout << coorsMemterY << endl;
     }
  }

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/DrawingRobot_1.0/src/movetoTarget.cpp" "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o"
+  "/home/pi/Drawing-Robot/src/movetoTarget.cpp" "/home/pi/Drawing-Robot/Build/CMakeFiles/movetoTarget.dir/src/movetoTarget.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

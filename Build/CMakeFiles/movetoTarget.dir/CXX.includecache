@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+/home/pi/Drawing-Robot/include/movetoTarget.h
 iostream
 -
 cmath
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/src/movetoTarget.cpp
+/home/pi/Drawing-Robot/src/movetoTarget.cpp
 ../include/movetoTarget.h
-/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+/home/pi/Drawing-Robot/include/movetoTarget.h
 

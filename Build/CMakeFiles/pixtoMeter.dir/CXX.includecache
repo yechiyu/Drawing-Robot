@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+/home/pi/Drawing-Robot/include/pixtoMeter.h
 string
 -
 iostream
@@ -18,7 +18,7 @@ string.h
 cmath
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp
+/home/pi/Drawing-Robot/src/pixtoMeter.cpp
 ../include/pixtoMeter.h
-/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+/home/pi/Drawing-Robot/include/pixtoMeter.h
 

@@ -1,6 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <math.h>
+#include <fstream>
 
 using namespace std;
 using namespace cv;
@@ -12,7 +13,7 @@ int threshold_max = 255;
 RNG rng;
 void Demo_Contours(int, void*);
 int main(int argc, char** argv) {
- src = imread("dispa.jpg");
+ src = imread("../img/11.png");
  if (src.empty()) {
   printf("could not load image...\n");
   return -1;
@@ -37,6 +38,8 @@ void Demo_Contours(int, void*) {
  Canny(src, canny_output, threshold_value, threshold_value * 2, 3, false);
  findContours(canny_output, contours, hierachy, RETR_TREE, CHAIN_APPROX_SIMPLE, Point(0, 0));
 
+
+ ofstream fout("newData.txt");
  dst = Mat::zeros(src.size(), CV_8UC3);
  RNG rng(12345);
  for (size_t i = 0; i < contours.size(); i++) {
@@ -46,6 +49,7 @@ void Demo_Contours(int, void*) {
  for (int i = 0; i<contours.size(); i++){
   for(int j = 0; j < contours[i].size(); j++){
    cout << contours[i][j]<<endl;
+   fout << contours[i][j]<<endl;
   } 
  }
  imshow(output_win, dst);

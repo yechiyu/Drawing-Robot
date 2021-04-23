@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/DrawingRobot_1.0
+CMAKE_SOURCE_DIR = /home/pi/Drawing-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/DrawingRobot_1.0/Build
+CMAKE_BINARY_DIR = /home/pi/Drawing-Robot/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pixtoMeter.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/pixtoMeter.dir/flags.make
 
 CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o: CMakeFiles/pixtoMeter.dir/flags.make
 CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o: ../src/pixtoMeter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o -c /home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o -c /home/pi/Drawing-Robot/src/pixtoMeter.cpp
 
 CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp > CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Drawing-Robot/src/pixtoMeter.cpp > CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.i
 
 CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp -o CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Drawing-Robot/src/pixtoMeter.cpp -o CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.s
 
 # Object files for target pixtoMeter
 pixtoMeter_OBJECTS = \
@@ -80,7 +80,7 @@ pixtoMeter_EXTERNAL_OBJECTS =
 libpixtoMeter.a: CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o
 libpixtoMeter.a: CMakeFiles/pixtoMeter.dir/build.make
 libpixtoMeter.a: CMakeFiles/pixtoMeter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpixtoMeter.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpixtoMeter.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/pixtoMeter.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pixtoMeter.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/pixtoMeter.dir/clean:
 .PHONY : CMakeFiles/pixtoMeter.dir/clean
 
 CMakeFiles/pixtoMeter.dir/depend:
-	cd /home/pi/Desktop/DrawingRobot_1.0/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/pixtoMeter.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Drawing-Robot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Drawing-Robot /home/pi/Drawing-Robot /home/pi/Drawing-Robot/Build /home/pi/Drawing-Robot/Build /home/pi/Drawing-Robot/Build/CMakeFiles/pixtoMeter.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pixtoMeter.dir/depend
 

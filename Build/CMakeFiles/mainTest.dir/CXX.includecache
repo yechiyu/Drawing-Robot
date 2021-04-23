@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
+/home/pi/Drawing-Robot/include/PiMotor.h
 pigpio.h
 -
 mutex
@@ -14,17 +14,17 @@ mutex
 iostream
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
+/home/pi/Drawing-Robot/include/calPosition.h
 iostream
 -
 cmath
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
+/home/pi/Drawing-Robot/include/controlMotor.h
 ../include/PiMotor.h
-/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
+/home/pi/Drawing-Robot/include/PiMotor.h
 ../include/reDecoder.h
-/home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
+/home/pi/Drawing-Robot/include/reDecoder.h
 unistd.h
 -
 stdio.h
@@ -34,29 +34,29 @@ chrono
 functional
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/define.h
+/home/pi/Drawing-Robot/include/define.h
 ../include/calPosition.h
-/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
+/home/pi/Drawing-Robot/include/calPosition.h
 ../include/movetoTarget.h
-/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+/home/pi/Drawing-Robot/include/movetoTarget.h
 ../include/processImages.h
-/home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
+/home/pi/Drawing-Robot/include/processImages.h
 ../include/controlMotor.h
-/home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
+/home/pi/Drawing-Robot/include/controlMotor.h
 ../include/pixtoMeter.h
-/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+/home/pi/Drawing-Robot/include/pixtoMeter.h
 thread
 -
 stdlib.h
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/movetoTarget.h
+/home/pi/Drawing-Robot/include/movetoTarget.h
 iostream
 -
 cmath
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/pixtoMeter.h
+/home/pi/Drawing-Robot/include/pixtoMeter.h
 string
 -
 iostream
@@ -68,23 +68,23 @@ string.h
 cmath
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/processImages.h
-string
+/home/pi/Drawing-Robot/include/processImages.h
+opencv2/opencv.hpp
 -
 iostream
 -
-opencv2/opencv.hpp
+math.h
 -
 fstream
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
+/home/pi/Drawing-Robot/include/reDecoder.h
 pigpio.h
 -
 iostream
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/src/mainTest.cpp
+/home/pi/Drawing-Robot/src/mainTest.cpp
 ../include/define.h
-/home/pi/Desktop/DrawingRobot_1.0/include/define.h
+/home/pi/Drawing-Robot/include/define.h
 

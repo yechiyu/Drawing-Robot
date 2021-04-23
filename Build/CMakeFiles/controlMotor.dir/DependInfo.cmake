@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/DrawingRobot_1.0/src/PiMotor.cpp" "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o"
-  "/home/pi/Desktop/DrawingRobot_1.0/src/controlMotor.cpp" "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/controlMotor.dir/src/controlMotor.cpp.o"
-  "/home/pi/Desktop/DrawingRobot_1.0/src/reDecoder.cpp" "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o"
+  "/home/pi/Drawing-Robot/src/PiMotor.cpp" "/home/pi/Drawing-Robot/Build/CMakeFiles/controlMotor.dir/src/PiMotor.cpp.o"
+  "/home/pi/Drawing-Robot/src/controlMotor.cpp" "/home/pi/Drawing-Robot/Build/CMakeFiles/controlMotor.dir/src/controlMotor.cpp.o"
+  "/home/pi/Drawing-Robot/src/reDecoder.cpp" "/home/pi/Drawing-Robot/Build/CMakeFiles/controlMotor.dir/src/reDecoder.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

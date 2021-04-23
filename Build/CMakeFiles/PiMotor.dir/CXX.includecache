@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
+/home/pi/Drawing-Robot/include/PiMotor.h
 pigpio.h
 -
 mutex
@@ -14,7 +14,7 @@ mutex
 iostream
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/src/PiMotor.cpp
+/home/pi/Drawing-Robot/src/PiMotor.cpp
 ../include/PiMotor.h
-/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
+/home/pi/Drawing-Robot/include/PiMotor.h
 

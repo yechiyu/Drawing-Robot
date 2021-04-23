@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
+/home/pi/Drawing-Robot/include/PiMotor.h
 pigpio.h
 -
 mutex
@@ -14,11 +14,11 @@ mutex
 iostream
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
+/home/pi/Drawing-Robot/include/controlMotor.h
 ../include/PiMotor.h
-/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
+/home/pi/Drawing-Robot/include/PiMotor.h
 ../include/reDecoder.h
-/home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
+/home/pi/Drawing-Robot/include/reDecoder.h
 unistd.h
 -
 stdio.h
@@ -28,21 +28,21 @@ chrono
 functional
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
+/home/pi/Drawing-Robot/include/reDecoder.h
 pigpio.h
 -
 iostream
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/src/PiMotor.cpp
+/home/pi/Drawing-Robot/src/PiMotor.cpp
 ../include/PiMotor.h
-/home/pi/Desktop/DrawingRobot_1.0/include/PiMotor.h
+/home/pi/Drawing-Robot/include/PiMotor.h
 
-/home/pi/Desktop/DrawingRobot_1.0/src/controlMotor.cpp
+/home/pi/Drawing-Robot/src/controlMotor.cpp
 ../include/controlMotor.h
-/home/pi/Desktop/DrawingRobot_1.0/include/controlMotor.h
+/home/pi/Drawing-Robot/include/controlMotor.h
 
-/home/pi/Desktop/DrawingRobot_1.0/src/reDecoder.cpp
+/home/pi/Drawing-Robot/src/reDecoder.cpp
 ../include/reDecoder.h
-/home/pi/Desktop/DrawingRobot_1.0/include/reDecoder.h
+/home/pi/Drawing-Robot/include/reDecoder.h
 

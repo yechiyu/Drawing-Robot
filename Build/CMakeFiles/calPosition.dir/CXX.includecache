@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
+/home/pi/Drawing-Robot/include/calPosition.h
 iostream
 -
 cmath
 -
 
-/home/pi/Desktop/DrawingRobot_1.0/src/calPosition.cpp
+/home/pi/Drawing-Robot/src/calPosition.cpp
 ../include/calPosition.h
-/home/pi/Desktop/DrawingRobot_1.0/include/calPosition.h
+/home/pi/Drawing-Robot/include/calPosition.h
 

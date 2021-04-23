@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/Desktop/DrawingRobot_1.0
+CMAKE_SOURCE_DIR = /home/pi/Drawing-Robot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/Desktop/DrawingRobot_1.0/Build
+CMAKE_BINARY_DIR = /home/pi/Drawing-Robot/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/processImages.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/processImages.dir/flags.make
 
 CMakeFiles/processImages.dir/src/processImages.cpp.o: CMakeFiles/processImages.dir/flags.make
 CMakeFiles/processImages.dir/src/processImages.cpp.o: ../src/processImages.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/processImages.dir/src/processImages.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/processImages.dir/src/processImages.cpp.o -c /home/pi/Desktop/DrawingRobot_1.0/src/processImages.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/processImages.dir/src/processImages.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/processImages.dir/src/processImages.cpp.o -c /home/pi/Drawing-Robot/src/processImages.cpp
 
 CMakeFiles/processImages.dir/src/processImages.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/processImages.dir/src/processImages.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Desktop/DrawingRobot_1.0/src/processImages.cpp > CMakeFiles/processImages.dir/src/processImages.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Drawing-Robot/src/processImages.cpp > CMakeFiles/processImages.dir/src/processImages.cpp.i
 
 CMakeFiles/processImages.dir/src/processImages.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/processImages.dir/src/processImages.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Desktop/DrawingRobot_1.0/src/processImages.cpp -o CMakeFiles/processImages.dir/src/processImages.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Drawing-Robot/src/processImages.cpp -o CMakeFiles/processImages.dir/src/processImages.cpp.s
 
 # Object files for target processImages
 processImages_OBJECTS = \
@@ -80,7 +80,7 @@ processImages_EXTERNAL_OBJECTS =
 libprocessImages.a: CMakeFiles/processImages.dir/src/processImages.cpp.o
 libprocessImages.a: CMakeFiles/processImages.dir/build.make
 libprocessImages.a: CMakeFiles/processImages.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libprocessImages.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Drawing-Robot/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libprocessImages.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/processImages.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/processImages.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/processImages.dir/clean:
 .PHONY : CMakeFiles/processImages.dir/clean
 
 CMakeFiles/processImages.dir/depend:
-	cd /home/pi/Desktop/DrawingRobot_1.0/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0 /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build /home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/processImages.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Drawing-Robot/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Drawing-Robot /home/pi/Drawing-Robot /home/pi/Drawing-Robot/Build /home/pi/Drawing-Robot/Build /home/pi/Drawing-Robot/Build/CMakeFiles/processImages.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/processImages.dir/depend
 

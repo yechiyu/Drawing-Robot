@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pi/Desktop/DrawingRobot_1.0/include -I/usr/local/include/opencv/include -isystem /usr/local/include/opencv 
+CXX_INCLUDES = -I/home/pi/Drawing-Robot/include -I/usr/local/include/opencv/include -isystem /usr/local/include/opencv 
 

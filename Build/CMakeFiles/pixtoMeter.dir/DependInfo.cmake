@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/Desktop/DrawingRobot_1.0/src/pixtoMeter.cpp" "/home/pi/Desktop/DrawingRobot_1.0/Build/CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o"
+  "/home/pi/Drawing-Robot/src/pixtoMeter.cpp" "/home/pi/Drawing-Robot/Build/CMakeFiles/pixtoMeter.dir/src/pixtoMeter.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
