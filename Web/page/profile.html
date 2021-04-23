@@ -1,19 +1,26 @@
 <link rel="stylesheet" href="../css/profile.css">
 <div id="profile-title" class="border">
-    Drawing Robot
-</div>
-<div id="profile-author" class="border">
-    Author: Jin Tao, Qikai Yang and Jiaming Chen
+    <div id="profile-title-img"></div>
+    <div id="profile-title-text">Drawing Robot</div>
+    <div id="profile-title-version">Version 1.0</div>
 </div>
 <div id="profile-sys" class="border">
     <div id="profile-sys-time" class="border"></div>
     <div id="profile-sys-cpu" class="border">cpu:</div>
 </div>
-<div id="profile-pic">
-    <img src="../img/concept.jpg" alt="">
+<div id="profile-pic" class="profile-bt" data-send="../page/intro.html">
+    <div id="profile-pic-text">
+        Product introduction
+    </div>
+    <div id="profile-pic-icon"></div>
 </div>
-<div id="profile-info">
 
+<div id="profile-component" class="profile-bt" data-send="../page/components.html">
+
+    <div id="profile-component-text">
+        Product components
+    </div>
+    <div id="profile-component-icon"></div>
 </div>
 
 <script type="text/javascript">
@@ -31,4 +38,27 @@
         document.getElementById("profile-sys-time").innerHTML = nowTime;
     }
     setInterval("now()", 0);
+
+    $(function (){
+
+
+        $(".desktop-icon-set").click(function() {
+            $("#interface").load($(this).data("send"), function(){
+            });
+        });
+    })
+
+    $(function (){
+
+
+        $("#profile-pic").click(function() {
+            $("#interface").load($(this).data("send"), function(){
+            });
+        });
+
+        $("#profile-component").click(function() {
+            $("#interface").load($(this).data("send"), function(){
+            });
+        });
+    })
 </script>

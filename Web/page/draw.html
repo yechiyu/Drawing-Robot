@@ -3,11 +3,11 @@
 </div>
 
 <div id="controller" class="border">
-    <p>
-        <button onclick="openMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">open camera</button>
-        <button onclick="closeMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">close camera</button>
-<!--        <button onclick="drawMedia()" class="cameraBt border">截取</button>-->
-    </p>
+<!--    <p>-->
+<!--        <button onclick="openMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">open camera</button>-->
+<!--        <button onclick="closeMedia()" class="cameraBt border button round" style="height: 85%; width: 25%;">close camera</button>-->
+<!--&lt;!&ndash;        <button onclick="drawMedia()" class="cameraBt border">截取</button>&ndash;&gt;-->
+<!--    </p>-->
 
     <div id="directions" class="border">
         <div id="directions-circle" class="border">
@@ -16,8 +16,8 @@
             </div>
             <div class="directions-line1 border">
                 <img src="../img/left.svg" alt="" class="ctyDir">
-                <img src="../img/stop.svg" id="stop" alt="" class="ctyDir">
-                <img src="../img/play.svg" id="play" alt="" class="ctyDir" style="display: none">
+                <img src="../img/stop1.svg" id="stop" alt="" class="ctyDir">
+                <img src="../img/play1.svg" id="play" alt="" class="ctyDir" style="display: none">
                 <img src="../img/right.svg" alt="" class="ctyDir">
             </div>
             <div class="directions-line border">
@@ -35,23 +35,102 @@
     });
 
     $("#sidebar-exit").click(function(){
-        $("#sidebar").css("bottom","-150px");
+        $("#sidebar").css("bottom","-200px");
+    });
+
+    $("#sidebar-value").click(function(){
+        $("#sideValue").css("bottom","45%");
 
     });
 
     $("#stop").click(function(){
-        $("#sidebar").css("bottom","-150px");
 
-    });
-
-    $("#stop").click(function(){
         $("#stop").hide();
-        $("#play").show()
+        $("#play").show();
+
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnStopVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+
+
     });
 
     $("#play").click(function(){
         $("#play").hide();
-        $("#stop").show()
+        $("#stop").show();
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnPlayVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
+
+
+    $("#turnUp").click(function(){
+
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnUpVal").val(),
+            },
+            success : function (data) {
+                alert("returen!");
+            },
+        });
+    });
+
+    $("#turnLeft").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnLeftVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
+    $("#turnRight").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnRightVal").val(),
+            },
+            success : function (data) {
+            },
+        });
+    });
+
+    $("#turnDown").click(function(){
+        $.ajax({
+            type : "post",
+            url : "../page/moveCtrl.php",
+            dataType: "json",
+            data : {
+                "direction": $("#turnDownVal").val(),
+            },
+            success : function (data) {
+            },
+        });
     });
 
 
