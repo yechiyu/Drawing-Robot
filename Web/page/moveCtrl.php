@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 set_time_limit(0);
 
-$service_port = 8080;
-$address = "127.0.0.1";
+$port = 8080;
+$ip = "127.0.0.1";
 
 $direction = $_POST['direction'];
 

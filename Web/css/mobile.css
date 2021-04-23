@@ -21,9 +21,9 @@
     overflow: hidden;
 }
 
-.border{
-    border: 1px solid #dc143c;
-}
+/*.border{*/
+/*    border: 1px solid #dc143c;*/
+/*}*/
 
 #interface{
     height: 90%;
@@ -47,11 +47,12 @@
 #preview{
     height: 90%;
     width: 95%;
+    border: 1px dashed grey;
 }
 
 #sidebar{
     width: 100%;
-    height: 10%;
+    height: 20%;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
