@@ -7,14 +7,14 @@ int threshold_max = 255;
 RNG rng;
 
 int process() {
- src = imread("../img/heart.png");
+ src = imread("../img/star.png");
  if (src.empty()) {
   printf("could not load image...\n");
   return -1;
  }
- namedWindow("input-image", CV_WINDOW_AUTOSIZE);
- namedWindow(output_win, CV_WINDOW_AUTOSIZE);
- imshow("input-image", src);
+//  namedWindow("input-image", CV_WINDOW_AUTOSIZE);
+//  namedWindow(output_win, CV_WINDOW_AUTOSIZE);
+//  imshow("input-image", src);
  cvtColor(src, src, CV_BGR2GRAY);
 
  const char* trackbar_title = "Threshold Value:";
@@ -44,5 +44,5 @@ void Demo_Contours(int, void*) {
    fout << contours[i][j]<<endl;
   } 
  }
- imshow(output_win, dst);
+//  imshow(output_win, dst);
 }

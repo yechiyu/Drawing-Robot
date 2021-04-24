@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_20288/fast && /usr/bin/make -f CMakeFiles/cmTC_20288.dir/build.make CMakeFiles/cmTC_20288.dir/build
+Run Build Command(s):/usr/bin/make cmTC_00037/fast && /usr/bin/make -f CMakeFiles/cmTC_00037.dir/build.make CMakeFiles/cmTC_00037.dir/build
 make[1]: 进入目录“/home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_20288.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_20288.dir/src.c.o   -c /home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_20288
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20288.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_20288.dir/src.c.o  -o cmTC_20288 
-/usr/bin/ld: CMakeFiles/cmTC_20288.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_00037.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_00037.dir/src.c.o   -c /home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_00037
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00037.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_00037.dir/src.c.o  -o cmTC_00037 
+/usr/bin/ld: CMakeFiles/cmTC_00037.dir/src.c.o: in function `main':
 src.c:(.text+0x40): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x4c): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x5c): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_20288.dir/build.make:87：cmTC_20288] 错误 1
+make[1]: *** [CMakeFiles/cmTC_00037.dir/build.make:87：cmTC_00037] 错误 1
 make[1]: 离开目录“/home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp”
-make: *** [Makefile:121：cmTC_20288/fast] 错误 2
+make: *** [Makefile:121：cmTC_00037/fast] 错误 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_65f1a/fast && /usr/bin/make -f CMakeFiles/cmTC_65f1a.dir/build.make CMakeFiles/cmTC_65f1a.dir/build
+Run Build Command(s):/usr/bin/make cmTC_51d7d/fast && /usr/bin/make -f CMakeFiles/cmTC_51d7d.dir/build.make CMakeFiles/cmTC_51d7d.dir/build
 make[1]: 进入目录“/home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp”
-Building C object CMakeFiles/cmTC_65f1a.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_65f1a.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_65f1a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_65f1a.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_65f1a.dir/CheckFunctionExists.c.o  -o cmTC_65f1a  -lpthreads 
+Building C object CMakeFiles/cmTC_51d7d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_51d7d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_51d7d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51d7d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_51d7d.dir/CheckFunctionExists.c.o  -o cmTC_51d7d  -lpthreads 
 /usr/bin/ld: 找不到 -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_65f1a.dir/build.make:87：cmTC_65f1a] 错误 1
+make[1]: *** [CMakeFiles/cmTC_51d7d.dir/build.make:87：cmTC_51d7d] 错误 1
 make[1]: 离开目录“/home/pi/Drawing-Robot/Build/CMakeFiles/CMakeTmp”
-make: *** [Makefile:121：cmTC_65f1a/fast] 错误 2
+make: *** [Makefile:121：cmTC_51d7d/fast] 错误 2
 
 
 

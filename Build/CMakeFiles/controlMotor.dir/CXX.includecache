@@ -34,15 +34,7 @@ pigpio.h
 iostream
 -
 
-/home/pi/Drawing-Robot/src/PiMotor.cpp
-../include/PiMotor.h
-/home/pi/Drawing-Robot/include/PiMotor.h
-
 /home/pi/Drawing-Robot/src/controlMotor.cpp
 ../include/controlMotor.h
 /home/pi/Drawing-Robot/include/controlMotor.h
-
-/home/pi/Drawing-Robot/src/reDecoder.cpp
-../include/reDecoder.h
-/home/pi/Drawing-Robot/include/reDecoder.h
 

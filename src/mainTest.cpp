@@ -2,7 +2,7 @@
 
 
         
-int speeds = 50;
+int speeds = 500;
 bool dir1,dir2;
 double speed1,speed2;
         // string url = "../img/1.jpg";
@@ -15,9 +15,9 @@ double targetY;  // target y
 
 double currrentX, currrentY, initialX, initialY;
 int main() 
-{  
-    double L1 = 0.275; //the distances between the motors and the pulley（left）
-    double L2 = 0.275; //the distances between the motors and the pulley（right）
+{                                                  
+    double L1 = 0.300; //the distances between the motors and the pulley（left）
+    double L2 = 0.300; //the distances between the motors and the pulley（right）
     process();
     pixToM();
     // intial position
@@ -27,9 +27,9 @@ int main()
 
     // Drawing start 
     string Y,X;
-    ifstream fin("newData.txt"); 
+    ifstream fin("MeterData.txt"); 
     // cout <<"!!!!!"<< endl;
-    const int LINE_LENGTH = 380; 
+    const int LINE_LENGTH = 1190; 
     char str[LINE_LENGTH];  
     char *p;
 	  const char *delim = " ";
@@ -86,19 +86,19 @@ int main()
             speed1 = speeds/speedFactor;
         }
 
-        if (speed1>255) speed1=255;
-        if (speed2>255) speed2=255;
+        if (speed1>2000) speed1=2000;
+        if (speed2>2000) speed2=2000;
 
         // control the direction of robot
         if(targetCounts1 > 0){
-            dir1 = 0;
-        }else{
             dir1 = 1;
+        }else{
+            dir1 = 0;
         }
         if(targetCounts2 > 0){
-            dir2 = 1;
-        }else{
             dir2 = 0;
+        }else{
+            dir2 = 1;
         }
         
         // initialise
@@ -121,5 +121,24 @@ int main()
         t1.join(); 
         t2.join();
     }
-    gpioTerminate(); 
-}
+    //  if (gpioInitialise() < 0)
+    //     {
+    //       fprintf(stderr, "igpio initialisation failed.\n\r");
+    //     }
+    //     else
+    //     {
+    //       fprintf(stderr, "igpio initialisation is okey.\n\r");
+    //     }
+    // left_motor.run_left(500,1);
+    // usleep(1000000);
+    // left_motor.stop_left();
+    // usleep(1000000);
+    // right_motor.run_right(500,0);
+    // usleep(1000000);
+    // right_motor.stop_right();
+    // right_motor.run_right(500,1);
+    // usleep(1000000);
+    // right_motor.stop_right();
+    // gpioTerminate(); 
+    gpioTerminate();
+ }

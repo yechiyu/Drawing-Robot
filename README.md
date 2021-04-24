@@ -5,6 +5,9 @@ This project has realized a drawing machine hand that can draw a graph according
 ## 
 Please download the branch DrawingRobot_1.0
 
+## Documents
+https://sway.office.com/QeANqgt13Z8ikb8U?authoringPlay=true&publish
+
 ## Key Words:
 IMAGE PROCESSING 
 MATH COMPUTATIONS
